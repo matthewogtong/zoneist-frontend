@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import LandingPage from './landing/LandingPage'
 import LogInPage from './login/LogInPage'
+import AboutPage from './about/AboutPage'
 import HomePage from './home/HomePage'
 
 // NONTRINKETS IMPORTS
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/login">
           <LogInPage />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
         </Route>
         <Route path="/home">
           <HomePage />

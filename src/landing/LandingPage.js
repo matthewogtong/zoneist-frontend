@@ -5,7 +5,7 @@ import AuthSlide from './AuthSlide'
 
 const LandingPage = () => {
     return (
-      <div id="landing-page">
+      <div className="landing-page">
         <LandingTitle />
         <LandingContent />
         <AuthSlide />

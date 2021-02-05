@@ -3,9 +3,19 @@ import React from 'react'
 const AuthSlide = () => {
     return (
       <>
-        <nav>
-          <a href="/login">Log In</a>
-          <a href="/signup">Sign Up</a>
+        <nav className="landing-nav">
+          <div>
+            <a href="/login">Log In</a>
+          </div>
+          <div>
+            <a href="/signup">Sign Up</a>
+          </div>
+          <div>
+            <a href="/home">Home</a>
+          </div>
+          <div>
+            <a href="/about">About</a>
+          </div>
         </nav>
       </>
     );
