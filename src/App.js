@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import LandingPage from './landing/LandingPage'
 import LogInPage from './login/LogInPage'
+import HomePage from './home/HomePage'
 
 // NONTRINKETS IMPORTS
 import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path="/login">
           <LogInPage />
+        </Route>
+        <Route path="/home">
+          <HomePage />
         </Route>
         <Route path="*">
           <h1>404 not found</h1>
