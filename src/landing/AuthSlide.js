@@ -1,10 +1,18 @@
 import React from 'react'
-import { Button } from 'primereact/button'
+import { useSpring, animated } from "react-spring"
 
 const AuthSlide = () => {
+    const fadeIn = useSpring({
+      opacity: 1,
+      marginLeft: 0,
+      from: { opacity: 0, marginLeft: -500 },
+      delay: 1000,
+      duration: 1000
+    });
+
     return (
       <>
-        <nav className="landing-nav">
+        <animated.nav style={fadeIn} className="landing-nav">
           <div>
             <a href="/login">Log In</a>
           </div>
@@ -17,7 +25,7 @@ const AuthSlide = () => {
           <div>
             <a href="/about">About</a>
           </div>
-        </nav>
+        </animated.nav>
       </>
     );
 };
