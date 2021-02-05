@@ -1,0 +1,34 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-diamond1-a {animation:line-diamond1-a 2s infinite;}
+     .line-diamond1-b {animation:line-diamond1-b 2s infinite;}
+     .line-diamond1-c {animation:line-diamond1-c 2s infinite;}
+     @keyframes line-diamond1-a {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(0, -4px, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(0, -4px, 0); opacity: 0;}
+     }
+     @keyframes line-diamond1-b {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(2px, -2px, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(2px, -2px, 0); opacity: 0;}
+     }
+     @keyframes line-diamond1-c {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(-2px, -2px, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(-2px, -2px, 0); opacity: 0;}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-diamond1-a, .line-diamond1-b, .line-diamond1-c {
+             animation: none;
+         }
+     }
+    </style><path class="fill1" d="M74 30.5L84 49.5L50 87L16 49.5L26 30.5H50H74Z" fill="#FFF" stroke-width="2px" style="animation-duration: 0.6s;"></path><path class="stroke1" d="M26 30.5L16 49.5M26 30.5H50M26 30.5L34.0708 49.5M74 30.5L84 49.5M74 30.5H50M74 30.5L65.9292 49.5M84 49.5L50 87M84 49.5H65.9292M50 87L16 49.5M50 87L65.9292 49.5M50 87L34.0708 49.5M16 49.5H34.0708M50 30.5L65.9292 49.5M50 30.5L34.0708 49.5M65.9292 49.5H34.0708" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 0.6s;"></path><path class="line-diamond1-a stroke2" d="M50 21.5V13" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 0.6s;"></path><path class="line-diamond1-b stroke2" d="M57.9948 24.2552L64.0052 18.2448" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 0.6s;"></path><path class="line-diamond1-c stroke2" d="M42.0053 24.2552L35.9949 18.2448" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 0.6s;"></path></svg>

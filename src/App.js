@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
+import LandingPage from './landing/LandingPage'
+import LogInPage from './login/LogInPage'
+
+// NONTRINKETS IMPORTS
+import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+        <Route path="/login">
+          <LogInPage />
+        </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
+          <a href="/login">Log In</a>
+          <a href="/">Back</a>
+          <Hammer />
+        </Route>
+      </Switch>
     </div>
   );
 }

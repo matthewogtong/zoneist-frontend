@@ -1,0 +1,15 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-camera1 {animation:line-camera1-pulse 2s infinite; transform-origin: 51.5px 54px;}
+     @keyframes line-camera1-pulse {
+         0%{transform:scale(1);}
+         30%{transform:scale(1);}
+         50%{transform:scale(.8);}
+         60%{transform:scale(1);}
+         100%{transform:scale(1);}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-camera1 {
+             animation: none;
+         }
+     }
+    </style><path class="stroke1 fill1" d="M8 29C8 26.7909 9.79086 25 12 25H28.8431C29.904 25 30.9214 24.5786 31.6716 23.8285L38.3284 17.1716C39.0786 16.4214 40.096 16 41.1569 16L59.8431 16C60.904 16 61.9214 16.4215 62.6716 17.1716L69.3284 23.8285C70.0786 24.5786 71.096 25 72.1569 25H89C91.2091 25 93 26.7909 93 29V80C93 82.2092 91.2091 84 89 84H12C9.79086 84 8 82.2092 8 80V29Z" fill="#FFF" stroke="#000" stroke-width="2px" style="animation-duration: 2s;"></path><circle class="line-camera1 stroke2 fill2" cx="51" cy="54" r="17" fill="#FFF" stroke="#000" stroke-width="2px" style="animation-duration: 2s;"></circle></svg>

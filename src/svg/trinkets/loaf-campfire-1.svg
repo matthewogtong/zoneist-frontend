@@ -1,0 +1,17 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-campfire1-a {animation:line-campfire1-flame 300ms infinite linear; transform-origin: 51.5px 66px;}
+     .line-campfire1-b {animation:line-campfire2-flame 300ms infinite linear; transform-origin: 52px 71px;}
+     @keyframes line-campfire1-flame {
+         0%{transform:scale(1);}
+         30%{transform:scale(1.1);}
+     }
+     @keyframes line-campfire2-flame {
+         0%{transform:scale(1);}
+         60%{transform:scale(1.2);}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-campfire1-a, .line-campfire1-b {
+             animation: none;
+         }
+     }
+    </style><g class="line-campfire1-a" style="animation-duration: 0.3s;"><path class="stroke2 fill2" d="M71 53.6667C71 63.2396 62.3143 71 51.4571 71C40.6 71 33 61.25 33 53.6667C33 39.5833 51.4571 19 51.4571 19C51.4571 19 71 41.75 71 53.6667Z" fill="#fff" stroke="#000" stroke-width="2px"></path></g><g class="line-campfire1-b" style="animation-duration: 0.3s;"><path class="stroke2 fill2" d="M60.5 58C60.5 62.4183 56.5 66 51.5 66C46.5 66 43 61.5 43 58C43 51.5 51.5 42 51.5 42C51.5 42 60.5 52.5 60.5 58Z" fill="#fff" stroke="#000" stroke-width="2px"></path></g><path class="stroke1 fill1" d="M76.6732 69.6293L11.66 87.0495C8.99266 87.7642 7.40975 90.5059 8.12446 93.1733C8.83917 95.8406 11.5808 97.4235 14.2482 96.7088L79.2614 79.2885L76.6732 69.6293Z" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 0.3s;"></path><path class="stroke1 fill1" d="M26.4185 69.6293L91.4318 87.0495C94.0991 87.7642 95.682 90.5059 94.9673 93.1733C94.2526 95.8406 91.5109 97.4235 88.8436 96.7088L23.8303 79.2885L26.4185 69.6293Z" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 0.3s;"></path></svg>
