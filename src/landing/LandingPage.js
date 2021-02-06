@@ -1,14 +1,14 @@
 import React from 'react'
 import LandingTitle from './LandingTitle'
 import LandingContent from './LandingContent'
-import AuthSlide from './AuthSlide'
+import AuthContainer from './AuthContainer'
 
 const LandingPage = () => {
     return (
       <div className="landing-page">
           <LandingTitle />
           <LandingContent />
-          <AuthSlide />
+          <AuthContainer />
       </div>
     );
         

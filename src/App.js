@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import PrimeReact from 'primereact/api';
 
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import './App.css';
 
 
 import LandingPage from './landing/LandingPage'
-import LogInPage from './login/LogInPage'
 import AboutPage from './about/AboutPage'
 import HomePage from './home/HomePage'
 
@@ -27,9 +27,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <LandingPage />
-        </Route>
-        <Route path="/login">
-          <LogInPage />
         </Route>
         <Route path="/about">
           <AboutPage />
