@@ -1,7 +1,7 @@
 import React from "react"
 import { useSpring, animated } from "react-spring"
 
-const AuthContainer = () => {
+const AuthContainer = ({ currentUser }) => {
   const fadeIn = useSpring({
     opacity: 1,
     marginLeft: 0,
@@ -13,7 +13,7 @@ const AuthContainer = () => {
   return (
     <>
       <animated.div style={fadeIn} className="auth-container p-shadow-24">
-        <p>welcome user!</p>
+        <p>welcome {currentUser.username}</p>
       </animated.div>
     </>
   )

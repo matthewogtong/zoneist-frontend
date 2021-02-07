@@ -13,21 +13,42 @@ const LogIn = ({ setCurrentUser }) => {
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [logInError, setLogInError] = useState(null)
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    const formData = { username, password }
+    e.preventDefault();
+
+    const formData = { username, password };
+
     fetch("http://localhost:3001/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     })
-      .then(r => r.json())
-      .then((data) => setCurrentUser(data.user))
-  }
+      .then((r) => {
+        return r.json().then((data) => {
+          // .ok is true for good status codes, and false for bad status codes
+          if (r.ok) {
+            // return data to the next .then method
+            return data;
+          } else {
+            // throw data to the .catch method
+            throw data;
+          }
+        });
+      })
+      .then((data) => {
+        // success:
+        setCurrentUser(data.user);
+        localStorage.setItem("token", data.token);
+      })
+      .catch((data) => {
+        // error:
+        setLogInError(data.error);
+      });
+  };
 
   return (
     <>
@@ -56,6 +77,7 @@ const LogIn = ({ setCurrentUser }) => {
           </span>
           <input type="submit" value="Login" />
         </form>
+        {logInError ? <p>{logInError}</p> : null}
       </animated.div>
     </>
   )

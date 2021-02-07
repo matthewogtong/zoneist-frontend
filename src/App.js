@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import PrimeReact from 'primereact/api';
@@ -20,8 +20,20 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
-
-  console.log({ currentUser })
+  // autologin
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:3001/home", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((r) => r.json())
+        .then((user) => setCurrentUser(user));
+    }
+  }, []);
 
   PrimeReact.ripple = true;
 
@@ -29,21 +41,21 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          {currentUser ? (
-            <LandingPage />
-          ) : (
-            <Redirect to="/login" />
-          )}
+          {currentUser ? <LandingPage currentUser={currentUser} setCurrentUser={setCurrentUser} /> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/login">
-          <LandingPage setCurrentUser={setCurrentUser} />
+          {currentUser ? (
+            <Redirect to="/" />
+          ) : (
+            <LandingPage currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          )}
         </Route>
         <Route exact path="/signup">
-          <LandingPage />
+          <LandingPage currentUser={currentUser} />
         </Route>
         <Route path="/home">
           {currentUser ? (
-            <HomePage currentUser={currentUser} />
+            <HomePage currentUser={currentUser} setCurrentUser={setCurrentUser} />
           ) : (
             <Redirect to="/login" />
           )}

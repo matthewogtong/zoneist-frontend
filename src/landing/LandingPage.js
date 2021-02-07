@@ -8,12 +8,12 @@ import SignUp from './SignUp'
 import AuthContainer from './AuthContainer'
 
 
-const LandingPage = ({ setCurrentUser }) => {
+const LandingPage = ({ currentUser, setCurrentUser }) => {
     return (
       <div className="landing-page">
         <LandingTitle />
         <LandingContent />
-        <LandingNav />
+        <LandingNav currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Switch>
           <Route path="/login">
             <LogIn setCurrentUser={setCurrentUser} />
@@ -22,7 +22,7 @@ const LandingPage = ({ setCurrentUser }) => {
             <SignUp />
           </Route>
           <Route path="/">
-            <AuthContainer />
+            <AuthContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </div>
