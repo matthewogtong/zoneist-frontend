@@ -20,6 +20,14 @@
   grid-row: 3 / span 2;
 }
 
+.landing-nav {
+  grid-column: 8 / span 3;
+  grid-row: 6 / span 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /* AUTH CONTAINER */
 .auth-container {
   background-color: #FFFFFF;
@@ -31,23 +39,29 @@
   grid-template-rows: repeat(12, 1fr);
 }
 
-.log-in-button {
-  grid-column: 4 / span 2;
-  grid-row: 2 / span 1;
+
+/* LOG IN FORM  */
+.log-in-container {
+  background-color: #FFFFFF;
+  grid-column: 7 / -2;
+  grid-row: 2 / -2;
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
-.sign-up-button {
-  grid-column: 8 / span 2;
-  grid-row: 2 / span 1;
-}
 
-.landing-nav {
-  grid-column: 2 / span 2;
-  grid-row: 5 / 6;
-  display: flex;
-  justify-content: space-evenly;
+/* SIGN UP FORM */
+.sign-up-container {
+  background-color: #FFFFFF;
+  grid-column: 7 / -2;
+  grid-row: 2 / -2;
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
-
 
 
 /* HOME PAGE ZONES */

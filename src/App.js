@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import PrimeReact from 'primereact/api';
 
@@ -19,6 +19,9 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null)
+
+  console.log({ currentUser })
 
   PrimeReact.ripple = true;
 
@@ -26,13 +29,27 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
+          {currentUser ? (
+            <LandingPage />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route exact path="/login">
+          <LandingPage setCurrentUser={setCurrentUser} />
+        </Route>
+        <Route exact path="/signup">
           <LandingPage />
+        </Route>
+        <Route path="/home">
+          {currentUser ? (
+            <HomePage currentUser={currentUser} />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route path="/about">
           <AboutPage />
-        </Route>
-        <Route path="/home">
-          <HomePage />
         </Route>
         <Route path="*">
           <h1>404 not found</h1>

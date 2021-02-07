@@ -21,14 +21,14 @@ import mountains from "../../img/mountains.jpeg"
 const ZonesContainer = () => {
   return (
     <>
-      <div class="container">
+      <div className="container">
         <div>
           <LPrinter />
         </div>
-        <div class="vertical">
+        <div className="vertical">
           <Axe />
         </div>
-        <div class="horizontal">
+        <div className="horizontal">
           <Bath />
         </div>
         <div>
@@ -37,44 +37,44 @@ const ZonesContainer = () => {
         <div>
           <Campfire />
         </div>
-        <div class="big">
+        <div className="big">
           <Candle />
         </div>
         <div>
           <Coffee />
         </div>
-        <div class="vertical">
+        <div className="vertical">
           <Devices />
         </div>
         <div>
           <Diamond />
         </div>
-        <div class="horizontal">
+        <div className="horizontal">
           <Draw />
         </div>
         <div>
           <Drone />
         </div>
-        <div class="big">
+        <div className="big">
           <Earth />
         </div>
         <div>
           <FidgetSpinner />
         </div>
-        <div class="horizontal">
+        <div className="horizontal">
           <img src={beach} alt="beach" />
           <Drone />
         </div>
         <div>
           <img src={lava} alt="beach" />
         </div>
-        <div class="big">
+        <div className="big">
           <img src={torii} alt="beach" />
         </div>
         <div>
           <img src={pond} alt="beach" />
         </div>
-        <div class="vertical">
+        <div className="vertical">
           <img src={mountains} alt="beach" />
         </div>
       </div>

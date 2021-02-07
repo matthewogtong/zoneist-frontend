@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
-import { InputText } from "primereact/inputtext"
+import { InputText } from 'primereact/inputtext'
 
-const LogIn = ({ setCurrentUser }) => {
+const SignUp = () => {
   const fadeIn = useSpring({
     opacity: 1,
     marginLeft: 0,
@@ -15,24 +15,13 @@ const LogIn = ({ setCurrentUser }) => {
   const [password, setPassword] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    const formData = { username, password }
-    fetch("http://localhost:3001/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(r => r.json())
-      .then((data) => setCurrentUser(data.user))
+      e.preventDefault()
+      console.log("you have signed up")
   }
-
   return (
     <>
-      <animated.div style={fadeIn} className="log-in-container p-shadow-24">
-        <h1>Login</h1>
+      <animated.div style={fadeIn} className="sign-up-container p-shadow-24">
+        <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <span className="p-float-label">
             <InputText
@@ -54,11 +43,11 @@ const LogIn = ({ setCurrentUser }) => {
             />
             <label htmlFor="password">Password</label>
           </span>
-          <input type="submit" value="Login" />
+          <input type="submit" value="SignUp" />
         </form>
       </animated.div>
     </>
-  )
+  );
 }
 
-export default LogIn
+export default SignUp
