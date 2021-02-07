@@ -19,7 +19,7 @@ const LandingPage = ({ currentUser, setCurrentUser }) => {
             <LogIn setCurrentUser={setCurrentUser} />
           </Route>
           <Route path="/signup">
-            <SignUp />
+            <SignUp setCurrentUser={setCurrentUser} />
           </Route>
           <Route path="/">
             <AuthContainer currentUser={currentUser} />

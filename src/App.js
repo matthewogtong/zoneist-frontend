@@ -51,7 +51,11 @@ function App() {
           )}
         </Route>
         <Route exact path="/signup">
-          <LandingPage currentUser={currentUser} />
+        {currentUser ? (
+            <Redirect to="/" />
+          ) : (
+            <LandingPage currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          )}
         </Route>
         <Route path="/home">
           {currentUser ? (

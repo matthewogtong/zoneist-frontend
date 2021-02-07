@@ -11,7 +11,7 @@ const HomePage = ({ currentUser, setCurrentUser }) => {
   }
     return (
       <>
-        <h1>This Home Page</h1>
+        <h1>Welcome Home {currentUser.username}</h1>
         <Link to="/" style={{ textDecoration: "none" }}>
           <Button label="Title" />
         </Link>

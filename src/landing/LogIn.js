@@ -1,8 +1,10 @@
 import React, { useState } from "react"
+import { useHistory } from "react-router-dom"
 import { useSpring, animated } from "react-spring"
 import { InputText } from "primereact/inputtext"
 
 const LogIn = ({ setCurrentUser }) => {
+  // ANIMATIONS
   const fadeIn = useSpring({
     opacity: 1,
     marginLeft: 0,
@@ -11,14 +13,18 @@ const LogIn = ({ setCurrentUser }) => {
     duration: 1000,
   })
 
+  // STATES
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [logInError, setLogInError] = useState(null)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // OTHER
+  const history = useHistory()
 
-    const formData = { username, password };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const formData = { username, password }
 
     fetch("http://localhost:3001/login", {
       method: "POST",
@@ -32,23 +38,24 @@ const LogIn = ({ setCurrentUser }) => {
           // .ok is true for good status codes, and false for bad status codes
           if (r.ok) {
             // return data to the next .then method
-            return data;
+            return data
           } else {
             // throw data to the .catch method
-            throw data;
+            throw data
           }
-        });
+        })
       })
       .then((data) => {
         // success:
-        setCurrentUser(data.user);
-        localStorage.setItem("token", data.token);
+        setCurrentUser(data.user)
+        localStorage.setItem("token", data.token)
+        history.push("/home")
       })
       .catch((data) => {
         // error:
-        setLogInError(data.error);
-      });
-  };
+        setLogInError(data.error)
+      })
+  }
 
   return (
     <>
@@ -75,9 +82,11 @@ const LogIn = ({ setCurrentUser }) => {
             />
             <label htmlFor="password">Password</label>
           </span>
+          {logInError ? (
+            <p style={{ color: "red" }}>Error: {logInError}</p>
+          ) : null}
           <input type="submit" value="Login" />
         </form>
-        {logInError ? <p>{logInError}</p> : null}
       </animated.div>
     </>
   )
