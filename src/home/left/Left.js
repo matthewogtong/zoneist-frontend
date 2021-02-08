@@ -4,7 +4,7 @@ import TotalZoneTime from './TotalZoneTime'
 
 const Left = () => {
     return (
-        <div className="home-left p-shadow-24">
+        <div className="home-left p-shadow-8">
             <NavBar />
             <TotalZoneTime />
         </div>

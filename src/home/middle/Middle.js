@@ -3,7 +3,7 @@ import ZonesContainer from './ZonesContainer'
 
 const Middle = () => {
     return (
-        <div className="home-middle">
+        <div className="home-middle p-shadow-8">
             <ZonesContainer />
         </div>
     )

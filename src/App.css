@@ -144,6 +144,19 @@
   font-size: calc(10px + 2vmin);
 }
 
+/* RIGHT */
+.home-right {
+  background-color: #FFFFFF;;
+  border-radius: 25px;
+  grid-column: 13 / -1;
+  grid-row: 4 / -2;
+  margin-right: 5%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  font-size: calc(10px + 2vmin);
+}
+
 /* ZONES */
 .container > div {
   display: flex;

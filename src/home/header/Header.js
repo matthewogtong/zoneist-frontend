@@ -14,7 +14,7 @@ const Header = ({ currentUser }) => {
     });
 
   return (
-    <animated.div style={fadeIn} className="home-header p-shadow-24">
+    <animated.div style={fadeIn} className="home-header">
       <HomeTitle currentUser={currentUser} />
       <HomeDate />
       <Greeting currentUser={currentUser} />
