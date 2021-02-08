@@ -9,7 +9,7 @@ const Middle = ({ currentUser }) => {
     console.log(currentUser.zones)
     return (
       <div className="home-middle p-shadow-8">
-          <ZonesCont />
+          <Market />
         {/* <Switch>
           <Route path="/market">
             <Market />
