@@ -4,17 +4,13 @@ import Left from './left/Left'
 import Middle from './middle/Middle'
 import Right from './right/Right'
 
-const HomePage = ({ currentUser, setCurrentUser }) => {
-  const handleLogOut = () => {
-    setCurrentUser(null);
-    localStorage.removeItem("token");
-  }
+const HomePage = ({ currentUser, setCurrentUser, renderType }) => {
   
   return (
     <div className="home-page">
       <Header currentUser={currentUser}/>
       <Left />
-      <Middle currentUser={currentUser}/>
+      <Middle renderType={renderType} currentUser={currentUser}/>
       <Right />
     </div>
   )

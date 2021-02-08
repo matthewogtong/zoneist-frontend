@@ -13,6 +13,7 @@ import './App.css';
 import LandingPage from './landing/LandingPage'
 import AboutPage from './about/AboutPage'
 import HomePage from './home/HomePage'
+import Market from './home/middle/Market'
 
 // NONTRINKETS IMPORTS
 import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
@@ -64,6 +65,12 @@ function App() {
           ) : (
             <Redirect to="/login" />
           )}
+        </Route>
+        <Route path="/zones">
+          <HomePage renderType="zones" currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        </Route>
+        <Route path="/market">
+          <HomePage renderType="market" currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route path="/about">
           <AboutPage />
