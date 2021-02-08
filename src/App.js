@@ -43,34 +43,66 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          {currentUser ? <LandingPage currentUser={currentUser} setCurrentUser={setCurrentUser} /> : <Redirect to="/login" />}
+          {currentUser ? (
+            <LandingPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route exact path="/login">
           {currentUser ? (
             <Redirect to="/" />
           ) : (
-            <LandingPage currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <LandingPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
           )}
         </Route>
         <Route exact path="/signup">
-        {currentUser ? (
+          {currentUser ? (
             <Redirect to="/" />
           ) : (
-            <LandingPage currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <LandingPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
           )}
         </Route>
         <Route path="/home">
           {currentUser ? (
-            <HomePage currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <HomePage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
           ) : (
             <Redirect to="/login" />
           )}
         </Route>
         <Route path="/zones">
-          <HomePage renderType="zones" currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          {currentUser ? (
+            <HomePage
+              renderType="zones"
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
         </Route>
         <Route path="/market">
-          <HomePage renderType="market" currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          {currentUser ? (
+            <HomePage
+              renderType="market"
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
         </Route>
         <Route path="/about">
           <AboutPage />

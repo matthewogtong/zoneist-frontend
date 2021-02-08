@@ -8,7 +8,7 @@ const Market = () => {
         opacity: 1,
         marginTop: 0,
         from: { opacity: 0, marginTop: -1000 },
-        delay: 500
+        delay: 250
       });
 
     return (

@@ -12,11 +12,7 @@ import { ReactComponent as Draw } from "../../svg/trinkets/loaf-draw-1.svg"
 import { ReactComponent as Drone } from "../../svg/trinkets/loaf-drone-1.svg"
 import { ReactComponent as Earth } from "../../svg/trinkets/loaf-earth.svg"
 import { ReactComponent as FidgetSpinner } from "../../svg/trinkets/loaf-fidget-spinner.svg"
-import beach from "../../img/beachPhoto.jpeg"
-import lava from "../../img/lava.jpeg"
-import torii from "../../img/torii.jpeg"
-import pond from "../../img/pond.jpeg"
-import mountains from "../../img/mountains.jpeg"
+import torii from "../../img/bluelaketorii.jpg"
 
 const ZonesContainer = () => {
   return (
@@ -61,21 +57,8 @@ const ZonesContainer = () => {
         <div>
           <FidgetSpinner />
         </div>
-        <div className="horizontal">
-          <img src={beach} alt="beach" />
-          <Drone />
-        </div>
-        <div>
-          <img src={lava} alt="beach" />
-        </div>
         <div className="big">
           <img src={torii} alt="beach" />
-        </div>
-        <div>
-          <img src={pond} alt="beach" />
-        </div>
-        <div className="vertical">
-          <img src={mountains} alt="beach" />
         </div>
       </div>
     </>
