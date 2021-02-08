@@ -58,7 +58,6 @@ const LogIn = ({ setCurrentUser }) => {
   }
 
   return (
-    <>
       <animated.div style={fadeIn} className="log-in-container p-shadow-24">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
@@ -88,7 +87,6 @@ const LogIn = ({ setCurrentUser }) => {
           <input type="submit" value="Login" />
         </form>
       </animated.div>
-    </>
   )
 }
 

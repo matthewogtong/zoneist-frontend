@@ -64,7 +64,48 @@
 }
 
 
-/* HOME PAGE ZONES */
+/* HOME PAGE */
+.home-page {
+  background-color: #FFFFFF;;
+  color: black;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  font-size: calc(10px + 2vmin);
+}
+
+/* HEADER */
+.home-header {
+  background-color: #FFFFFF;;
+  grid-column: 1 / -1;
+  grid-row: 1 / span 3;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  font-size: calc(10px + 2vmin);
+}
+
+.home-title {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+  text-align: center;
+}
+
+.home-date {
+  grid-column: 3 / 10;
+  grid-row: 1 / span 2;
+  text-align: center;
+}
+
+.home-greeting {
+  grid-column: 10 / -1;
+  grid-row: 1 / span 2;
+  text-align: center;
+}
+
+
+/* ZONES */
 .container > div {
   display: flex;
   justify-content: center;

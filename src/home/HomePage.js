@@ -1,24 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from 'primereact/button'
-import ZonesContainer from './middle/ZonesContainer'
+import Header from './header/Header'
 
 const HomePage = ({ currentUser, setCurrentUser }) => {
-
   const handleLogOut = () => {
-    setCurrentUser(null)
-    localStorage.removeItem("token")
+    setCurrentUser(null);
+    localStorage.removeItem("token");
   }
-    return (
-      <>
-        <h1>Welcome Home {currentUser.username}</h1>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button label="Title" />
-        </Link>
-        <Button onClick={handleLogOut}>Log Out</Button>
-        <ZonesContainer />
-      </>
-    );
+  return (
+    <div className="home-page">
+      <Header currentUser={currentUser}/>
+    </div>
+  )
 }
 
 export default HomePage
