@@ -2,76 +2,76 @@ import React from "react";
 
 const ZonesCont = () => {
   return (
-    <div class="zones-container">
-      <div class="bg1">
+    <div className="zones-container">
+      <div className="bg1">
         <h2>
-          16 <span>| 24</span>
+          Time
         </h2>
-        <p>Goals Completed</p>
+        <p>Objective</p>
       </div>
-      <div class="bg1">
+      <div className="bg1">
         <h2>
-          30 mins
+          Time
         </h2>
-        <p>Respiration</p>
+        <p>Objective</p>
       </div>
-      <div class="bg2">
+      <div className="bg2">
         <h2>
-          1 hour
+          Time
         </h2>
-        <p>Miles</p>
+        <p>Objective</p>
       </div>
-      <div class="bg1">
-        <h2>small</h2>
-        <p>objective:</p>
+      <div className="bg1">
+        <h2>Time</h2>
+        <p>Objective</p>
       </div>
-      <div class="bg1">
+      <div className="bg1">
         <h2>
-          small
+          Time
         </h2>
-        <p>Sleep Keep</p>
+        <p>Objective</p>
       </div>
-      <div class="bg2">
+      <div className="bg2">
         <h2>
-          98 <span>bpm</span>
+          Time
         </h2>
-        <p>Heart Rate</p>
+        <p>Objective</p>
       </div>
-      <div class="bg1">
+      <div className="bg1">
         <h2>
-          170 <span>lbs</span>
+          Time
         </h2>
-        <p>Weight</p>
+        <p>Objective</p>
       </div>
-      <div class="bg1">
+      <div className="bg1">
         <h2>
-          28 <span>%</span>
+          Time
         </h2>
-        <p>Fat Percentage</p>
+        <p>Objective</p>
       </div>
-      <div class="bg2">
+      <div className="bg2">
         <h2>
-          118 <span>mgdl</span>
+          Time
         </h2>
-        <p>Blood Glucose</p>
+        <p>Objective</p>
       </div>
-      <div class="bg2">
+      <div className="bg2">
         <h2>
-          680 <span>kcal</span>
+          Time
         </h2>
-        <p>AVG Consumption</p>
+        <p>Objective</p>
       </div>
-      <div class="bg2">
+      <div className="bg2">
         <h2>
-          Big
+          Time
         </h2>
-        <p>Workouts</p>
+        <p>Objective</p>
       </div>
-      <div class="bg2">
+      <div className="bg2">
         <h2>
-          85 <span>%</span>
+          Time
         </h2>
-        <p>Body Hydration</p>
+        <p>Objective</p>
       </div>
     </div>
   );
