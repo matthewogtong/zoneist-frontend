@@ -16,7 +16,7 @@ const NavBar = () => {
       <br/>
       <Link to="/about" style={{ textDecoration: 'none' }}>About</Link>
       <br/>
-      <Link to="/" style={{ textDecoration: 'none' }}>Title</Link>
+      <Link to="/" style={{ textDecoration: 'none' }}>Title | Log Out</Link>
     </nav>
   )
 }

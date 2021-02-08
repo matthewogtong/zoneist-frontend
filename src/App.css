@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
 /* LANDING PAGE */
 .landing-page {
   background-color: #FFFFFF;;
@@ -137,7 +142,7 @@
 /* MIDDLE */
 .home-middle {
   background-color: #FFFFFF;;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   grid-column: 4 / span 9;
   grid-row: 4 / -2;
   display: grid;
@@ -163,6 +168,70 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(12, 1fr);
   font-size: calc(10px + 2vmin);
+}
+
+
+/* ZONES IMAGE SPAN */
+.zones-container {
+  /* box-sizing: border-box;
+  margin: 0;
+  padding: 0; */
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.zones-container h2 {
+  font-size: 45px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+.zones-container > div {
+  cursor: pointer;
+  border-radius: 15px;
+  height: 100%;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transition: all .5s ease-in;
+}
+
+.zones-container > div:hover {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+
+.zones-container > div:nth-of-type(1) {
+  grid-column: 1 / 3;
+}
+
+.zones-container > div:nth-of-type(6) {
+  grid-column: 3 / 5;
+}
+
+.zones-container > div:nth-of-type(9) {
+  grid-column: 3 / 5;
+}
+
+.zones-container > div:nth-of-type(10) {
+  grid-column: 1 / 3;
+}
+
+.bg1 {
+  background: url('./img/torii.jpeg');
+}
+
+.bg2 {
+  background: url('./img/pond.jpeg');
 }
 
 /* ZONES */

@@ -1,19 +1,21 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Market from './Market'
+import ZonesCont from './ZonesCont'
 import ZonesContainer from './ZonesContainer'
 
 const Middle = () => {
     return (
       <div className="home-middle p-shadow-8">
-        <Switch>
+          <ZonesCont />
+        {/* <Switch>
           <Route path="/market">
             <Market />
           </Route>
           <Route path="/zones">
             <ZonesContainer />
           </Route>
-        </Switch>
+        </Switch> */}
       </div>
     );
 }
