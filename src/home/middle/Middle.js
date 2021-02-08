@@ -4,7 +4,9 @@ import Market from './Market'
 import ZonesCont from './ZonesCont'
 import ZonesContainer from './ZonesContainer'
 
-const Middle = () => {
+const Middle = ({ currentUser }) => {
+
+    console.log(currentUser.zones)
     return (
       <div className="home-middle p-shadow-8">
           <ZonesCont />

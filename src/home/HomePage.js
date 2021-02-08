@@ -14,7 +14,7 @@ const HomePage = ({ currentUser, setCurrentUser }) => {
     <div className="home-page">
       <Header currentUser={currentUser}/>
       <Left />
-      <Middle />
+      <Middle currentUser={currentUser}/>
       <Right />
     </div>
   )

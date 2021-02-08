@@ -71,6 +71,44 @@ body {
   grid-template-rows: repeat(12, 1fr);
 }
 
+/* ABOUT PAGE  */
+.about-page {
+  background-color: #FFFFFF;;
+  color: black;
+  display: grid;
+  grid-gap: 1%;
+  height: 100vh;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  font-size: calc(10px + 2vmin);
+}
+
+.about-header {
+  grid-column: 2 / span 1;
+}
+
+.about-nav {
+  grid-column: 4 / span 1;
+  display: flex;
+  
+}
+
+.about-focus {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 4
+}
+
+.about-customize {
+  grid-column: 6 / span 3;
+  grid-row: 2 / span 4
+}
+
+.about-achieve {
+  grid-column: 10 / span 3;
+  grid-row: 2 / span 4
+}
+
+
 
 /* HOME PAGE */
 .home-page {
@@ -239,7 +277,7 @@ body {
 }
 
 /* ZONES */
-.container > div {
+/* .container > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,4 +310,4 @@ body {
 .big {
   grid-column: span 2;
   grid-row: span 2;
-}
+} */
