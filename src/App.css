@@ -115,6 +115,7 @@
   border-radius: 25px;
   grid-column: 1 / span 3;
   grid-row: 4 / -2;
+  grid-gap: 1%;
   margin-left: 5%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -123,11 +124,12 @@
 }
 
 .nav-bar {
+  grid-column: 1 / -1;
   grid-row: 1 / span 9;
 }
 
 .total-zone-time {
-  grid-row: 9 / -1;
+  grid-row: 10 / -1;
 }
 
 
@@ -142,6 +144,12 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(12, 1fr);
   font-size: calc(10px + 2vmin);
+}
+
+/* MARKET */
+.market {
+  grid-column: 1 / -1 ;
+  grid-row: 1 / -1;
 }
 
 /* RIGHT */
