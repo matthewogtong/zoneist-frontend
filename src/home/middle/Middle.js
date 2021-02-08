@@ -1,9 +1,10 @@
 import React from 'react'
+import ZonesContainer from './ZonesContainer'
 
 const Middle = () => {
     return (
-        <div>
-            <h1>hi</h1>
+        <div className="home-middle">
+            <ZonesContainer />
         </div>
     )
 }
