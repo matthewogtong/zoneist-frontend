@@ -31,6 +31,7 @@
 /* AUTH CONTAINER */
 .auth-container {
   background-color: #FFFFFF;
+  border-radius: 25px;
   grid-column: 7 / -2;
   grid-row: 2 / -2;
   display: grid;
@@ -43,6 +44,7 @@
 /* LOG IN FORM  */
 .log-in-container {
   background-color: #FFFFFF;
+  border-radius: 25px;
   grid-column: 7 / -2;
   grid-row: 2 / -2;
   display: grid;
@@ -55,6 +57,7 @@
 /* SIGN UP FORM */
 .sign-up-container {
   background-color: #FFFFFF;
+  border-radius: 25px;
   grid-column: 7 / -2;
   grid-row: 2 / -2;
   display: grid;
@@ -66,7 +69,8 @@
 
 /* HOME PAGE */
 .home-page {
-  background-color: #FFFFFF;;
+  background-color: #FFFFFF;
+  grid-gap: 1%;
   color: black;
   display: grid;
   height: 100vh;
@@ -78,6 +82,7 @@
 /* HEADER */
 .home-header {
   background-color: #FFFFFF;;
+  border-radius: 25px;
   grid-column: 1 / -1;
   grid-row: 1 / span 3;
   display: grid;
@@ -104,6 +109,30 @@
   text-align: center;
 }
 
+/* LEFT */
+.home-left {
+  background-color: #FFFFFF;;
+  border-radius: 25px;
+  grid-column: 1 / span 3;
+  grid-row: 4 / -2;
+  margin-left: 5%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  font-size: calc(10px + 2vmin);
+}
+
+.nav-bar {
+  grid-row: 1 / span 9;
+}
+
+.total-zone-time {
+  grid-row: 9 / -1;
+}
+
+
+
+/* MIDDLE */
 
 /* ZONES */
 .container > div {
