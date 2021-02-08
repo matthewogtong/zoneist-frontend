@@ -79,33 +79,39 @@ body {
   grid-gap: 1%;
   height: 100vh;
   grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  font-size: calc(10px + 2vmin);
+  grid-template-rows: repeat(8, 1fr);
 }
 
 .about-header {
   grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 400%;
 }
 
 .about-nav {
-  grid-column: 4 / span 1;
+  grid-column: 2 / span 3;
+  grid-row: 8 / span 1;
   display: flex;
-  
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .about-focus {
   grid-column: 2 / span 3;
-  grid-row: 2 / span 4
+  grid-row: 3 / span 5
 }
 
 .about-customize {
   grid-column: 6 / span 3;
-  grid-row: 2 / span 4
+  grid-row: 3 / span 5
 }
 
 .about-achieve {
   grid-column: 10 / span 3;
-  grid-row: 2 / span 4
+  grid-row: 3 / span 5
 }
 
 
@@ -209,7 +215,11 @@ body {
 }
 
 .home-calendar {
-
+  grid-column: 1 / -1;
+  grid-row: 1 / span 6;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 
