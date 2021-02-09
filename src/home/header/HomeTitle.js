@@ -1,10 +1,10 @@
 import React from 'react'
 
-const HomeTitle = ({ currentUser }) => {
+const HomeTitle = ({ currentUser, currentTokens, setCurrentTokens }) => {
     return (
         <div className="home-title">
             <h2>zoneist</h2>
-            <p>Tokens: {currentUser.tokens}</p>
+            <p>Tokens: {currentTokens}</p>
         </div>
         
     )

@@ -4,7 +4,7 @@ import HomeTitle from './HomeTitle'
 import HomeDate from './HomeDate'
 import Greeting from './Greeting'
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, currentTokens, setCurrentTokens }) => {
     const fadeIn = useSpring({
       opacity: 1,
       marginLeft: 0,
@@ -15,11 +15,15 @@ const Header = ({ currentUser }) => {
 
   return (
     <animated.div style={fadeIn} className="home-header">
-      <HomeTitle currentUser={currentUser} />
+      <HomeTitle
+        currentUser={currentUser}
+        currentTokens={currentTokens}
+        setCurrentTokens={setCurrentTokens}
+      />
       <HomeDate />
       <Greeting currentUser={currentUser} />
     </animated.div>
-  )
+  );
 }
 
 export default Header

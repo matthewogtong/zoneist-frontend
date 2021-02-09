@@ -22,6 +22,7 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
+  const [currentTokens, setCurrentTokens] = useState(0)
   const [regions, setRegions] = useState([])
   // autologin
   useEffect(() => {
@@ -34,7 +35,10 @@ function App() {
         },
       })
         .then((r) => r.json())
-        .then((user) => setCurrentUser(user));
+        .then((user) => {
+          setCurrentUser(user)
+          setCurrentTokens(user.tokens)
+        });
     }
   }, []);
 
@@ -84,6 +88,8 @@ function App() {
           {currentUser ? (
             <HomePage
               currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
             />
           ) : (
             <Redirect to="/login" />
@@ -104,6 +110,8 @@ function App() {
             <HomePage
               renderType="market"
               currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
               regions={regions}
             />
           ) : (
