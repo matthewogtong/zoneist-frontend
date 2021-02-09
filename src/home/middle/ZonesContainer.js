@@ -13,12 +13,7 @@ const ZonesContainer = () => {
 
   return (
     <animated.div style={fadeIn} className="zones-container">
-      <div className="bg1">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
+      <Zone />
       <div className="bg1">
         <h2>
           Time

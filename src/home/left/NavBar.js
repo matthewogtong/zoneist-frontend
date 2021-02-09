@@ -1,7 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from "primereact/button"
+
 
 const NavBar = () => {
+
+  const handleEnterZone = () => {
+    console.log("sup bruh youre in the zone")
+  }
+
   return (
     <nav className="nav-bar p-shadow-8">
       <Link to="/zones" style={{ textDecoration: 'none' }}>Zones</Link>
@@ -17,6 +24,8 @@ const NavBar = () => {
       <Link to="/about" style={{ textDecoration: 'none' }}>About</Link>
       <br/>
       <Link to="/" style={{ textDecoration: 'none' }}>Title | Log Out</Link>
+      <br/>
+      <Button onClick={handleEnterZone}>Enter Zone</Button>
     </nav>
   )
 }
