@@ -45,8 +45,30 @@ const TrinketCarousel = ({
 
     // TRINKET PURCHASE
 
-    const handleTrinketPurchase = () => {
-        console.log("trinket has been bought")
+    const handleTrinketPurchase = (trinket) => {
+        if (currentTokens >= trinket.price) {
+            fetch(`http://localhost:3001/users/${currentUser.id}/trinkets`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({
+                id: trinket.id,
+                name: trinket.name,
+                price: trinket.price,
+              }),
+            })
+              .then((r) => r.json())
+              .then((boughtTrinket) => {
+                const filteredTrinkets = marketTrinkets.filter(
+                  (trinket) => trinket.id !== boughtTrinket.id
+                )
+                const updatedTokens = currentTokens - boughtTrinket.price
+                setMarketTrinkets(filteredTrinkets)
+                setCurrentTokens(updatedTokens)
+              })
+          }
     }
     // TRINKET TEMPLATE
     const trinketTemplate = (trinket) => {
@@ -59,7 +81,7 @@ const TrinketCarousel = ({
                 <SVG />
                 <h4>{trinket.name}</h4>
                 <h6>${trinket.price}</h6>
-                <Button onClick={(e) => handleTrinketPurchase()}>Buy</Button>
+                <Button onClick={(e) => handleTrinketPurchase(trinket)}>Buy</Button>
               </div>
             </div>
           </div>
