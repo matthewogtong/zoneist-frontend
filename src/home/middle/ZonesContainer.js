@@ -2,7 +2,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring"
 import Zone from './Zone'
 
-const ZonesContainer = () => {
+const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
 
     const fadeIn = useSpring({
       opacity: 1,
@@ -11,6 +11,8 @@ const ZonesContainer = () => {
       delay: 250
     });
 
+    console.log(currentZones)
+    console.log(currentUser)
   return (
     <animated.div style={fadeIn} className="zones-container">
       <Zone />

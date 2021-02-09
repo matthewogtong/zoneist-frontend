@@ -23,6 +23,7 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [currentTokens, setCurrentTokens] = useState(0)
+  const [currentZones, setCurrentZones] = useState([])
   const [regions, setRegions] = useState([])
   const [trinkets, setTrinkets] = useState([])
   // autologin
@@ -39,6 +40,7 @@ function App() {
         .then((user) => {
           setCurrentUser(user)
           setCurrentTokens(user.tokens)
+          setCurrentZones(user.zones)
         });
     }
   }, []);
@@ -99,6 +101,8 @@ function App() {
               currentUser={currentUser}
               currentTokens={currentTokens}
               setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/login" />
@@ -111,6 +115,8 @@ function App() {
               currentUser={currentUser}
               currentTokens={currentTokens}
               setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/" />
