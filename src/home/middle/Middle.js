@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Market from './Market'
-import ZonesCont from './ZonesCont'
 import ZonesContainer from './ZonesContainer'
 
 const Middle = ({ currentUser, renderType }) => {
@@ -13,11 +12,11 @@ const Middle = ({ currentUser, renderType }) => {
         }
         else if (renderType === "zones") {
             return (
-                <ZonesCont />
+                <ZonesContainer />
             )
         } else {
             return (
-                <ZonesCont />
+                <ZonesContainer />
             )
         }
     }

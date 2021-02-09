@@ -62,7 +62,7 @@ const RegionCarousel = () => {
             orientation="vertical"
             verticalViewPortHeight="352px"
             itemTemplate={regionTemplate}
-            header={<h5>Regions</h5>}
+            header={<h2 className="region-carousel-header">Regions</h2>}
             style={{maxWidth: '400px'}}
           />
         </div>

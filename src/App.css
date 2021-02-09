@@ -203,13 +203,15 @@ body {
   grid-gap: 5px;
   grid-template-columns: repeat(6, 1fr) ;
   grid-template-rows: repeat(6, 1fr);
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: 100px; */
 }
 
 .region-carousel {
-  grid-column: 1 / -1;
+  grid-column: 1 / span 3;
   grid-row: 1 / -1;
+}
+
+.region-carousel-header {
+  text-align: center;
 }
 
 .region-carousel .region-item .region-item-content {
@@ -224,11 +226,6 @@ body {
   width: 50%;
 }
 
-
-.market-item {
-  border-radius: 15px;
-  margin-top: auto;
-}
 
 /* RIGHT */
 .home-right {
