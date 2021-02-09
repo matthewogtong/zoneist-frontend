@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import Market from './Market'
 import ZonesContainer from './ZonesContainer'
 
-const Middle = ({ currentUser, renderType }) => {
+const Middle = ({ currentUser, renderType, regions }) => {
 
     const renderContent = () => {
         if (renderType === "market") {
             return (
-                <Market />
+                <Market currentUser={currentUser} regions={regions} />
             )
         }
         else if (renderType === "zones") {

@@ -4,16 +4,19 @@ import Left from './left/Left'
 import Middle from './middle/Middle'
 import Right from './right/Right'
 
-const HomePage = ({ currentUser, setCurrentUser, renderType }) => {
-  
+const HomePage = ({ currentUser, renderType, regions }) => {
   return (
     <div className="home-page">
-      <Header currentUser={currentUser}/>
+      <Header currentUser={currentUser} />
       <Left />
-      <Middle renderType={renderType} currentUser={currentUser}/>
+      <Middle
+        renderType={renderType}
+        currentUser={currentUser}
+        regions={regions}
+      />
       <Right />
     </div>
-  )
-}
+  );
+};
 
 export default HomePage

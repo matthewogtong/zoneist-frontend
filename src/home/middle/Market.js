@@ -3,7 +3,7 @@ import { useSpring, animated } from "react-spring"
 import RegionCarousel from './RegionCarousel'
 import TrinketCarousel from './TrinketCarousel'
 
-const Market = () => {
+const Market = ({ currentUser, regions }) => {
 
     const fadeIn = useSpring({
         opacity: 1,
@@ -12,9 +12,11 @@ const Market = () => {
         delay: 250
       });
 
+    
+
     return (
         <animated.div style={fadeIn} className="market">
-            <RegionCarousel />
+            <RegionCarousel currentUser={currentUser} regions={regions} />
             <TrinketCarousel />
         </animated.div>
     )

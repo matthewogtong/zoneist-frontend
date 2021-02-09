@@ -22,6 +22,7 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
+  const [regions, setRegions] = useState([])
   // autologin
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -36,6 +37,13 @@ function App() {
         .then((user) => setCurrentUser(user));
     }
   }, []);
+
+  // GET REGIONS
+  useEffect(() => {
+    fetch(`http://localhost:3001/regions`)
+      .then((r) => r.json())
+      .then((regionsArr) => setRegions(regionsArr))
+  }, [])
 
   PrimeReact.ripple = true;
 
@@ -76,7 +84,6 @@ function App() {
           {currentUser ? (
             <HomePage
               currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
             />
           ) : (
             <Redirect to="/login" />
@@ -87,7 +94,6 @@ function App() {
             <HomePage
               renderType="zones"
               currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
             />
           ) : (
             <Redirect to="/" />
@@ -98,7 +104,7 @@ function App() {
             <HomePage
               renderType="market"
               currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
+              regions={regions}
             />
           ) : (
             <Redirect to="/" />

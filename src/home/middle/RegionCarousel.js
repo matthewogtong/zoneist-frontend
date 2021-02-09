@@ -11,8 +11,9 @@ import machuPicchu from "../../img/machupicchu.jpg"
 import nyc from "../../img/nyc.jpg"
 import venice from "../../img/venice.jpg"
 
-const RegionCarousel = () => {
-    const [regions, setRegions] = useState([])
+const RegionCarousel = ({ currentUser, regions }) => {
+    const [userRegions, setUserRegions] = useState([])
+    const [marketRegions, setMarketRegions] = useState([])
 
     const imageMapper = {
         "Barcelona": barcelona,
@@ -26,13 +27,43 @@ const RegionCarousel = () => {
         "Venice": venice
     }
     
+
     useEffect(() => {
-        fetch("http://localhost:3001/regions")
+        fetch(`http://localhost:3001/users/${currentUser.id}/regions`)
             .then(r => r.json())
-            .then(regionsArr => setRegions(regionsArr.slice(0, 9)))
+            .then(userRegionsArr => {
+              setUserRegions(userRegionsArr)
+              const filteredRegions = regions.filter(region => !userRegionsArr.some(userRegion => region.id === userRegion.id))
+              setMarketRegions(filteredRegions)
+            })
     }, [])
 
-    console.log(regions)
+    // BUY REGION
+
+    const handleRegionPurchase = (region) => {
+
+      fetch(`http://localhost:3001/users/${currentUser.id}/regions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          "id": region.id,
+          "name": region.name,
+          "price": region.price
+        })
+      })
+        .then(r => r.json())
+        .then(boughtRegion => {
+          // const updatedUserRegions = [...userRegions, boughtRegion]
+          // setUserRegions(updatedUserRegions)
+          const filteredRegions = marketRegions.filter(region => region.id !== boughtRegion.id)
+          setMarketRegions(filteredRegions)
+        })
+    }
+
+
 
     const regionTemplate = (region) => {
 
@@ -45,7 +76,7 @@ const RegionCarousel = () => {
                 <img className="p-shadow-5" src={image} alt={region.name} />
                 <h4>{region.name}</h4>
                 <h6>${region.price}</h6>
-                <Button>Buy</Button>
+                <Button onClick={e => handleRegionPurchase(region)} >Buy</Button>
               </div>
             </div>
           </div>
@@ -56,7 +87,7 @@ const RegionCarousel = () => {
       <div className="region-carousel">
         <div className="card">
           <Carousel
-            value={regions}
+            value={marketRegions}
             numVisible={1}
             numScroll={1}
             orientation="vertical"
