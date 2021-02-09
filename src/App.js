@@ -109,6 +109,8 @@ function App() {
             <HomePage
               renderType="zones"
               currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
             />
           ) : (
             <Redirect to="/" />
