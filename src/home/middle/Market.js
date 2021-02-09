@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSpring, animated } from "react-spring"
-import MarketItem from './MarketItem'
+import RegionCarousel from './RegionCarousel'
 
 const Market = () => {
 
@@ -13,19 +13,7 @@ const Market = () => {
 
     return (
         <animated.div style={fadeIn} className="market">
-            <h4 className="market-header">Market</h4>
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
-            <MarketItem />
+            <RegionCarousel />
         </animated.div>
     )
 }

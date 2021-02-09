@@ -22,7 +22,6 @@ const Middle = ({ currentUser, renderType }) => {
         }
     }
 
-    console.log(currentUser.zones)
     return (
       <div className="home-middle p-shadow-8">
           {renderContent()}
