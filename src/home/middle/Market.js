@@ -3,7 +3,7 @@ import { useSpring, animated } from "react-spring"
 import RegionCarousel from './RegionCarousel'
 import TrinketCarousel from './TrinketCarousel'
 
-const Market = ({ currentUser, regions, currentTokens, setCurrentTokens }) => {
+const Market = ({ currentUser, regions, trinkets, currentTokens, setCurrentTokens }) => {
 
     const fadeIn = useSpring({
         opacity: 1,
@@ -22,7 +22,12 @@ const Market = ({ currentUser, regions, currentTokens, setCurrentTokens }) => {
           setCurrentTokens={setCurrentTokens}
           regions={regions}
         />
-        <TrinketCarousel />
+        <TrinketCarousel
+          currentUser={currentUser}
+          currentTokens={currentTokens}
+          setCurrentTokens={setCurrentTokens}
+          trinkets={trinkets}
+        />
       </animated.div>
     );
 }

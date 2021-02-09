@@ -17,7 +17,7 @@ const RegionCarousel = ({
   setCurrentTokens,
   regions,
 }) => {
-  const [userRegions, setUserRegions] = useState([])
+  // const [userRegions, setUserRegions] = useState([])
   const [marketRegions, setMarketRegions] = useState([])
 
   const imageMapper = {
@@ -32,11 +32,12 @@ const RegionCarousel = ({
     Venice: venice,
   }
 
+  // GET USER REGIONS
   useEffect(() => {
     fetch(`http://localhost:3001/users/${currentUser.id}/regions`)
       .then((r) => r.json())
       .then((userRegionsArr) => {
-        setUserRegions(userRegionsArr)
+        // setUserRegions(userRegionsArr)
         const filteredRegions = regions.filter(
           (region) =>
             !userRegionsArr.some((userRegion) => region.id === userRegion.id)
@@ -45,7 +46,7 @@ const RegionCarousel = ({
       })
   }, [])
 
-  // BUY REGION
+  // REGION PURCHASE
 
   const handleRegionPurchase = (region) => {
     if (currentTokens >= region.price) {
@@ -73,6 +74,7 @@ const RegionCarousel = ({
     }
   }
 
+  // REGION TEMPLATE
   const regionTemplate = (region) => {
     let image = imageMapper[region.name]
 

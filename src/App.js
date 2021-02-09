@@ -24,6 +24,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [currentTokens, setCurrentTokens] = useState(0)
   const [regions, setRegions] = useState([])
+  const [trinkets, setTrinkets] = useState([])
   // autologin
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -48,6 +49,14 @@ function App() {
       .then((r) => r.json())
       .then((regionsArr) => setRegions(regionsArr))
   }, [])
+
+  // GET TRINKETS
+  useEffect(() => {
+    fetch(`http://localhost:3001/trinkets`)
+      .then((r) => r.json())
+      .then((trinketsArr) => setTrinkets(trinketsArr))
+  }, [])
+
 
   PrimeReact.ripple = true;
 
@@ -113,6 +122,7 @@ function App() {
               currentTokens={currentTokens}
               setCurrentTokens={setCurrentTokens}
               regions={regions}
+              trinkets={trinkets}
             />
           ) : (
             <Redirect to="/" />

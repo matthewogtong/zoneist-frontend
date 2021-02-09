@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Market from './Market'
 import ZonesContainer from './ZonesContainer'
 
-const Middle = ({ currentUser, renderType, currentTokens, setCurrentTokens, regions }) => {
+const Middle = ({ currentUser, renderType, currentTokens, setCurrentTokens, regions, trinkets }) => {
 
     const renderContent = () => {
         if (renderType === "market") {
@@ -12,6 +12,7 @@ const Middle = ({ currentUser, renderType, currentTokens, setCurrentTokens, regi
                 currentTokens={currentTokens}
                 setCurrentTokens={setCurrentTokens}
                 regions={regions}
+                trinkets={trinkets}
               />
             );
         }

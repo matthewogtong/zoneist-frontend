@@ -4,7 +4,7 @@ import Left from './left/Left'
 import Middle from './middle/Middle'
 import Right from './right/Right'
 
-const HomePage = ({ currentUser, renderType, regions, currentTokens, setCurrentTokens }) => {
+const HomePage = ({ currentUser, renderType, regions, trinkets, currentTokens, setCurrentTokens }) => {
   return (
     <div className="home-page">
       <Header
@@ -17,6 +17,7 @@ const HomePage = ({ currentUser, renderType, regions, currentTokens, setCurrentT
         renderType={renderType}
         currentUser={currentUser}
         regions={regions}
+        trinkets={trinkets}
         currentTokens={currentTokens}
         setCurrentTokens={setCurrentTokens}
       />

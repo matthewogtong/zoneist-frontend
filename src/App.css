@@ -226,6 +226,27 @@ body {
   width: 50%;
 }
 
+.trinket-carousel {
+  grid-column: 4 / span 3;
+  grid-row: 1 / -1;
+}
+
+.trinket-carousel-header {
+  text-align: center;
+}
+
+.trinket-carousel .trinket-item .trinket-item-content {
+  border: 1px solid var(--surface-d);
+  border-radius: 3px;
+  margin: .3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.trinket-carousel .trinket-item img {
+  width: 50%;
+}
+
 
 /* RIGHT */
 .home-right {
