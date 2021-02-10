@@ -112,6 +112,10 @@ function App() {
             <HomePage
               renderType="zone-form"
               currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/" />

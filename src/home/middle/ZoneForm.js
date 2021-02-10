@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSpring, animated } from "react-spring"
 
-const ZoneForm = () => {
+const ZoneForm = ({ currentUser }) => {
 
     const fadeIn = useSpring({
         opacity: 1,
