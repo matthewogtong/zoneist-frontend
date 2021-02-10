@@ -2,6 +2,7 @@ import React from 'react'
 import Market from './Market'
 import ZonesContainer from './ZonesContainer'
 import ZoneForm from './ZoneForm'
+import TagsContainer from './TagsContainer'
 
 const Middle = ({ currentUser, renderType, currentTokens, setCurrentTokens, regions, trinkets, currentZones, setCurrentZones }) => {
 
@@ -14,6 +15,12 @@ const Middle = ({ currentUser, renderType, currentTokens, setCurrentTokens, regi
               setCurrentTokens={setCurrentTokens}
               regions={regions}
               trinkets={trinkets}
+            />
+          )
+        } else if (renderType === "tags") {
+          return (
+            <TagsContainer
+              currentUser={currentUser}
             />
           )
         } else if (renderType === "zone-form") {

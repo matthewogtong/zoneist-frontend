@@ -107,6 +107,20 @@ function App() {
             <Redirect to="/login" />
           )}
         </Route>
+        <Route path="/tags">
+          {currentUser ? (
+            <HomePage
+              renderType="tags"
+              currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
         <Route path="/zone-form">
           {currentUser ? (
             <HomePage
