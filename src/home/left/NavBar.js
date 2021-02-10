@@ -5,10 +5,6 @@ import { Button } from "primereact/button"
 
 const NavBar = () => {
 
-  const handleEnterZone = () => {
-    console.log("sup bruh youre in the zone")
-  }
-
   return (
     <nav className="nav-bar p-shadow-8">
       <Link to="/zones" style={{ textDecoration: 'none' }}>Zones</Link>

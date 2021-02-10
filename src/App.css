@@ -251,6 +251,20 @@ body {
 .tags-container {
   grid-column: 1 / -1 ;
   grid-row: 1 / -1;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(6, 1fr) ;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.tag-form {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1
+}
+
+.tag-list {
+  grid-column: 1 / -1;
+  grid-row: 3 / -1; 
 }
 
 

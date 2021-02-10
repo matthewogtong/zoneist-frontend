@@ -13,6 +13,8 @@ const HomePage = ({
   setCurrentTokens,
   currentZones,
   setCurrentZones,
+  currentTags,
+  setCurrentTags
 }) => {
   return (
     <div className="home-page">
@@ -31,6 +33,8 @@ const HomePage = ({
         setCurrentTokens={setCurrentTokens}
         currentZones={currentZones}
         setCurrentZones={setCurrentZones}
+        currentTags={currentTags}
+        setCurrentTags={setCurrentTags}
       />
       <Right />
     </div>

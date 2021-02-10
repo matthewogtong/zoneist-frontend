@@ -22,6 +22,7 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [currentTokens, setCurrentTokens] = useState(0)
+  const [currentTags, setCurrentTags] = useState([])
   const [currentZones, setCurrentZones] = useState([])
   const [regions, setRegions] = useState([])
   const [trinkets, setTrinkets] = useState([])
@@ -40,6 +41,7 @@ function App() {
           setCurrentUser(user)
           setCurrentTokens(user.tokens)
           setCurrentZones(user.zones)
+          setCurrentTags(user.tags)
         });
     }
   }, []);
@@ -116,6 +118,8 @@ function App() {
               setCurrentTokens={setCurrentTokens}
               currentZones={currentZones}
               setCurrentZones={setCurrentZones}
+              currentTags={currentTags}
+              setCurrentTags={setCurrentTags}
             />
           ) : (
             <Redirect to="/" />

@@ -8,7 +8,7 @@ const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
       opacity: 1,
       marginTop: 0,
       from: { opacity: 0, marginTop: -1000 },
-      delay: 250
+      delay: 0
     });
 
     const displayUserZones = currentZones.map(zone => {
