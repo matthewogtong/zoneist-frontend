@@ -9,7 +9,7 @@ const Market = ({ currentUser, regions, trinkets, currentTokens, setCurrentToken
         opacity: 1,
         marginTop: 0,
         from: { opacity: 0, marginTop: -1000 },
-        delay: 100
+        delay: 0
       });
 
     
