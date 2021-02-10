@@ -11,75 +11,27 @@ const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
       delay: 250
     });
 
-    console.log(currentZones)
-    console.log(currentUser)
+    const displayUserZones = currentZones.map(zone => {
+      return (
+        <Zone
+          key={zone.id}
+          isActive={zone.isActive}
+          isComplete={zone.isComplete}
+          objective={zone.objective}
+          zoneStart={zone.zoneStart}
+          zoneEnd={zone.zoneEnd}
+          prematureEnd={zone.prematureEnd}
+          totalObjectiveTime={zone.totalObjectiveTime}
+          tag={zone.tag}
+          trinket={zone.trinket}
+          region={zone.region}
+        />
+      );
+    })
+
   return (
     <animated.div style={fadeIn} className="zones-container">
-      <Zone />
-      <div className="bg1">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg2">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg1">
-        <h2>Time</h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg1">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg2">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg1">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg1">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg2">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg2">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg2">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
-      <div className="bg2">
-        <h2>
-          Time
-        </h2>
-        <p>Objective</p>
-      </div>
+      {displayUserZones}
     </animated.div>
   );
 };

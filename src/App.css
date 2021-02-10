@@ -272,28 +272,32 @@ body {
 
 /* ZONES IMAGE SPAN */
 .zones-container {
-  /* box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0; */
+  padding: 0;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
 .zones-container h2 {
-  font-size: 45px;
+  /* font-size: 45px;
+  font-weight: 300;
+  margin: 10px; */
+  font-size: 100%;
   font-weight: 300;
   margin: 10px;
 }
 
-.zones-container > div {
+.zones-container .completed-zone {
   cursor: pointer;
   border-radius: 15px;
   height: 100%;
   background-size: cover;
-  /* background-attachment: fixed; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -303,13 +307,13 @@ body {
   transition: all .5s ease-in;
 }
 
-.zones-container > div:hover {
+.zones-container .test:hover {
   opacity: 0.7;
   transform: scale(0.98);
 }
 
 
-.zones-container > div:nth-of-type(1) {
+/* .zones-container > div:nth-of-type(1) {
   grid-column: 1 / 3;
 }
 
@@ -323,6 +327,10 @@ body {
 
 .zones-container > div:nth-of-type(10) {
   grid-column: 1 / 3;
+} */
+
+.Barcelona {
+  background: url('./img/barcelona.jpg');
 }
 
 .bg1 {
@@ -332,39 +340,3 @@ body {
 .bg2 {
   background: url('./img/giza.jpg');
 }
-
-/* ZONES */
-/* .container > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  color: #ffeead;
-}
-
-.container > div > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.container {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-auto-rows: 75px;
-  grid-auto-flow: dense;
-}
-
-.horizontal {
-  grid-column: span 2;
-}
-
-.vertical {
-  grid-row: span 2;
-}
-
-.big {
-  grid-column: span 2;
-  grid-row: span 2;
-} */

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Market from './Market'
 import ZonesContainer from './ZonesContainer'
 
