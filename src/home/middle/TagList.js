@@ -1,11 +1,28 @@
 import React from 'react'
+import Tag from './Tag'
 
-const TagList = () => {
+const TagList = ({ currentUser, currentTags, setCurrentTags }) => {
+
+
+
+
+    const displayTags = currentTags.map(tag => {
+        return (
+          <Tag
+            key={tag.id}
+            name={tag.name}
+            id={tag.id}
+            currentTags={currentTags}
+            setCurrentTags={setCurrentTags}
+            currentUser={currentUser}
+          />
+        );
+    })
+
     return (
         <div className="tag-list">
             <ul>
-                <li>tag 1</li>
-                <li>tag 2</li>
+                {displayTags}
             </ul>
         </div>
     )

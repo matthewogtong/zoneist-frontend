@@ -1,15 +1,31 @@
 import React, { useState } from 'react'
-import { InputText } from 'primereact/inputtext';
+import { InputText } from 'primereact/inputtext'
 
-const TagForm = () => {
+const TagForm = ({ currentUser, currentTags, setCurrentTags }) => {
 
     const [tagName, setTagName] = useState("")
 
-    console.log(tagName)
-
     const handleTagSubmit = (e) => {
         e.preventDefault()
-        console.log("yo")
+
+        fetch(`http://localhost:3001/users/${currentUser.id}/tags`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: currentUser.id,
+                name: tagName
+            })
+        })
+            .then(r => r.json())
+            .then(newTag => {
+                const updatedTags = [...currentTags, newTag]
+                setCurrentTags(updatedTags)
+            })
+        
+        setTagName("")
     }
 
     return (

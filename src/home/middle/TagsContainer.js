@@ -20,8 +20,8 @@ const TagsContainer = ({ currentUser, currentTags, setCurrentTags }) => {
     return (
         <animated.div style={fadeIn} className="tags-container">
             <h1>Tags Container</h1>
-            <TagForm />
-            <TagList />
+            <TagForm currentUser={currentUser} currentTags={currentTags} setCurrentTags={setCurrentTags} />
+            <TagList currentUser={currentUser} currentTags={currentTags} setCurrentTags={setCurrentTags} />
         </animated.div>
     )
 }
