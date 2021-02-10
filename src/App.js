@@ -107,6 +107,16 @@ function App() {
             <Redirect to="/login" />
           )}
         </Route>
+        <Route path="/zone-form">
+          {currentUser ? (
+            <HomePage
+              renderType="zone-form"
+              currentUser={currentUser}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
         <Route path="/zones">
           {currentUser ? (
             <HomePage

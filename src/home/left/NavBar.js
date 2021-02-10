@@ -25,7 +25,9 @@ const NavBar = () => {
       <br/>
       <Link to="/" style={{ textDecoration: 'none' }}>Title | Log Out</Link>
       <br/>
-      <Button onClick={handleEnterZone}>Enter Zone</Button>
+      <Link to="zone-form" style={{ textDecoration: 'none' }}>
+        <Button>Enter Zone</Button>
+      </Link>
     </nav>
   )
 }
