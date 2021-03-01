@@ -18,7 +18,7 @@ import HomePage from './home/HomePage'
 import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 
 
-
+ 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [currentTokens, setCurrentTokens] = useState(0)
