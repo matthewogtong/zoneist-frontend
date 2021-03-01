@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux"
+import { setUser, setLoggedIn } from "./redux/user"
 
 import PrimeReact from 'primereact/api';
 
@@ -20,6 +22,20 @@ import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
 
  
 function App() {
+
+  // DISPATCH
+  const dispatch = useDispatch()
+
+  // REDUX SELECTOR
+  const isLoggedIn = useSelector(state => {
+    return (
+      state.user.loggedIn ? true : false
+    )
+  })
+
+  console.log(isLoggedIn)
+
+
   const [currentUser, setCurrentUser] = useState(null)
   const [currentTokens, setCurrentTokens] = useState(0)
   const [currentTags, setCurrentTags] = useState([])
@@ -38,13 +54,16 @@ function App() {
       })
         .then((r) => r.json())
         .then((user) => {
-          setCurrentUser(user)
-          setCurrentTokens(user.tokens)
-          setCurrentZones(user.zones)
-          setCurrentTags(user.tags)
+          dispatch(setUser(user))
+          dispatch(setLoggedIn())
+          // setCurrentUser(user)
+          // setCurrentTokens(user.tokens)
+          // setCurrentZones(user.zones)
+          // setCurrentTags(user.tags)
         });
     }
   }, []);
+
 
   // GET REGIONS
   useEffect(() => {
@@ -67,7 +86,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          {currentUser ? (
+          {isLoggedIn ? (
             <LandingPage
               currentUser={currentUser}
               setCurrentUser={setCurrentUser}
@@ -77,7 +96,7 @@ function App() {
           )}
         </Route>
         <Route exact path="/login">
-          {currentUser ? (
+          {isLoggedIn ? (
             <Redirect to="/" />
           ) : (
             <LandingPage
@@ -87,7 +106,7 @@ function App() {
           )}
         </Route>
         <Route exact path="/signup">
-          {currentUser ? (
+          {isLoggedIn ? (
             <Redirect to="/" />
           ) : (
             <LandingPage
@@ -97,20 +116,20 @@ function App() {
           )}
         </Route>
         <Route path="/home">
-          {currentUser ? (
+          {isLoggedIn ? (
             <HomePage
-              currentUser={currentUser}
-              currentTokens={currentTokens}
-              setCurrentTokens={setCurrentTokens}
-              currentZones={currentZones}
-              setCurrentZones={setCurrentZones}
+              // currentUser={currentUser}
+              // currentTokens={currentTokens}
+              // setCurrentTokens={setCurrentTokens}
+              // currentZones={currentZones}
+              // setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/login" />
           )}
         </Route>
         <Route path="/tags">
-          {currentUser ? (
+          {isLoggedIn ? (
             <HomePage
               renderType="tags"
               currentUser={currentUser}
@@ -126,7 +145,7 @@ function App() {
           )}
         </Route>
         <Route path="/zone-form">
-          {currentUser ? (
+          {isLoggedIn ? (
             <HomePage
               renderType="zone-form"
               currentUser={currentUser}
@@ -140,7 +159,7 @@ function App() {
           )}
         </Route>
         <Route path="/zones">
-          {currentUser ? (
+          {isLoggedIn ? (
             <HomePage
               renderType="zones"
               currentUser={currentUser}
@@ -154,7 +173,7 @@ function App() {
           )}
         </Route>
         <Route path="/market">
-          {currentUser ? (
+          {isLoggedIn ? (
             <HomePage
               renderType="market"
               currentUser={currentUser}

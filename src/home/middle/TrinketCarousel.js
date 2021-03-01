@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
 import { Carousel } from "primereact/carousel"
 import { Button } from "primereact/button"
 import { ReactComponent as LPrinter } from "../../svg/trinkets/loaf-3D-printing.svg"
@@ -30,9 +31,11 @@ const TrinketCarousel = ({
       Diamond: Diamond,
     }
 
+    const userId = useSelector(state => state.user.entities[0].id)
+
     // GET USER TRINKETS
     useEffect(() => {
-      fetch(`http://localhost:3001/users/${currentUser.id}/trinkets`)
+      fetch(`http://localhost:3001/users/${userId}/trinkets`)
         .then((r) => r.json())
         .then((userTrinketsArr) => {
           const filteredTrinkets = trinkets.filter(

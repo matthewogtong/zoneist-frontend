@@ -1,9 +1,13 @@
 import React from 'react'
+import { useSelector } from "react-redux"
 
-const Greeting = ({ currentUser }) => {
+const Greeting = () => {
+
+    const username = useSelector(state => state.user.entities[0].username)
+
     return (
       <div className="home-greeting">
-        <h2>Hello, {currentUser.username}</h2>
+        <h2>Hello, {username}</h2>
       </div>
     );
 }

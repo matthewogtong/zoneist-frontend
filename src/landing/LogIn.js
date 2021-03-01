@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useSpring, animated } from "react-spring"
 import { InputText } from "primereact/inputtext"
+import { useDispatch } from "react-redux"
+import { setUser, setLoggedIn } from "../redux/user"
 
 const LogIn = ({ setCurrentUser }) => {
   // ANIMATIONS
@@ -12,6 +14,9 @@ const LogIn = ({ setCurrentUser }) => {
     delay: 250,
     duration: 1000,
   })
+
+   // DISPATCH
+   const dispatch = useDispatch()
 
   // STATES
   const [username, setUsername] = useState("")
@@ -47,7 +52,8 @@ const LogIn = ({ setCurrentUser }) => {
       })
       .then((data) => {
         // success:
-        setCurrentUser(data.user)
+        dispatch(setUser(data.user))
+        dispatch(setLoggedIn())
         localStorage.setItem("token", data.token)
         history.push("/home")
       })

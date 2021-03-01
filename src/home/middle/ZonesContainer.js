@@ -1,8 +1,12 @@
 import React from "react";
 import { useSpring, animated } from "react-spring"
 import Zone from './Zone'
+import { useSelector } from "react-redux"
+
 
 const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
+
+    const zones = useSelector(state => state.user.entities[0].zones)
 
     const fadeIn = useSpring({
       opacity: 1,
@@ -11,7 +15,7 @@ const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
       delay: 0
     });
 
-    const displayUserZones = currentZones.map(zone => {
+    const displayUserZones = zones.map(zone => {
       return (
         <Zone
           key={zone.id}

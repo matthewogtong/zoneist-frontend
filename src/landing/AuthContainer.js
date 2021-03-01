@@ -1,7 +1,11 @@
 import React from "react"
 import { useSpring, animated } from "react-spring"
+import { useSelector } from "react-redux"
 
-const AuthContainer = ({ currentUser }) => {
+const AuthContainer = () => {
+
+  const username = useSelector(state => state.user.entities[0].username)
+  
   const fadeIn = useSpring({
     opacity: 1,
     marginLeft: 0,
@@ -13,7 +17,7 @@ const AuthContainer = ({ currentUser }) => {
   return (
     <>
       <animated.div style={fadeIn} className="auth-container p-shadow-24">
-        <p>welcome {currentUser.username}</p>
+        <p>welcome {username}</p>
       </animated.div>
     </>
   )

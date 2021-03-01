@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
 import { Carousel } from "primereact/carousel"
 import { Button } from "primereact/button"
 import barcelona from "../../img/barcelona.jpg"
@@ -20,6 +21,8 @@ const RegionCarousel = ({
   // const [userRegions, setUserRegions] = useState([])
   const [marketRegions, setMarketRegions] = useState([])
 
+  const userId = useSelector(state => state.user.entities[0].id)
+
   const imageMapper = {
     Barcelona: barcelona,
     "Blue Lagoon": blueLagoon,
@@ -34,7 +37,7 @@ const RegionCarousel = ({
 
   // GET USER REGIONS
   useEffect(() => {
-    fetch(`http://localhost:3001/users/${currentUser.id}/regions`)
+    fetch(`http://localhost:3001/users/${userId}/regions`)
       .then((r) => r.json())
       .then((userRegionsArr) => {
         // setUserRegions(userRegionsArr)

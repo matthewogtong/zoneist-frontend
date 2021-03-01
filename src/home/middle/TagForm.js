@@ -1,21 +1,24 @@
 import React, { useState } from 'react'
+import { useSelector } from "react-redux"
 import { InputText } from 'primereact/inputtext'
 
 const TagForm = ({ currentUser, currentTags, setCurrentTags }) => {
+
+    const userId = useSelector(state => state.user.entities[0].id)
 
     const [tagName, setTagName] = useState("")
 
     const handleTagSubmit = (e) => {
         e.preventDefault()
 
-        fetch(`http://localhost:3001/users/${currentUser.id}/tags`, {
+        fetch(`http://localhost:3001/users/${userId}/tags`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                user_id: currentUser.id,
+                user_id: userId,
                 name: tagName
             })
         })
