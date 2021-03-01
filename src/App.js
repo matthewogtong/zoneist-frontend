@@ -1,23 +1,201 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux"
+import { setUser, setLoggedIn } from "./redux/user"
+
+import PrimeReact from 'primereact/api';
+
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
 import './App.css';
 
+
+import LandingPage from './landing/LandingPage'
+import AboutPage from './about/AboutPage'
+import HomePage from './home/HomePage'
+
+// NONTRINKETS IMPORTS
+import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
+
+
+ 
 function App() {
+
+  // DISPATCH
+  const dispatch = useDispatch()
+
+  // REDUX SELECTOR
+  const isLoggedIn = useSelector(state => {
+    return (
+      state.user.loggedIn ? true : false
+    )
+  })
+
+  console.log(isLoggedIn)
+
+
+  const [currentUser, setCurrentUser] = useState(null)
+  const [currentTokens, setCurrentTokens] = useState(0)
+  const [currentTags, setCurrentTags] = useState([])
+  const [currentZones, setCurrentZones] = useState([])
+  const [regions, setRegions] = useState([])
+  const [trinkets, setTrinkets] = useState([])
+  // autologin
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:3001/home", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((r) => r.json())
+        .then((user) => {
+          dispatch(setUser(user))
+          dispatch(setLoggedIn())
+          // setCurrentUser(user)
+          // setCurrentTokens(user.tokens)
+          // setCurrentZones(user.zones)
+          // setCurrentTags(user.tags)
+        });
+    }
+  }, []);
+
+
+  // GET REGIONS
+  useEffect(() => {
+    fetch(`http://localhost:3001/regions`)
+      .then((r) => r.json())
+      .then((regionsArr) => setRegions(regionsArr))
+  }, [])
+
+  // GET TRINKETS
+  useEffect(() => {
+    fetch(`http://localhost:3001/trinkets`)
+      .then((r) => r.json())
+      .then((trinketsArr) => setTrinkets(trinketsArr))
+  }, [])
+
+
+  PrimeReact.ripple = true;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/">
+          {isLoggedIn ? (
+            <LandingPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route exact path="/login">
+          {isLoggedIn ? (
+            <Redirect to="/" />
+          ) : (
+            <LandingPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          )}
+        </Route>
+        <Route exact path="/signup">
+          {isLoggedIn ? (
+            <Redirect to="/" />
+          ) : (
+            <LandingPage
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            />
+          )}
+        </Route>
+        <Route path="/home">
+          {isLoggedIn ? (
+            <HomePage
+              // currentUser={currentUser}
+              // currentTokens={currentTokens}
+              // setCurrentTokens={setCurrentTokens}
+              // currentZones={currentZones}
+              // setCurrentZones={setCurrentZones}
+            />
+          ) : (
+            <Redirect to="/login" />
+          )}
+        </Route>
+        <Route path="/tags">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="tags"
+              currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
+              currentTags={currentTags}
+              setCurrentTags={setCurrentTags}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route path="/zone-form">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="zone-form"
+              currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route path="/zones">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="zones"
+              currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
+              currentZones={currentZones}
+              setCurrentZones={setCurrentZones}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route path="/market">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="market"
+              currentUser={currentUser}
+              currentTokens={currentTokens}
+              setCurrentTokens={setCurrentTokens}
+              regions={regions}
+              trinkets={trinkets}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
+          <a href="/login">Log In</a>
+          <a href="/">Back</a>
+          <Hammer />
+        </Route>
+      </Switch>
     </div>
   );
 }

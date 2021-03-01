@@ -1,0 +1,13 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-door2 {animation:line-door2 1.6s infinite;}
+     @keyframes line-door2 {
+         0%{transform: translate3d(-2px, 0, 0);}
+         50%{transform: translate3d(2px, 0, 0);}
+         100%{transform: translate3d(-2px, 0, 0);}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-door2 {
+             animation: none;
+         }
+     }
+    </style><rect class="stroke1 fill1" x="15" y="11" width="47" height="68" rx="1" fill="#FFF" stroke="#000" stroke-width="2px" style="animation-duration: 1.6s;"></rect><path class="line-door2 stroke2 fill2" d="M84.5 51.5L84.5 58.5C84.5 59.0523 84.0523 59.5 83.5 59.5L69 59.5C68.4477 59.5 68 59.9477 68 60.5L68 66.4749C68 66.8915 67.5204 67.1253 67.1922 66.8689L52.5147 55.4021C52.2553 55.1994 52.2591 54.8056 52.5225 54.6081L67.2 43.6C67.5296 43.3528 68 43.588 68 44L68 49.5C68 50.0523 68.4477 50.5 69 50.5L83.5 50.5C84.0523 50.5 84.5 50.9477 84.5 51.5Z" fill="#FFF" stroke="#000" stroke-width="2px" style="animation-duration: 1.6s;"></path><path class="stroke1 fill1" d="M44.4472 26.7236L16.4472 12.7236C15.7823 12.3912 15 12.8747 15 13.618V78.7677C15 79.2037 15.2825 79.5894 15.6981 79.7211L43.6981 88.5877C44.3428 88.7919 45 88.3106 45 87.6344V27.618C45 27.2393 44.786 26.893 44.4472 26.7236Z" fill="#FFF" stroke="#000" stroke-width="2px" style="animation-duration: 1.6s;"></path><line class="stroke1" x1="39" y1="48" x2="39" y2="62" stroke="#000" stroke-width="2px" style="animation-duration: 1.6s;"></line></svg>
