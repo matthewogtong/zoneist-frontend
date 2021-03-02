@@ -42,7 +42,8 @@ function App() {
   const [currentZones, setCurrentZones] = useState([])
   const [regions, setRegions] = useState([])
   const [trinkets, setTrinkets] = useState([])
-  // autologin
+
+  // AUTO LOGIN
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
