@@ -57,10 +57,6 @@ function App() {
         .then((user) => {
           dispatch(setUser(user))
           dispatch(setLoggedIn())
-          // setCurrentUser(user)
-          // setCurrentTokens(user.tokens)
-          // setCurrentZones(user.zones)
-          // setCurrentTags(user.tags)
         });
     }
   }, []);
