@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { purchaseTrinket } from "../../redux/user"
 import { Carousel } from "primereact/carousel"
 import { Button } from "primereact/button"
 import { ReactComponent as LPrinter } from "../../svg/trinkets/loaf-3D-printing.svg"
@@ -11,12 +12,8 @@ import { ReactComponent as Candle } from "../../svg/trinkets/loaf-candle-3.svg"
 import { ReactComponent as Coffee } from "../../svg/trinkets/loaf-coffee-3.svg"
 import { ReactComponent as Devices } from "../../svg/trinkets/loaf-devices-4.svg"
 import { ReactComponent as Diamond } from "../../svg/trinkets/loaf-diamond-1.svg"
-const TrinketCarousel = ({
-  currentUser,
-  currentTokens,
-  setCurrentTokens,
-  trinkets,
-}) => {
+
+const TrinketCarousel = () => {
     const [marketTrinkets, setMarketTrinkets] = useState([])
 
     const svgMapper = {
@@ -31,7 +28,17 @@ const TrinketCarousel = ({
       Diamond: Diamond,
     }
 
+    const dispatch = useDispatch()
+
     const userId = useSelector(state => state.user.entities[0].id)
+
+    const userTokens = useSelector(state => state.user.entities[0].tokens)
+
+    const trinkets = useSelector(state => {
+      return (
+        state.trinket.entities[0]
+      )
+    })
 
     // GET USER TRINKETS
     useEffect(() => {
@@ -44,13 +51,13 @@ const TrinketCarousel = ({
           )
           setMarketTrinkets(filteredTrinkets)
         })
-    }, [])
+    }, [trinkets, userId])
 
     // TRINKET PURCHASE
 
     const handleTrinketPurchase = (trinket) => {
-        if (currentTokens >= trinket.price) {
-            fetch(`http://localhost:3001/users/${currentUser.id}/trinkets`, {
+        if (userTokens >= trinket.price) {
+            fetch(`http://localhost:3001/users/${userId}/trinkets`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -67,9 +74,10 @@ const TrinketCarousel = ({
                 const filteredTrinkets = marketTrinkets.filter(
                   (trinket) => trinket.id !== boughtTrinket.id
                 )
-                const updatedTokens = currentTokens - boughtTrinket.price
+                const updatedTokens = userTokens - boughtTrinket.price
                 setMarketTrinkets(filteredTrinkets)
-                setCurrentTokens(updatedTokens)
+                dispatch(purchaseTrinket(updatedTokens))
+                // setCurrentTokens(updatedTokens)
               })
           }
     }

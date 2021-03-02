@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import { setUser, setLoggedIn } from "./redux/user"
+import { setRegions } from "./redux/region"
+import { setTrinkets } from "./redux/trinket"
 
 import PrimeReact from 'primereact/api';
 
@@ -33,16 +35,7 @@ function App() {
     )
   })
 
-  console.log(isLoggedIn)
-
-
-  const [currentUser, setCurrentUser] = useState(null)
-  const [currentTokens, setCurrentTokens] = useState(0)
-  const [currentTags, setCurrentTags] = useState([])
-  const [currentZones, setCurrentZones] = useState([])
-  const [regions, setRegions] = useState([])
-  const [trinkets, setTrinkets] = useState([])
-  // autologin
+  // AUTO LOGIN
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -56,28 +49,26 @@ function App() {
         .then((user) => {
           dispatch(setUser(user))
           dispatch(setLoggedIn())
-          // setCurrentUser(user)
-          // setCurrentTokens(user.tokens)
-          // setCurrentZones(user.zones)
-          // setCurrentTags(user.tags)
         });
     }
-  }, []);
+  }, [dispatch]);
 
 
   // GET REGIONS
   useEffect(() => {
     fetch(`http://localhost:3001/regions`)
       .then((r) => r.json())
-      .then((regionsArr) => setRegions(regionsArr))
-  }, [])
+      .then((regionsArr) => dispatch(setRegions(regionsArr)))
+  }, [dispatch])
+
+  
 
   // GET TRINKETS
   useEffect(() => {
     fetch(`http://localhost:3001/trinkets`)
       .then((r) => r.json())
-      .then((trinketsArr) => setTrinkets(trinketsArr))
-  }, [])
+      .then((trinketsArr) => dispatch(setTrinkets(trinketsArr)))
+  }, [dispatch])
 
 
   PrimeReact.ripple = true;
@@ -88,8 +79,6 @@ function App() {
         <Route exact path="/">
           {isLoggedIn ? (
             <LandingPage
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
             />
           ) : (
             <Redirect to="/login" />
@@ -100,8 +89,6 @@ function App() {
             <Redirect to="/" />
           ) : (
             <LandingPage
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
             />
           )}
         </Route>
@@ -110,19 +97,12 @@ function App() {
             <Redirect to="/" />
           ) : (
             <LandingPage
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
             />
           )}
         </Route>
         <Route path="/home">
           {isLoggedIn ? (
             <HomePage
-              // currentUser={currentUser}
-              // currentTokens={currentTokens}
-              // setCurrentTokens={setCurrentTokens}
-              // currentZones={currentZones}
-              // setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/login" />
@@ -132,13 +112,6 @@ function App() {
           {isLoggedIn ? (
             <HomePage
               renderType="tags"
-              currentUser={currentUser}
-              currentTokens={currentTokens}
-              setCurrentTokens={setCurrentTokens}
-              currentZones={currentZones}
-              setCurrentZones={setCurrentZones}
-              currentTags={currentTags}
-              setCurrentTags={setCurrentTags}
             />
           ) : (
             <Redirect to="/" />
@@ -148,11 +121,6 @@ function App() {
           {isLoggedIn ? (
             <HomePage
               renderType="zone-form"
-              currentUser={currentUser}
-              currentTokens={currentTokens}
-              setCurrentTokens={setCurrentTokens}
-              currentZones={currentZones}
-              setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/" />
@@ -162,11 +130,6 @@ function App() {
           {isLoggedIn ? (
             <HomePage
               renderType="zones"
-              currentUser={currentUser}
-              currentTokens={currentTokens}
-              setCurrentTokens={setCurrentTokens}
-              currentZones={currentZones}
-              setCurrentZones={setCurrentZones}
             />
           ) : (
             <Redirect to="/" />
@@ -176,11 +139,6 @@ function App() {
           {isLoggedIn ? (
             <HomePage
               renderType="market"
-              currentUser={currentUser}
-              currentTokens={currentTokens}
-              setCurrentTokens={setCurrentTokens}
-              regions={regions}
-              trinkets={trinkets}
             />
           ) : (
             <Redirect to="/" />

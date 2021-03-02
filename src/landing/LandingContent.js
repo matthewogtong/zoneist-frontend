@@ -11,7 +11,7 @@ const LandingContent = () => {
   });
   return (
     <animated.div style={fadeIn} className="landing-content">
-      <p>this the content</p>
+      <p>A productivity app set out to inspire focus for accomplishing daily objectives with a clear goal-setting</p>
     </animated.div>
   );
 };

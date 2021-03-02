@@ -5,7 +5,7 @@ import TagList from './TagList'
 
 
 
-const TagsContainer = ({ currentUser, currentTags, setCurrentTags }) => {
+const TagsContainer = () => {
 
     const fadeIn = useSpring({
         opacity: 1,
@@ -15,13 +15,11 @@ const TagsContainer = ({ currentUser, currentTags, setCurrentTags }) => {
       });
 
     
-      console.log(currentTags)
-    
     return (
         <animated.div style={fadeIn} className="tags-container">
             <h1>Tags Container</h1>
-            <TagForm currentUser={currentUser} currentTags={currentTags} setCurrentTags={setCurrentTags} />
-            <TagList currentUser={currentUser} currentTags={currentTags} setCurrentTags={setCurrentTags} />
+            <TagForm />
+            <TagList />
         </animated.div>
     )
 }

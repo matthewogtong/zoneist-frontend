@@ -5,7 +5,7 @@ import { InputText } from "primereact/inputtext"
 import { useDispatch } from "react-redux"
 import { setUser, setLoggedIn } from "../redux/user"
 
-const LogIn = ({ setCurrentUser }) => {
+const LogIn = () => {
   // ANIMATIONS
   const fadeIn = useSpring({
     opacity: 1,
