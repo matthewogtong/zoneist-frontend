@@ -7,9 +7,9 @@ const trinketSlice = createSlice({
     },
     reducers: {
         setTrinkets(state, action) {
-            state.entities.push({
+            state.entities.push([
                 ...action.payload
-            })
+            ])
         }
     }
 })

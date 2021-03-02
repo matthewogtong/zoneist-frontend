@@ -17,10 +17,18 @@ const userSlice = createSlice({
         },
         setLoggedOut(state) {
             state.loggedIn = false
+        },
+        purchaseTrinket(state, action) {
+            state.entities.tokens = action
         }
     }
 })
 
-export const { setUser, setLoggedIn, setLoggedOut } = userSlice.actions
+export const {
+  setUser,
+  setLoggedIn,
+  setLoggedOut,
+  purchaseTrinket,
+} = userSlice.actions;
 
 export default userSlice.reducer

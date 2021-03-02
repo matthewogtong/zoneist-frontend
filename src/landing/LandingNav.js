@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setLoggedOut } from "../redux/user"
 
 
-const LandingNav = ({ currentUser, setCurrentUser }) => {
+const LandingNav = () => {
   const fadeIn = useSpring({
     opacity: 1,
     marginLeft: 0,

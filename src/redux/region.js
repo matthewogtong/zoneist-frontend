@@ -7,9 +7,9 @@ const regionSlice = createSlice({
     },
     reducers: {
         setRegions(state, action) {
-            state.entities.push({
+            state.entities.push([
                 ...action.payload
-            })
+            ])
         }
     }
 })

@@ -43,12 +43,15 @@ function App() {
 
   const trinkets = useSelector(state => {
     return (
-      state.trinket.entities
+      state.trinket.entities[0]
     )
   })
 
-  console.log(regions)
-  console.log(trinkets)
+  
+
+  
+
+ 
 
 
   const [currentUser, setCurrentUser] = useState(null)
@@ -74,7 +77,7 @@ function App() {
           dispatch(setLoggedIn())
         });
     }
-  }, []);
+  }, [dispatch]);
 
 
   // GET REGIONS
@@ -82,7 +85,7 @@ function App() {
     fetch(`http://localhost:3001/regions`)
       .then((r) => r.json())
       .then((regionsArr) => dispatch(setRegions(regionsArr)))
-  }, [])
+  }, [dispatch])
 
   
 
@@ -91,7 +94,7 @@ function App() {
     fetch(`http://localhost:3001/trinkets`)
       .then((r) => r.json())
       .then((trinketsArr) => dispatch(setTrinkets(trinketsArr)))
-  }, [])
+  }, [dispatch])
 
 
   PrimeReact.ripple = true;
