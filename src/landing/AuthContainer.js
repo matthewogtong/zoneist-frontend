@@ -17,7 +17,8 @@ const AuthContainer = () => {
   return (
     <>
       <animated.div style={fadeIn} className="auth-container p-shadow-24">
-        <p>welcome {username}</p>
+        <h3>welcome back</h3>
+        <p>{username}!</p>
       </animated.div>
     </>
   )
