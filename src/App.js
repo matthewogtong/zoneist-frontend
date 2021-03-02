@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import { setUser, setLoggedIn } from "./redux/user"
+import { setRegions } from "./redux/region"
+import { setTrinkets } from "./redux/trinket"
 
 import PrimeReact from 'primereact/api';
 
@@ -33,15 +35,28 @@ function App() {
     )
   })
 
-  console.log(isLoggedIn)
+  const regions = useSelector(state => {
+    return (
+      state.region.entities
+    )
+  })
+
+  const trinkets = useSelector(state => {
+    return (
+      state.trinket.entities
+    )
+  })
+
+  console.log(regions)
+  console.log(trinkets)
 
 
   const [currentUser, setCurrentUser] = useState(null)
   const [currentTokens, setCurrentTokens] = useState(0)
   const [currentTags, setCurrentTags] = useState([])
   const [currentZones, setCurrentZones] = useState([])
-  const [regions, setRegions] = useState([])
-  const [trinkets, setTrinkets] = useState([])
+  // const [regions, setRegions] = useState([])
+  // const [trinkets, setTrinkets] = useState([])
 
   // AUTO LOGIN
   useEffect(() => {
@@ -66,14 +81,16 @@ function App() {
   useEffect(() => {
     fetch(`http://localhost:3001/regions`)
       .then((r) => r.json())
-      .then((regionsArr) => setRegions(regionsArr))
+      .then((regionsArr) => dispatch(setRegions(regionsArr)))
   }, [])
+
+  
 
   // GET TRINKETS
   useEffect(() => {
     fetch(`http://localhost:3001/trinkets`)
       .then((r) => r.json())
-      .then((trinketsArr) => setTrinkets(trinketsArr))
+      .then((trinketsArr) => dispatch(setTrinkets(trinketsArr)))
   }, [])
 
 

@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import userReducer from "./user"
 import regionReducer from "./region"
+import trinketReducer from "./trinket"
 
 const store = configureStore({
     reducer: {
         user: userReducer,
-        region: regionReducer
+        region: regionReducer,
+        trinket: trinketReducer
     }
 })
 
