@@ -35,6 +35,7 @@ function App() {
     )
   })
 
+  
   // AUTO LOGIN
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -100,7 +101,7 @@ function App() {
             />
           )}
         </Route>
-        <Route path="/home">
+        <Route exact path="/home">
           {isLoggedIn ? (
             <HomePage
             />
