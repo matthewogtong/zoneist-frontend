@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { purchaseRegion } from "../../redux/user"
 import { Carousel } from "primereact/carousel"
 import { Button } from "primereact/button"
 import barcelona from "../../img/barcelona.jpg"
@@ -12,16 +13,8 @@ import machuPicchu from "../../img/machupicchu.jpg"
 import nyc from "../../img/nyc.jpg"
 import venice from "../../img/venice.jpg"
 
-const RegionCarousel = ({
-  currentUser,
-  currentTokens,
-  setCurrentTokens,
-  regions,
-}) => {
-  // const [userRegions, setUserRegions] = useState([])
+const RegionCarousel = () => {
   const [marketRegions, setMarketRegions] = useState([])
-
-  const userId = useSelector(state => state.user.entities[0].id)
 
   const imageMapper = {
     Barcelona: barcelona,
@@ -35,6 +28,16 @@ const RegionCarousel = ({
     Venice: venice,
   }
 
+  const dispatch = useDispatch();
+
+  const userId = useSelector((state) => state.user.entities[0].id);
+
+  const userTokens = useSelector((state) => state.user.entities[0].tokens);
+
+  const regions = useSelector((state) => {
+    return state.region.entities[0];
+  });
+
   // GET USER REGIONS
   useEffect(() => {
     fetch(`http://localhost:3001/users/${userId}/regions`)
@@ -47,13 +50,13 @@ const RegionCarousel = ({
         )
         setMarketRegions(filteredRegions)
       })
-  }, [])
+  }, [regions, userId])
 
   // REGION PURCHASE
 
   const handleRegionPurchase = (region) => {
-    if (currentTokens >= region.price) {
-      fetch(`http://localhost:3001/users/${currentUser.id}/regions`, {
+    if (userTokens >= region.price) {
+      fetch(`http://localhost:3001/users/${userId}/regions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,9 +73,10 @@ const RegionCarousel = ({
           const filteredRegions = marketRegions.filter(
             (region) => region.id !== boughtRegion.id
           )
-          const updatedTokens = currentTokens - boughtRegion.price
+          const updatedTokens = userTokens - boughtRegion.price
           setMarketRegions(filteredRegions)
-          setCurrentTokens(updatedTokens)
+          dispatch(purchaseRegion(updatedTokens))
+          // setCurrentTokens(updatedTokens)
         })
     }
   }

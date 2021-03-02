@@ -45,8 +45,6 @@ const TrinketCarousel = () => {
       fetch(`http://localhost:3001/users/${userId}/trinkets`)
         .then((r) => r.json())
         .then((userTrinketsArr) => {
-          console.log(userTrinketsArr)
-          console.log(trinkets)
           const filteredTrinkets = trinkets.filter(
             (trinket) =>
               !userTrinketsArr.some((userTrinket) => trinket.id === userTrinket.id)

@@ -20,7 +20,10 @@ const userSlice = createSlice({
         },
         purchaseTrinket(state, action) {
             state.entities.tokens = action
-        }
+        },
+        purchaseRegion(state, action) {
+            state.entities.tokens = action
+        },
     }
 })
 
@@ -29,6 +32,7 @@ export const {
   setLoggedIn,
   setLoggedOut,
   purchaseTrinket,
+  purchaseRegion
 } = userSlice.actions;
 
 export default userSlice.reducer

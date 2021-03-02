@@ -9,7 +9,6 @@ const HomeDate = () => {
     const formattedHomeDate = format(date, "do")
     const formattedHomeDay = format(date, "EEEE")
 
-    console.log(date)
     return(
         <div className="home-date">
             <h2>{formattedHomeMonth} {formattedHomeDate}</h2>
