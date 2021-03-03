@@ -43,7 +43,6 @@ const RegionCarousel = () => {
     fetch(`http://localhost:3001/users/${userId}/regions`)
       .then((r) => r.json())
       .then((userRegionsArr) => {
-        // setUserRegions(userRegionsArr)
         const filteredRegions = regions.filter(
           (region) =>
             !userRegionsArr.some((userRegion) => region.id === userRegion.id)

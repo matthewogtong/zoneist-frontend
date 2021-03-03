@@ -27,10 +27,8 @@ const Zone = ({
   region,
 }) => {
 
-    
-
   return (
-    <div className={`${region.name} completed-zone`}>
+    <div className={`${region.name.split(' ').join('')} completed-zone`}>
       <h2>{zoneStart}</h2>
       <p>{objective}</p>
     </div>

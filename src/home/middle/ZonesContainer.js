@@ -4,7 +4,7 @@ import Zone from './Zone'
 import { useSelector } from "react-redux"
 
 
-const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
+const ZonesContainer = () => {
 
     const zones = useSelector(state => state.user.entities[0].zones)
 
