@@ -31,6 +31,9 @@ const userSlice = createSlice({
         deleteTag(state, action) {
             const index = state.entities[0].tags.findIndex(tag => tag.id === action.payload)
             state.entities[0].tags.splice(index, 1)
+        },
+        editTag(state, action) {
+           
         }
     }
 })
