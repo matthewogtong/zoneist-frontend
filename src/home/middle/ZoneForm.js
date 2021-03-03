@@ -76,7 +76,7 @@ const ZoneForm = () => {
             .then(newZone => {
                 dispatch(addZone(newZone))
                 console.log(newZone)
-                history.push("/home")
+                history.push("/in-the-zone")
             })
     }
 
