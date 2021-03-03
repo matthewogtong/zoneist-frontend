@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { addTag } from "../../redux/tag"
 import { InputText } from 'primereact/inputtext'
 
-const TagForm = ({ currentUser, currentTags, setCurrentTags }) => {
+const TagForm = () => {
+
+    const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user.entities[0].id)
 
@@ -24,8 +27,7 @@ const TagForm = ({ currentUser, currentTags, setCurrentTags }) => {
         })
             .then(r => r.json())
             .then(newTag => {
-                const updatedTags = [...currentTags, newTag]
-                setCurrentTags(updatedTags)
+                dispatch(addTag(newTag))
             })
         
         setTagName("")

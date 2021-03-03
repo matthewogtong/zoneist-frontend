@@ -1,25 +1,27 @@
 import React from 'react'
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { deleteTag } from "../../redux/tag"
 
-const Tag = ({ currentUser, currentTags, setCurrentTags, name, id }) => {
+const Tag = ({ tag }) => {
+
+    const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user.entities[0].id)
  
     const handleDeleteTag = (tagId) => {
-        fetch(`http://localhost:3001/users/${currentUser.id}/tags/${tagId}`, {
+        fetch(`http://localhost:3001/users/${userId}/tags/${tagId}`, {
             method: "DELETE"
         })
         .then(r => r.json())
         .then(deletedTag => {
-            const updatedTags = currentTags.filter(tag => tag.id !== tagId)
-            setCurrentTags(updatedTags)
+            dispatch(deleteTag(deletedTag))
         })
     }
     return (
       <>
-        <li key={id}>
-          {name}
-          <button key={id} onClick={e => handleDeleteTag(id)}>
+        <li key={tag.id}>
+          {tag.name}
+          <button key={tag.is} onClick={e => handleDeleteTag(tag.id)}>
             🗑
           </button>
         </li>

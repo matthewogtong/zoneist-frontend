@@ -24,7 +24,7 @@ const userSlice = createSlice({
         },
         purchaseRegion(state, action) {
             state.entities.tokens = action
-        },
+        }
     }
 })
 

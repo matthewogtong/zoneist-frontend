@@ -4,14 +4,14 @@ import { useSelector } from "react-redux"
 
 const TagList = () => {
 
-    const tags = useSelector(state => state.user.entities[0].tags)
+    const tags = useSelector(state => state.tag.entities[0])
+    console.log(tags)
 
     const displayTags = tags.map(tag => {
         return (
           <Tag
             key={tag.id}
-            name={tag.name}
-            id={tag.id}
+            tag={tag}
           />
         );
     })
