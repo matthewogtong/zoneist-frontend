@@ -32,8 +32,8 @@ const userSlice = createSlice({
             const index = state.entities[0].tags.findIndex(tag => tag.id === action.payload)
             state.entities[0].tags.splice(index, 1)
         },
-        editTag(state, action) {
-           
+        addZone(state, action) {
+            state.entities[0].zones.push(action.payload)
         }
     }
 })
@@ -45,7 +45,8 @@ export const {
   purchaseTrinket,
   purchaseRegion,
   addTag,
-  deleteTag
+  deleteTag,
+  addZone
 } = userSlice.actions;
 
 export default userSlice.reducer
