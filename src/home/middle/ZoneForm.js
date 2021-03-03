@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { addZone } from "../../redux/user"
+import { format } from "date-fns" 
 import { useSpring, animated } from "react-spring"
+import { useHistory } from "react-router-dom"
 
 const ZoneForm = () => {
+
+    let history = useHistory()
 
     const dispatch = useDispatch()
 
     const [formData, setFormData] = useState({
         objective: "",
         totalObjectiveTime: 0,
+        zoneStart: format(new Date(), 'Pp'),
         tag: "",
         region: "",
         trinket: ""
@@ -64,13 +69,14 @@ const ZoneForm = () => {
             },
             body: JSON.stringify({
                 ...formData,
-                zoneStart: new Date()
+                
             })
         })
             .then(r => r.json())
             .then(newZone => {
                 dispatch(addZone(newZone))
                 console.log(newZone)
+                history.push("/home")
             })
     }
 
@@ -89,7 +95,7 @@ const ZoneForm = () => {
 
     return (
       <animated.div style={fadeIn} className="zone-form">
-        <form onSubmit={handleSubmit}>
+        <form className="z-form" onSubmit={handleSubmit}>
           <h3>add new zone</h3>
 
           <label htmlFor="objective">Objective</label>

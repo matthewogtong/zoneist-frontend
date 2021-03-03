@@ -207,6 +207,18 @@ body {
   /* grid-auto-rows: minmax(100px, auto); */
 }
 
+/* ZONE FORM */
+.zone-form {
+  grid-column: 1 / -1 ;
+  grid-row: 1 / -1;
+}
+
+.z-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* ZONES IMAGE SPAN */
 .zones-container {
   /* box-sizing: border-box; */

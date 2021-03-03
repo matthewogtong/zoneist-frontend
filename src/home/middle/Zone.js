@@ -1,18 +1,5 @@
 import React from 'react'
-
-
-// let styles = {
-//     cursor: `pointer`,
-//     borderRadius: `15px`,
-//     height: `100%`,
-//     backgroundSize: `cover`,
-//     display: `flex`,
-//     flexDirection: `column`,
-//     alignItems: `center`,
-//     justifyContent: `center`,
-//     textAlign: `center`,
-//     transition: `all .5s ease-in`
-//   }
+import { format } from "date-fns"
 
 const Zone = ({
   isActive,
@@ -26,6 +13,10 @@ const Zone = ({
   trinket,
   region,
 }) => {
+
+
+  console.log(format(new Date(), 'Pp'))
+
 
   return (
     <div className={`${region.name.split(' ').join('')} completed-zone`}>
