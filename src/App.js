@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setUser, setLoggedIn } from "./redux/user"
 import { setRegions } from "./redux/region"
 import { setTrinkets } from "./redux/trinket"
+import { setTags } from "./redux/tag"
 
 import PrimeReact from 'primereact/api';
 
@@ -35,6 +36,7 @@ function App() {
     )
   })
 
+  
   // AUTO LOGIN
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -49,6 +51,7 @@ function App() {
         .then((user) => {
           dispatch(setUser(user))
           dispatch(setLoggedIn())
+          dispatch(setTags(user.tags))
         });
     }
   }, [dispatch]);
@@ -100,7 +103,7 @@ function App() {
             />
           )}
         </Route>
-        <Route path="/home">
+        <Route exact path="/home">
           {isLoggedIn ? (
             <HomePage
             />

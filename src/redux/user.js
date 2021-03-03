@@ -17,13 +17,14 @@ const userSlice = createSlice({
         },
         setLoggedOut(state) {
             state.loggedIn = false
+            state.entities = []
         },
         purchaseTrinket(state, action) {
             state.entities.tokens = action
         },
         purchaseRegion(state, action) {
             state.entities.tokens = action
-        },
+        }
     }
 })
 
