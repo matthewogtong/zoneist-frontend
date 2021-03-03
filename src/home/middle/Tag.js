@@ -6,7 +6,7 @@ const Tag = ({ currentUser, currentTags, setCurrentTags, name, id }) => {
     const userId = useSelector(state => state.user.entities[0].id)
  
     const handleDeleteTag = (tagId) => {
-        fetch(`http://localhost:3001/users/${userId}/tags/${tagId}`, {
+        fetch(`http://localhost:3001/users/${currentUser.id}/tags/${tagId}`, {
             method: "DELETE"
         })
         .then(r => r.json())
