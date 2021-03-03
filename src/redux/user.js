@@ -20,10 +20,12 @@ const userSlice = createSlice({
             state.entities = []
         },
         purchaseTrinket(state, action) {
-            state.entities[0].tokens = action
+            state.entities[0].tokens = action.payload.user.tokens
+            state.entities[0].trinkets.push(action.payload.trinket)
         },
         purchaseRegion(state, action) {
-            state.entities[0].tokens = action
+            state.entities[0].tokens = action.payload.user.tokens
+            state.entities[0].regions.push(action.payload.region)
         },
         addTag(state, action) {
             state.entities[0].tags.push(action.payload)

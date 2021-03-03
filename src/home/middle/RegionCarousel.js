@@ -64,18 +64,17 @@ const RegionCarousel = () => {
         body: JSON.stringify({
           id: region.id,
           name: region.name,
+          image: region.image,
           price: region.price,
         }),
       })
         .then((r) => r.json())
-        .then((boughtRegion) => {
+        .then((regionData) => {
           const filteredRegions = marketRegions.filter(
-            (region) => region.id !== boughtRegion.id
+            (region) => region.id !== regionData.region.id
           )
-          const updatedTokens = userTokens - boughtRegion.price
           setMarketRegions(filteredRegions)
-          dispatch(purchaseRegion(updatedTokens))
-          // setCurrentTokens(updatedTokens)
+          dispatch(purchaseRegion(regionData))
         })
     }
   }

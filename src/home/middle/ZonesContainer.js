@@ -16,6 +16,7 @@ const ZonesContainer = () => {
     });
 
     const displayUserZones = zones.map(zone => {
+      console.log(zone)
       return (
         <Zone
           key={zone.id}
