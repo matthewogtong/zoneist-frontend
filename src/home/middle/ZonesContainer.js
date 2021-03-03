@@ -4,7 +4,7 @@ import Zone from './Zone'
 import { useSelector } from "react-redux"
 
 
-const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
+const ZonesContainer = () => {
 
     const zones = useSelector(state => state.user.entities[0].zones)
 
@@ -16,6 +16,7 @@ const ZonesContainer = ({ currentUser, currentZones, setCurrentZones }) => {
     });
 
     const displayUserZones = zones.map(zone => {
+      console.log(zone)
       return (
         <Zone
           key={zone.id}

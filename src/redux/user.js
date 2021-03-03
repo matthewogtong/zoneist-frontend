@@ -20,10 +20,12 @@ const userSlice = createSlice({
             state.entities = []
         },
         purchaseTrinket(state, action) {
-            state.entities[0].tokens = action
+            state.entities[0].tokens = action.payload.user.tokens
+            state.entities[0].trinkets.push(action.payload.trinket)
         },
         purchaseRegion(state, action) {
-            state.entities[0].tokens = action
+            state.entities[0].tokens = action.payload.user.tokens
+            state.entities[0].regions.push(action.payload.region)
         },
         addTag(state, action) {
             state.entities[0].tags.push(action.payload)
@@ -31,6 +33,9 @@ const userSlice = createSlice({
         deleteTag(state, action) {
             const index = state.entities[0].tags.findIndex(tag => tag.id === action.payload)
             state.entities[0].tags.splice(index, 1)
+        },
+        addZone(state, action) {
+            state.entities[0].zones.push(action.payload)
         }
     }
 })
@@ -42,7 +47,8 @@ export const {
   purchaseTrinket,
   purchaseRegion,
   addTag,
-  deleteTag
+  deleteTag,
+  addZone
 } = userSlice.actions;
 
 export default userSlice.reducer

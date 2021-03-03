@@ -40,6 +40,9 @@ const TrinketCarousel = () => {
       )
     })
 
+    const state = useSelector(state => state.user.entities[0])
+    console.log(state)
+
     // GET USER TRINKETS
     useEffect(() => {
       fetch(`http://localhost:3001/users/${userId}/trinkets`)
@@ -70,14 +73,13 @@ const TrinketCarousel = () => {
               }),
             })
               .then((r) => r.json())
-              .then((boughtTrinket) => {
+              .then((trinketData) => {
                 const filteredTrinkets = marketTrinkets.filter(
-                  (trinket) => trinket.id !== boughtTrinket.id
+                  (trinket) => trinket.id !== trinketData.trinket.id
                 )
-                const updatedTokens = userTokens - boughtTrinket.price
                 setMarketTrinkets(filteredTrinkets)
-                dispatch(purchaseTrinket(updatedTokens))
-                // setCurrentTokens(updatedTokens)
+                dispatch(purchaseTrinket(trinketData))
+                console.log(trinketData)
               })
           }
     }

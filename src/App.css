@@ -190,7 +190,7 @@ body {
 /* MIDDLE */
 .home-middle {
   background-color: #FFFFFF;;
-  /* border-radius: 25px; */
+  border-radius: 25px;
   grid-column: 4 / span 9;
   grid-row: 4 / -2;
   display: grid;
@@ -198,6 +198,96 @@ body {
   grid-template-rows: repeat(12, 1fr);
   font-size: calc(10px + 2vmin);
 }
+
+.zones-middle {
+  grid-column: 4 / span 9;
+  grid-row: 4 / -2;
+  /* display: grid; */
+  gap: 10px;
+  /* grid-auto-rows: minmax(100px, auto); */
+}
+
+/* ZONES IMAGE SPAN */
+.zones-container {
+  /* box-sizing: border-box; */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* grid-column: 1 / -1; */
+  /* grid-row: 1 / -1; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); */
+  /* grid-template-rows: repeat(3, 1fr); */
+  /* grid-gap: 10px;  */
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.zones-container h2 {
+  /* font-size: 45px;
+  font-weight: 300;
+  margin: 10px; */
+  font-size: 100%;
+  font-weight: 300;
+  margin: 10px;
+}
+
+.zones-container .completed-zone {
+  cursor: pointer;
+  border-radius: 15px;
+  /* height: 100%; */
+  background-size: fill;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .5s ease-in;
+}
+
+.zones-container .test:hover {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.Barcelona {
+  background: url('./img/barcelona.jpg');
+}
+
+.BlueLagoon {
+  background: url('./img/bluelagoon.jpg');
+}
+
+.BlueLakeTorii {
+  background: url('./img/bluelaketorii.jpg');
+}
+
+.Giza {
+  background: url('./img/giza.jpg');
+}
+
+.IguazuFalls {
+  background: url('./img/iguazufalls.jpg');
+}
+
+.LofotenIslands {
+  background: url('./img/lofotenislands.jpg');
+}
+
+.MachuPicchu {
+  background: url('./img/machupicchu.jpg');
+}
+
+.NYC {
+  background: url('./img/nyc.jpg');
+}
+
+.Venice {
+  background: url('./img/venice.jpg')
+}
+
+
+
 
 /* MARKET */
 .market {
@@ -295,73 +385,3 @@ body {
 }
 
 
-/* ZONES IMAGE SPAN */
-.zones-container {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  display: grid;
-  /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 10px;
-}
-
-.zones-container h2 {
-  /* font-size: 45px;
-  font-weight: 300;
-  margin: 10px; */
-  font-size: 100%;
-  font-weight: 300;
-  margin: 10px;
-}
-
-.zones-container .completed-zone {
-  cursor: pointer;
-  border-radius: 15px;
-  height: 100%;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  transition: all .5s ease-in;
-}
-
-.zones-container .test:hover {
-  opacity: 0.7;
-  transform: scale(0.98);
-}
-
-
-/* .zones-container > div:nth-of-type(1) {
-  grid-column: 1 / 3;
-}
-
-.zones-container > div:nth-of-type(6) {
-  grid-column: 3 / 5;
-}
-
-.zones-container > div:nth-of-type(9) {
-  grid-column: 3 / 5;
-}
-
-.zones-container > div:nth-of-type(10) {
-  grid-column: 1 / 3;
-} */
-
-.Barcelona {
-  background: url('./img/barcelona.jpg');
-}
-
-.bg1 {
-  background: url('./img/bluelaketorii.jpg');
-}
-
-.bg2 {
-  background: url('./img/giza.jpg');
-}
