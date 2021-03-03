@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { deleteTag } from "../../redux/tag"
+import { deleteTag } from "../../redux/user"
 
 const Tag = ({ tag }) => {
 
@@ -14,14 +14,14 @@ const Tag = ({ tag }) => {
         })
         .then(r => r.json())
         .then(deletedTag => {
-            dispatch(deleteTag(deletedTag))
+            dispatch(deleteTag(deletedTag.id))
         })
     }
     return (
       <>
         <li key={tag.id}>
           {tag.name}
-          <button key={tag.is} onClick={e => handleDeleteTag(tag.id)}>
+          <button onClick={e => handleDeleteTag(tag.id)}>
             🗑
           </button>
         </li>

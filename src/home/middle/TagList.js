@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 
 const TagList = () => {
 
-    const tags = useSelector(state => state.tag.entities[0])
+    const tags = useSelector(state => state.user.entities[0].tags)
     console.log(tags)
 
     const displayTags = tags.map(tag => {

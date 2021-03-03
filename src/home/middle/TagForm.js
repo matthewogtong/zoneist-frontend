@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { addTag } from "../../redux/tag"
+import { addTag } from "../../redux/user"
 import { InputText } from 'primereact/inputtext'
 
 const TagForm = () => {
+
+    const state = useSelector(state => state)
+
+    console.log(state)
 
     const dispatch = useDispatch()
 
@@ -28,6 +32,7 @@ const TagForm = () => {
             .then(r => r.json())
             .then(newTag => {
                 dispatch(addTag(newTag))
+                console.log(newTag)
             })
         
         setTagName("")
