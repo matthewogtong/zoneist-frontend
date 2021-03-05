@@ -14,7 +14,6 @@ const ZoneForm = () => {
     const [formData, setFormData] = useState({
         objective: "",
         totalObjectiveTime: 0,
-        zoneStart: format(new Date(), 'Pp'),
         tag: "",
         region: "",
         trinket: ""
@@ -46,11 +45,6 @@ const ZoneForm = () => {
         )
     })
 
-    // console.log(userId)
-    // console.log(userTags)
-    // console.log(userRegions)
-    // console.log(userTrinkets)
-
     const fadeIn = useSpring({
         opacity: 1,
         marginTop: 0,
@@ -61,6 +55,8 @@ const ZoneForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+
+        
         
         fetch(`http://localhost:3001/users/${userId}/zones`, {
             method: "POST",
@@ -69,6 +65,7 @@ const ZoneForm = () => {
             },
             body: JSON.stringify({
                 ...formData,
+                zoneStart: format(new Date(), 'Pp'),
                 
             })
         })
@@ -123,6 +120,7 @@ const ZoneForm = () => {
             value={formData.tag}
             onChange={handleChange}
           >
+              <option value="" disabled></option>
               {displayTagOptions}
           </select>
 
@@ -133,6 +131,7 @@ const ZoneForm = () => {
             value={formData.region}
             onChange={handleChange}
           >
+              <option value="" disabled></option>
               {displayRegionOptions}
           </select>
 
@@ -143,6 +142,7 @@ const ZoneForm = () => {
             value={formData.trinket}
             onChange={handleChange}
           >
+              <option value="" disabled></option>
               {displayTrinketOptions}
           </select>
 

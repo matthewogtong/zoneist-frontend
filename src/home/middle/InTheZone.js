@@ -11,6 +11,13 @@ const InTheZone = () => {
         history.push("/home")
     }
 
+    // const zoneStartTime = currentZone.zoneStart
+
+    // const formattedZoneStart = zoneStartTime.getMonth()
+
+    // console.log(formattedZoneStart)
+    
+
     return (
       <div className="in-zone-div">
         <h1>Currently in Zone</h1>
