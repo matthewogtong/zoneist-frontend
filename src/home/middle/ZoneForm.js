@@ -4,8 +4,11 @@ import { addZone } from "../../redux/user"
 import { format } from "date-fns" 
 import { useSpring, animated } from "react-spring"
 import { useHistory } from "react-router-dom"
+import { useForm } from 'react-hook-form'
 
 const ZoneForm = () => {
+
+    const { register, handleSubmit, errors } = useForm()
 
     let history = useHistory()
 
@@ -52,12 +55,15 @@ const ZoneForm = () => {
         delay: 0
       })
 
+    const testOnSubmit = (data) => {
 
-    const handleSubmit = (event) => {
+        console.log(data)
+
+    }
+
+    const handleOnSubmit = (event) => {
         event.preventDefault()
 
-        
-        
         fetch(`http://localhost:3001/users/${userId}/zones`, {
             method: "POST",
             headers: {
@@ -92,7 +98,7 @@ const ZoneForm = () => {
 
     return (
       <animated.div style={fadeIn} className="zone-form">
-        <form className="z-form" onSubmit={handleSubmit}>
+        <form className="z-form" onSubmit={handleSubmit(testOnSubmit)}>
           <h3>add new zone</h3>
 
           <label htmlFor="objective">Objective</label>
@@ -102,7 +108,13 @@ const ZoneForm = () => {
             name="objective"
             value={formData.objective}
             onChange={handleChange}
+            ref={register({ required: true })}
           />
+          {errors.objective && errors.objective.type === "required" && (
+          <p>
+              This is required
+          </p>
+          )}
 
           <label htmlFor="totalObjectiveTime">Minutes</label>
           <input
@@ -111,6 +123,7 @@ const ZoneForm = () => {
             name="totalObjectiveTime"
             value={formData.totalObjectiveTime}
             onChange={handleChange}
+            ref={register({ required: true })}
           />
 
           <label htmlFor="tag">Tag</label>
@@ -119,6 +132,7 @@ const ZoneForm = () => {
             id="tag"
             value={formData.tag}
             onChange={handleChange}
+            ref={register({ required: true })}
           >
               <option value="" disabled></option>
               {displayTagOptions}
@@ -130,6 +144,7 @@ const ZoneForm = () => {
             id="region"
             value={formData.region}
             onChange={handleChange}
+            ref={register({ required: true })}
           >
               <option value="" disabled></option>
               {displayRegionOptions}
@@ -141,6 +156,7 @@ const ZoneForm = () => {
             id="trinket"
             value={formData.trinket}
             onChange={handleChange}
+            ref={register({ required: true })}
           >
               <option value="" disabled></option>
               {displayTrinketOptions}
