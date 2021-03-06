@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { addTag } from "../../redux/user"
 import { InputText } from 'primereact/inputtext'
@@ -8,24 +8,24 @@ const TagForm = () => {
 
     const { register, handleSubmit, errors } = useForm()
 
-    const state = useSelector(state => state)
+    const currentTags = useSelector(state => state.user.entities[0].tags)
 
-    console.log(state)
+    const currentTagNames = (currentTags.map(tag => tag.name))
 
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user.entities[0].id)
 
-    const [tagName, setTagName] = useState("")
-
-    const onSubmit = (data) => {
-      console.log(data)
+    const validateTagUniqueness = (value) => {
+      if (currentTagNames.includes(value)) {
+        return false
+      } else {
+        return true
+      }
     }
 
-    const handleTagSubmit = (e) => {
-        e.preventDefault()
-
-        fetch(`http://localhost:3001/users/${userId}/tags`, {
+    const onSubmit = (data) => {
+      fetch(`http://localhost:3001/users/${userId}/tags`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const TagForm = () => {
             },
             body: JSON.stringify({
                 user_id: userId,
-                name: tagName
+                name: data.tagName
             })
         })
             .then(r => r.json())
@@ -41,8 +41,6 @@ const TagForm = () => {
                 dispatch(addTag(newTag))
                 console.log(newTag)
             })
-        
-        setTagName("")
     }
 
     return (
@@ -51,13 +49,16 @@ const TagForm = () => {
           <InputText
             id="tagName"
             name="tagName"
-            // value={tagName}
-            // onChange={(e) => setTagName(e.target.value)}
-            ref={register({ required: true })}
+            ref={register({ required: true, validate: validateTagUniqueness })}
           />
            {errors.tagName && errors.tagName.type === "required" && (
           <p className="zone-form-error">
               This is required
+          </p>
+          )}
+          {errors.tagName && errors.tagName.type === "validate" && (
+          <p className="zone-form-error">
+              This tag already exists
           </p>
           )}
           <label htmlFor="tagName">Tag Name</label>
