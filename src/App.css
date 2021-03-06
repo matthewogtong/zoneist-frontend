@@ -218,6 +218,11 @@ body {
   flex-direction: column;
 }
 
+.zone-form-error {
+  color: red;
+  font-size: 65%;
+}
+
 /* IN ZONE */
 .in-zone-div {
   grid-column: 1 / -1 ;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { addZone } from "../../redux/user"
 import { format } from "date-fns" 
@@ -13,14 +13,6 @@ const ZoneForm = () => {
     let history = useHistory()
 
     const dispatch = useDispatch()
-
-    const [formData, setFormData] = useState({
-        objective: "",
-        totalObjectiveTime: 0,
-        tag: "",
-        region: "",
-        trinket: ""
-    })
 
     const userId = useSelector(state => state.user.entities[0].id)
 
@@ -55,50 +47,28 @@ const ZoneForm = () => {
         delay: 0
       })
 
-    const testOnSubmit = (data) => {
-
-        console.log(data)
-
-    }
-
-    const handleOnSubmit = (event) => {
-        event.preventDefault()
-
-        fetch(`http://localhost:3001/users/${userId}/zones`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                ...formData,
-                zoneStart: format(new Date(), 'Pp'),
-                
-            })
-        })
-            .then(r => r.json())
-            .then(newZone => {
-                dispatch(addZone(newZone))
-                console.log(newZone)
-                history.push("/in-the-zone")
-            })
-    }
-
-    const handleChange = (event) => {
-        const key = event.target.id
-
-        let value = event.target.value
-        
-        setFormData({
-            ...formData,
-            [key]: value
+    const onSubmit = (data) => {
+      fetch(`http://localhost:3001/users/${userId}/zones`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          zoneStart: format(new Date(), "Pp"),
+        }),
+      })
+        .then((r) => r.json())
+        .then((newZone) => {
+          dispatch(addZone(newZone))
+          console.log(newZone)
+          history.push("/in-the-zone")
         })
     }
-
-    console.log(formData)
 
     return (
       <animated.div style={fadeIn} className="zone-form">
-        <form className="z-form" onSubmit={handleSubmit(testOnSubmit)}>
+        <form className="z-form" onSubmit={handleSubmit(onSubmit)}>
           <h3>add new zone</h3>
 
           <label htmlFor="objective">Objective</label>
@@ -106,12 +76,10 @@ const ZoneForm = () => {
             type="text"
             id="objective"
             name="objective"
-            value={formData.objective}
-            onChange={handleChange}
             ref={register({ required: true })}
           />
           {errors.objective && errors.objective.type === "required" && (
-          <p>
+          <p className="zone-form-error">
               This is required
           </p>
           )}
@@ -121,51 +89,63 @@ const ZoneForm = () => {
             type="number"
             id="totalObjectiveTime"
             name="totalObjectiveTime"
-            value={formData.totalObjectiveTime}
-            onChange={handleChange}
             ref={register({ required: true })}
           />
+          {errors.totalObjectiveTime && errors.totalObjectiveTime.type === "required" && (
+          <p className="zone-form-error">
+              This is required
+          </p>
+          )}
 
           <label htmlFor="tag">Tag</label>
           <select
             name="tag"
             id="tag"
-            value={formData.tag}
-            onChange={handleChange}
             ref={register({ required: true })}
           >
-              <option value="" disabled></option>
+              <option value="">Select...</option>
               {displayTagOptions}
           </select>
+          {errors.tag && errors.tag.type === "required" && (
+          <p className="zone-form-error">
+              Please select a tag
+          </p>
+          )}
 
           <label htmlFor="region">Region</label>
           <select
             name="region"
             id="region"
-            value={formData.region}
-            onChange={handleChange}
             ref={register({ required: true })}
           >
-              <option value="" disabled></option>
+              <option value="">Select...</option>
               {displayRegionOptions}
           </select>
+          {errors.region && errors.region.type === "required" && (
+          <p className="zone-form-error">
+              Please select a region
+          </p>
+          )}
 
           <label htmlFor="trinket">Trinket</label>
           <select
             name="trinket"
             id="trinket"
-            value={formData.trinket}
-            onChange={handleChange}
             ref={register({ required: true })}
           >
-              <option value="" disabled></option>
+              <option value="">Select...</option>
               {displayTrinketOptions}
           </select>
+          {errors.trinket && errors.trinket.type === "required" && (
+          <p className="zone-form-error">
+              Please select a trinket
+          </p>
+          )}
 
           <button type="submit">Enter Zone</button>
         </form>
       </animated.div>
-    );
+    )
 }
 
 export default ZoneForm
