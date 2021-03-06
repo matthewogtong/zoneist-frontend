@@ -1,24 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { addTag } from "../../redux/user"
 import { InputText } from 'primereact/inputtext'
+import { useForm } from 'react-hook-form'
 
 const TagForm = () => {
 
-    const state = useSelector(state => state)
+    const { register, handleSubmit, errors } = useForm()
 
-    console.log(state)
+    const currentTags = useSelector(state => state.user.entities[0].tags)
+
+    const currentTagNames = (currentTags.map(tag => tag.name))
 
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user.entities[0].id)
 
-    const [tagName, setTagName] = useState("")
+    const validateTagUniqueness = (value) => {
+      if (currentTagNames.includes(value)) {
+        return false
+      } else {
+        return true
+      }
+    }
 
-    const handleTagSubmit = (e) => {
-        e.preventDefault()
-
-        fetch(`http://localhost:3001/users/${userId}/tags`, {
+    const onSubmit = (data) => {
+      fetch(`http://localhost:3001/users/${userId}/tags`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -26,7 +33,7 @@ const TagForm = () => {
             },
             body: JSON.stringify({
                 user_id: userId,
-                name: tagName
+                name: data.tagName
             })
         })
             .then(r => r.json())
@@ -34,18 +41,26 @@ const TagForm = () => {
                 dispatch(addTag(newTag))
                 console.log(newTag)
             })
-        
-        setTagName("")
     }
 
     return (
-      <form onSubmit={handleTagSubmit} className="tag-form">
+      <form onSubmit={handleSubmit(onSubmit)} className="tag-form">
         <span className="p-float-label">
           <InputText
             id="tagName"
-            value={tagName}
-            onChange={(e) => setTagName(e.target.value)}
+            name="tagName"
+            ref={register({ required: true, validate: validateTagUniqueness })}
           />
+           {errors.tagName && errors.tagName.type === "required" && (
+          <p className="zone-form-error">
+              This is required
+          </p>
+          )}
+          {errors.tagName && errors.tagName.type === "validate" && (
+          <p className="zone-form-error">
+              This tag already exists
+          </p>
+          )}
           <label htmlFor="tagName">Tag Name</label>
         </span>
         <input type="submit" value="Submit" />
