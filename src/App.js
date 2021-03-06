@@ -127,6 +127,15 @@ function App() {
             <Redirect to="/" />
           )}
         </Route>
+        <Route path="/in-the-zone">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="in-the-zone"
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
         <Route path="/zones">
           {isLoggedIn ? (
             <HomePage
