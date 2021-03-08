@@ -17,17 +17,17 @@ const InTheZone = () => {
         <span>you completed your zone!</span>
       )
     }
-    
+    console.log(currentZone)
     const renderer = ({ hours, minutes, seconds, completed }) => {
       if (completed) {
+        
         return <Completionist />
       } else {
         return <span>{hours}:{minutes}:{seconds}</span>
       }
     }
 
-    const totalCountdownMilliseconds = currentZone.totalObjectiveTime * 1000
-    console.log(totalCountdownMilliseconds)
+    const totalCountdownMilliseconds = currentZone.totalObjectiveTime * 60000
 
     return (
       <div className="in-zone-div">

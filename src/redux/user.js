@@ -36,6 +36,11 @@ const userSlice = createSlice({
         },
         addZone(state, action) {
             state.entities[0].zones.push(action.payload)
+        }, 
+        completeZone(state, action) {
+            const completedZone = state.entities[0].zones.find(zone => zone.id === action.payload.id)
+            completedZone.isComplete = true
+            completedZone.isActive = false
         }
     }
 })
