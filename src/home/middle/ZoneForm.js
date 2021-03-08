@@ -56,6 +56,12 @@ const ZoneForm = () => {
         body: JSON.stringify({
           ...data,
           zoneStart: format(new Date(), "Pp"),
+          zoneStartDate: new Date().getDate(),
+          zoneStartMonth: new Date().getMonth(),
+          zoneStartYear: new Date().getFullYear(),
+          zoneStartHours: new Date().getHours(),
+          zoneStartMinutes: new Date().getMinutes(),
+          zoneStartSeconds: new Date().getSeconds(),
         }),
       })
         .then((r) => r.json())
