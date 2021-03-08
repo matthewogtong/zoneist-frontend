@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 
 const ZonesContainer = () => {
 
-    const [zonesToday, setZonesToday] = useState(false)
+    // const [zonesToday, setZonesToday] = useState(false)
 
     const zones = useSelector(state => state.user.entities[0].zones)
 
@@ -19,7 +19,7 @@ const ZonesContainer = () => {
 
     const displayUserZones = zones.map(zone => {
       if (zone.isComplete && !zone.isActive) {
-        setZonesToday(true)
+        // setZonesToday(true)
         return (
           <Zone
             key={zone.id}
@@ -40,7 +40,8 @@ const ZonesContainer = () => {
 
   return (
     <animated.div style={fadeIn} className="zones-container">
-      {zonesToday ? displayUserZones : <p>you have no completed zones today</p>}
+      {/* {zonesToday ? displayUserZones : <p>you have no completed zones today</p>} */}
+      {displayUserZones}
     </animated.div>
   );
 };

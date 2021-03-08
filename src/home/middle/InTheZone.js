@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { completeZone } from "../../redux/user"
 import Countdown from 'react-countdown'
+import CompletedZone from './CompletedZone'
 
 const InTheZone = () => {
     const history = useHistory()
@@ -10,38 +11,31 @@ const InTheZone = () => {
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user.entities[0].id)
-
     const currentZone = useSelector(state => state.user.entities[0].zones.slice(-1)[0])
     
     const handleClick = () => {
         history.push("/home")
     }
 
-    const Completionist = () => {
-      return (
-        <span>you completed your zone!</span>
-      )
-    }
     console.log(currentZone)
     const renderer = ({ hours, minutes, seconds, completed }) => {
       if (completed) {
         dispatch(completeZone(currentZone))
         console.log(currentZone)
-        // fetch(`http://localhost:3001/users/${userId}/zones/${currentZone.id}/completed`, {
-        //   method: "PATCH",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //     "Accept": "application/json"
-        //   },
-        //   body: JSON.stringify({
-        //     ...currentZone,
-        //     isActive: currentZone.isActive,
-        //     isComplete: currentZone.isComplete
-        //   })
-        // })
-        //   .then(r => r.json())
-        //   .then(data => console.log(data))
-        return <Completionist />
+        fetch(`http://localhost:3001/users/${userId}/zones/${currentZone.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            isActive: false,
+            isComplete: true
+          })
+        })
+          .then(r => r.json())
+          .then(data => console.log(data))
+        return <CompletedZone />
       } else {
         return <span>{hours}:{minutes}:{seconds}</span>
       }
