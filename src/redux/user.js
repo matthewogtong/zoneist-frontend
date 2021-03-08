@@ -53,7 +53,8 @@ export const {
   purchaseRegion,
   addTag,
   deleteTag,
-  addZone
+  addZone,
+  completeZone
 } = userSlice.actions;
 
 export default userSlice.reducer
