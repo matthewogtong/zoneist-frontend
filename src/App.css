@@ -305,6 +305,44 @@ body {
 }
 
 
+/* COLLECTION */
+.collection {
+  grid-column: 1 / -1 ;
+  grid-row: 1 / -1;
+}
+
+.collection-region-carousel-header {
+  text-align: center;
+}
+
+.collection-region-carousel .region .region-content {
+  border: 1px solid var(--surface-d);
+  border-radius: 3px;
+  margin: .3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.collection-region-carousel .region img {
+  width: 50%;
+}
+
+.collection-trinket-carousel-header {
+  text-align: center;
+}
+
+.collection-trinket-carousel .trinket .trinket-content {
+  border: 1px solid var(--surface-d);
+  border-radius: 3px;
+  margin: .3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.collection-trinket-carousel .trinket img {
+  width: 50%;
+}
+
 
 
 /* MARKET */
