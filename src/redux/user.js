@@ -4,12 +4,22 @@ const userSlice = createSlice({
     name: "user",
     initialState: {
         entities: [],
-        loggedIn: false
+        loggedIn: false,
+        zonesToday: false,
+        zonesToDisplay: []
     },
     reducers: {
         setUser(state, action) {
             state.entities.push({
                 ...action.payload
+            })
+        },
+        setZonesToday(state, action) {
+            action.payload.forEach(zone => {
+                if (zone.isComplete && !zone.isActive) {
+                    state.zonesToday = true
+                    state.zonesToDisplay.push(zone)
+                }
             })
         },
         setLoggedIn(state) {
@@ -18,6 +28,8 @@ const userSlice = createSlice({
         setLoggedOut(state) {
             state.loggedIn = false
             state.entities = []
+            state.zonesToday = false
+            state.zonesToDisplay = []
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens
@@ -38,9 +50,13 @@ const userSlice = createSlice({
             state.entities[0].zones.push(action.payload)
         }, 
         completeZone(state, action) {
-            const completedZone = state.entities[0].zones.find(zone => zone.id === action.payload.id)
-            completedZone.isComplete = true
-            completedZone.isActive = false
+            // const completedZone = state.entities[0].zones.find(zone => zone.id === action.payload.id)
+            // completedZone.isComplete = true
+            // completedZone.isActive = false
+            state.zonesToDisplay.push(action.payload)
+            if (state.zonesToday === false) {
+                state.zonesToday = true
+            }
         }
     }
 })
@@ -54,7 +70,8 @@ export const {
   addTag,
   deleteTag,
   addZone,
-  completeZone
+  completeZone,
+  setZonesToday
 } = userSlice.actions;
 
 export default userSlice.reducer
