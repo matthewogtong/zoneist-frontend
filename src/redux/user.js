@@ -28,6 +28,8 @@ const userSlice = createSlice({
         setLoggedOut(state) {
             state.loggedIn = false
             state.entities = []
+            state.zonesToday = false
+            state.zonesToDisplay = []
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens
