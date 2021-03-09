@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring"
 import Zone from './Zone'
 import { useSelector } from "react-redux"
@@ -6,9 +6,12 @@ import { useSelector } from "react-redux"
 
 const ZonesContainer = () => {
 
-    // const [zonesToday, setZonesToday] = useState(false)
+    const zoneState = useSelector(state => state.user)
+    console.log(zoneState)
 
     const zones = useSelector(state => state.user.entities[0].zones)
+    console.log(zones)
+    const zonesToDisplay = useSelector(state => state.user.zonesToDisplay)
 
     const fadeIn = useSpring({
       opacity: 1,
@@ -17,9 +20,7 @@ const ZonesContainer = () => {
       delay: 0
     });
 
-    const displayUserZones = zones.map(zone => {
-      if (zone.isComplete && !zone.isActive) {
-        // setZonesToday(true)
+    const displayUserZones = zonesToDisplay.map(zone => {
         return (
           <Zone
             key={zone.id}
@@ -36,7 +37,7 @@ const ZonesContainer = () => {
           />
         );
       }
-    })
+    )
 
   return (
     <animated.div style={fadeIn} className="zones-container">

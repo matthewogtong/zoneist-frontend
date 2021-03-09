@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { setUser, setLoggedIn } from "./redux/user"
+import { setUser, setLoggedIn, setZonesToday } from "./redux/user"
 import { setRegions } from "./redux/region"
 import { setTrinkets } from "./redux/trinket"
 
@@ -50,6 +50,7 @@ function App() {
         .then((user) => {
           dispatch(setUser(user))
           dispatch(setLoggedIn())
+          dispatch(setZonesToday(user.zones))
         });
     }
   }, [dispatch]);

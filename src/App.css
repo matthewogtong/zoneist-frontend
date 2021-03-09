@@ -253,7 +253,7 @@ body {
 .zones-container .completed-zone {
   cursor: pointer;
   border-radius: 15px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
