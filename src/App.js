@@ -155,6 +155,15 @@ function App() {
             <Redirect to="/" />
           )}
         </Route>
+        <Route path="/collection">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="collection"
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
         <Route path="/about">
           <AboutPage />
         </Route>
