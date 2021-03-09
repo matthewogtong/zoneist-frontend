@@ -350,14 +350,14 @@ body {
   grid-column: 1 / -1 ;
   grid-row: 1 / -1;
   display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(6, 1fr) ;
-  grid-template-rows: repeat(6, 1fr);
+  /* grid-gap: 5px; */
+  grid-template-columns: repeat(12, 1fr) ;
+  grid-template-rows: repeat(12, 1fr);
 }
 
 .region-carousel {
-  grid-column: 1 / span 3;
-  grid-row: 1 / -1;
+  grid-column: 2 / 7;
+  grid-row: 2 / -2;
 }
 
 .region-carousel-header {
@@ -367,18 +367,19 @@ body {
 .region-carousel .region-item .region-item-content {
   border: 1px solid var(--surface-d);
   border-radius: 3px;
-  margin: .3rem;
+  /* margin: .3rem; */
   text-align: center;
   padding: 2rem 0;
+  border-color: black;
 }
 
 .region-carousel .region-item img {
-  width: 50%;
+  width: 45%;
 }
 
 .trinket-carousel {
-  grid-column: 4 / span 3;
-  grid-row: 1 / -1;
+  grid-column: 7 / 12;
+  grid-row: 2 / -2;
 }
 
 .trinket-carousel-header {
@@ -388,9 +389,10 @@ body {
 .trinket-carousel .trinket-item .trinket-item-content {
   border: 1px solid var(--surface-d);
   border-radius: 3px;
-  margin: .3rem;
+  /* margin: .3rem; */
   text-align: center;
   padding: 2rem 0;
+  border-color: black;
 }
 
 .trinket-carousel .trinket-item img {
