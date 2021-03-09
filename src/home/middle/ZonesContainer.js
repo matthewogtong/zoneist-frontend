@@ -11,6 +11,7 @@ const ZonesContainer = () => {
 
     const zones = useSelector(state => state.user.entities[0].zones)
     console.log(zones)
+    const zonesToday = useSelector(state => state.user.zonesToday)
     const zonesToDisplay = useSelector(state => state.user.zonesToDisplay)
 
     const fadeIn = useSpring({
@@ -41,8 +42,7 @@ const ZonesContainer = () => {
 
   return (
     <animated.div style={fadeIn} className="zones-container">
-      {/* {zonesToday ? displayUserZones : <p>you have no completed zones today</p>} */}
-      {displayUserZones}
+      {zonesToday ? displayUserZones : <p>you have no completed zones today</p>}
     </animated.div>
   );
 };
