@@ -9,7 +9,7 @@ const SignUp = () => {
   //   ANIMATIONS
   const fadeIn = useSpring({
     opacity: 1,
-    marginLeft: 0,
+    marginLeft: "auto",
     from: { opacity: 0, marginLeft: -500 },
     delay: 250,
     duration: 1000,
@@ -64,8 +64,8 @@ const SignUp = () => {
       })
   }
   return (
-      <animated.div style={fadeIn} className="sign-up-container p-shadow-24">
-        <h1>Sign Up</h1>
+      <div className="sign-up-container p-shadow-24">
+        <animated.h1 style={fadeIn} className="sign-up-h1">sign up</animated.h1>
         <form onSubmit={handleSubmit}>
           <span className="p-float-label">
             <InputText
@@ -75,7 +75,7 @@ const SignUp = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">username</label>
           </span>
           <span className="p-float-label">
             <InputText
@@ -85,14 +85,14 @@ const SignUp = () => {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">password</label>
           </span>
           {signUpError ? (
             <p style={{ color: "red" }}>Error: {signUpError}</p>
           ) : null}
-          <input type="submit" value="SignUp" />
+          <input type="submit" value="submit" />
         </form>
-      </animated.div>
+      </div>
   )
 }
 
