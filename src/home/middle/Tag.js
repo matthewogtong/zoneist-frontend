@@ -1,7 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { deleteTag } from "../../redux/user"
+import ReactCardFlip from 'react-card-flip'
+
 import { ReactComponent as Recycle } from "../../svg/nontrinkets/recycle.svg"
+
 
 const Tag = ({ tag }) => {
 

@@ -17,7 +17,7 @@ const TagsContainer = () => {
     
     return (
         <animated.div style={fadeIn} className="tags-container">
-            <h1>Tags Container</h1>
+            <h1>Tags</h1>
             <TagForm />
             <TagList />
         </animated.div>

@@ -529,15 +529,51 @@ body {
 .tags-container {
   grid-column: 1 / -1 ;
   grid-row: 1 / -1;
-  background: #D6D5C2;
+  background: #0e101c;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
 }
 
+.tags-container h1 {
+  display: block;
+  margin: 10% auto;
+  width: 50%;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+}
+
 .tag-form {
-  /* grid-column: 1 / span 2;
-  grid-row: 2 / span 1 */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tag-form input {
+  display: block;
+  margin: 10% auto;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.tag-form button[type="submit"],
+.tag-form input[type="submit"] {
+  background: #ec5990;
+  color: white;
+  text-transform: lowercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
 }
 
 .tag-list {
@@ -550,6 +586,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.tag-list-ul li {
+  color: white;
+}
+
 /* .sign-up-container {
   background: #0e101c;
   border-radius: 25px;

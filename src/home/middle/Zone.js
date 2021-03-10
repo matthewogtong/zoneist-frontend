@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
-import { format } from "date-fns"
 
 // IMPORT TRINKETS
 import { ReactComponent as LPrinter } from "../../svg/trinkets/loaf-3D-printing.svg"
