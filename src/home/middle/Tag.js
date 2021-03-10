@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { deleteTag } from "../../redux/user"
+import { ReactComponent as Recycle } from "../../svg/nontrinkets/recycle.svg"
 
 const Tag = ({ tag }) => {
 
@@ -28,9 +29,7 @@ const Tag = ({ tag }) => {
           <button onClick={e => handleEditTag(tag.id)}>
             ✏️
           </button>
-          <button onClick={e => handleDeleteTag(tag.id)}>
-            🗑
-          </button>
+          <Recycle onClick={e => handleDeleteTag(tag.id)}/>
         </li>
       </>
     );

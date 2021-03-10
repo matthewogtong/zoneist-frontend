@@ -18,7 +18,7 @@ const TagList = () => {
 
     return (
         <div className="tag-list">
-            <ul>
+            <ul className="tag-list-ul">
                 {displayTags}
             </ul>
         </div>
