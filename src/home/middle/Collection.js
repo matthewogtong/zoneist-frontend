@@ -15,9 +15,9 @@ import nyc from "../../img/nyc.jpg"
 import venice from "../../img/venice.jpg"
 
 // IMPORT TRINKETS
-import { ReactComponent as LPrinter } from "../../svg/trinkets/loaf-3D-printing.svg"
-import { ReactComponent as Axe } from "../../svg/trinkets/loaf-axe.svg"
-import { ReactComponent as Bath } from "../../svg/trinkets/loaf-bath.svg"
+import { ReactComponent as LPrinter } from "../../svg/trinkets/3D-printing.svg"
+import { ReactComponent as Bed } from "../../svg/trinkets/bed.svg"
+import { ReactComponent as Coder } from "../../svg/trinkets/coder.svg"
 import { ReactComponent as Camera } from "../../svg/trinkets/loaf-camera.svg"
 import { ReactComponent as Campfire } from "../../svg/trinkets/loaf-campfire-1.svg"
 import { ReactComponent as Candle } from "../../svg/trinkets/loaf-candle-3.svg"
@@ -51,8 +51,8 @@ const Collection = () => {
 
       const svgMapper = {
         LPrinter: LPrinter,
-        Axe: Axe,
-        Bath: Bath,
+        Bed: Bed,
+        Coder: Coder,
         Camera: Camera,
         Campfire: Campfire,
         Candle: Candle,

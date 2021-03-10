@@ -61,7 +61,7 @@ const TagForm = () => {
               This tag already exists
           </p>
           )}
-          <label htmlFor="tagName">Tag Name</label>
+          <label htmlFor="tagName">create tag</label>
         </span>
         <input type="submit" value="Submit" />
       </form>

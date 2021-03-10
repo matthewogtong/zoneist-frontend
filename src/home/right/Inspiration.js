@@ -11,18 +11,18 @@ const Inspiration = ()  => {
         .then((r) => r.json())
         .then((data) => {
           let quote = data[Math.floor(Math.random() * data.length)]
-          return toast.info(`${quote.text} ~ ${quote.author}`)
+          return toast.dark(`${quote.text} ~ ${quote.author}`)
         })
     }
     return (
       <div className="inspiration-div">
         <br/>
-        <Message onClick={notify} label="Inspiration" />
+        <Message className="message-svg" onClick={notify} label="Inspiration" />
         <br/>
         <Gesture />
         <ToastContainer
           position="top-right"
-          autoClose={5000}
+          autoClose={10000}
           hideProgressBar={false}
           newestOnTop
           closeOnClick

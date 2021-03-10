@@ -1,0 +1,28 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-hacker1-a {animation:line-hacker1-a 2s 200ms linear infinite;}
+     .line-hacker1-b {animation:line-hacker1-a 2s 300ms linear infinite;}
+     .line-hacker1-c {animation:line-hacker1-c 2s 700ms linear infinite;}
+     .line-hacker1-d {animation:line-hacker1-a 2s 800ms linear infinite;}
+     .line-hacker1-e {animation:line-hacker1-a 2s 900ms linear infinite;}
+     .line-hacker1-f {animation:line-hacker1-a 2s 1100ms linear infinite;}
+     .line-hacker1-g {animation:line-hacker1-a 2s 1300ms linear infinite;}
+     .line-hacker1-h {animation:line-hacker1-a 2s 1400ms linear infinite;}
+     .line-hacker1-i {animation:line-hacker1-a 2s 1600ms linear infinite;}
+
+
+     @keyframes line-hacker1-a {
+         0%{transform: translate3d(0, -100px, 0);}
+         100%{transform: translate3d(0, 180px, 0);}
+     }
+
+     @keyframes line-hacker1-c {
+         0%{transform: translate3d(40px, -100px, 0);}
+         100%{transform: translate3d(40px, 180px, 0);}
+     }
+
+     @media (prefers-reduced-motion: reduce) {
+         .line-hacker1-a, .line-hacker1-b, .line-hacker1-c, .line-hacker1-d, .line-hacker1-e, .line-hacker1-f, .line-hacker1-g {
+             animation: none;
+         }
+     }
+    </style><path class="line-hacker1-a stroke2" transform="translate(0, -60)" d="M84.5 7.5V15.5" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 2s;"></path><path class="line-hacker1-b stroke2" transform="translate(0, -60)" d="M65 43V51" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 2s;"></path><path class="line-hacker1-c stroke2" transform="translate(50, -60)" d="M1 73V81" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 2s;"></path><path class="line-hacker1-d stroke2" transform="translate(0, -60)" d="M21 27V35" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 2s;"></path><path class="line-hacker1-e stroke2" transform="translate(0, -60)" d="M27 5V13" stroke="#000" stroke-width="2px" stroke-linecap="round" style="animation-duration: 2s;"></path><circle class="line-hacker1-f stroke2 fill2" transform="translate(0, -60)" cx="10.5" cy="48.5" r="3.5" stroke="#000" stroke-width="2px" fill="rgba(0,0,0,1)" style="animation-duration: 2s;"></circle><circle class="line-hacker1-g stroke2 fill2" transform="translate(0, -60)" cx="78.5" cy="50.5" r="3.5" stroke="#000" stroke-width="2px" fill="rgba(0,0,0,1)" style="animation-duration: 2s;"></circle><circle class="line-hacker1-h stroke2 fill2" transform="translate(0, -60)" cx="56.5" cy="11.5" r="3.5" stroke="#000" stroke-width="2px" fill="rgba(0,0,0,1)" style="animation-duration: 2s;"></circle><circle class="line-hacker1-i stroke2 fill2" transform="translate(0, -60)" cx="7.5" cy="4.5" r="3.5" stroke="#000" stroke-width="2px" fill="rgba(0,0,0,1)" style="animation-duration: 2s;"></circle><g transform="translate(0, -3)"><path class="stroke1 fill1" d="M23.384 57.4518C24.9395 52.4264 29.5868 49 34.8474 49H66.1526C71.4132 49 76.0605 52.4264 77.616 57.4518L83.1875 75.4518C85.5772 83.1725 79.8061 91 71.724 91H29.276C21.1939 91 15.4228 83.1725 17.8125 75.4518L23.384 57.4518Z" fill="#fff" stroke="#000" stroke-width="2px"></path><path class="fill1" d="M75.5 42L53.6302 60.7456C52.1204 62.0396 49.8894 62.0282 48.393 60.7189L27 42C27 42 27.216 40.4879 28.7137 38.6114C30.3334 35.4627 32.8317 30.7466 35 27.25C39.0287 20.7533 44.5 12.5 51 12.5C57.5 12.5 63.1106 20.7512 67.25 27.25C69.5659 30.886 72.2615 35.8407 73.9244 38.9803C75.249 40.6822 75.5 42 75.5 42Z" fill="#fff" stroke-width="2px"></path><path class="stroke1" d="M75.5 42L53.6302 60.7456C52.1204 62.0396 49.8894 62.0282 48.393 60.7189L27 42M75.5 42C75.5 42 70.9027 32.9847 67.25 27.25C63.1106 20.7512 57.5 12.5 51 12.5C44.5 12.5 39.0287 20.7533 35 27.25C31.4438 32.9847 27 42 27 42M75.5 42C75.5 42 74.1716 35.0257 61.5 32.4452M27 42C27 42 28.0464 34.6755 41.5 32.2615M41.5 32.2615C44.1545 31.7852 47.2921 31.5 51 31.5C55.1626 31.5 58.6235 31.8594 61.5 32.4452M41.5 32.2615C41.5 32.2615 39.5 46.5 51 46.5C62.5 46.5 61.5 32.4452 61.5 32.4452" stroke="#000" stroke-width="2px"></path><path class="stroke1 fill1" d="M31 67C31 65.8954 31.8954 65 33 65H69C70.1046 65 71 65.8954 71 67V91H31V67Z" fill="#fff" stroke="#000" stroke-width="2px"></path><path class="stroke1" d="M43 75.5H59" stroke="#000" stroke-width="2px" stroke-linecap="round"></path></g></svg>

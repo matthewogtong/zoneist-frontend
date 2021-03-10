@@ -75,8 +75,7 @@ const ZoneForm = () => {
     return (
       <animated.div style={fadeIn} className="zone-form">
         <form className="z-form" onSubmit={handleSubmit(onSubmit)}>
-          <h3>add new zone</h3>
-
+          <h3>define zone structure</h3>
           <label htmlFor="objective">Objective</label>
           <input
             type="text"
@@ -84,11 +83,7 @@ const ZoneForm = () => {
             name="objective"
             ref={register({ required: true })}
           />
-          {errors.objective && errors.objective.type === "required" && (
-          <p className="zone-form-error">
-              This is required
-          </p>
-          )}
+          {errors.objective && errors.objective.type === "required"}
 
           <label htmlFor="totalObjectiveTime">Minutes</label>
           <input
@@ -97,11 +92,7 @@ const ZoneForm = () => {
             name="totalObjectiveTime"
             ref={register({ required: true })}
           />
-          {errors.totalObjectiveTime && errors.totalObjectiveTime.type === "required" && (
-          <p className="zone-form-error">
-              This is required
-          </p>
-          )}
+          {errors.totalObjectiveTime && errors.totalObjectiveTime.type === "required"}
 
           <label htmlFor="tag">Tag</label>
           <select
@@ -112,11 +103,7 @@ const ZoneForm = () => {
               <option value="">Select...</option>
               {displayTagOptions}
           </select>
-          {errors.tag && errors.tag.type === "required" && (
-          <p className="zone-form-error">
-              Please select a tag
-          </p>
-          )}
+          {errors.tag && errors.tag.type === "required"}
 
           <label htmlFor="region">Region</label>
           <select
@@ -127,11 +114,7 @@ const ZoneForm = () => {
               <option value="">Select...</option>
               {displayRegionOptions}
           </select>
-          {errors.region && errors.region.type === "required" && (
-          <p className="zone-form-error">
-              Please select a region
-          </p>
-          )}
+          {errors.region && errors.region.type === "required"}
 
           <label htmlFor="trinket">Trinket</label>
           <select
@@ -142,16 +125,63 @@ const ZoneForm = () => {
               <option value="">Select...</option>
               {displayTrinketOptions}
           </select>
-          {errors.trinket && errors.trinket.type === "required" && (
-          <p className="zone-form-error">
-              Please select a trinket
-          </p>
-          )}
+          {errors.trinket && errors.trinket.type === "required"}
 
-          <button type="submit">Enter Zone</button>
+          <button type="submit">start zone</button>
         </form>
       </animated.div>
     )
 }
 
 export default ZoneForm
+
+
+// .log-in-container {
+//   background: #0e101c;
+//   border-radius: 25px;
+//   grid-column: 9 / -2;
+//   grid-row: 3 / -4;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .log-in-container form {
+//   max-width: 500px;
+//   margin: 0 auto;
+// }
+
+// .log-in-container .log-in-h1 {
+//   display: block;
+//   margin: 10% auto;
+//   width: 50%;
+//   font-weight: 100;
+//   color: white;
+//   text-align: center;
+//   padding-bottom: 10px;
+//   border-bottom: 1px solid rgb(79, 98, 148);
+// }
+
+// .log-in-container input {
+//   display: block;
+//   margin: 10% auto;
+//   box-sizing: border-box;
+//   width: 100%;
+//   border-radius: 4px;
+//   border: 1px solid white;
+//   padding: 10px 15px;
+//   margin-bottom: 10px;
+//   font-size: 14px;
+// }
+
+// .log-in-container button[type="submit"],
+// .log-in-container input[type="submit"] {
+//   background: #ec5990;
+//   color: white;
+//   text-transform: lowercase;
+//   border: none;
+//   margin-top: 40px;
+//   padding: 20px;
+//   font-size: 16px;
+//   font-weight: 100;
+//   letter-spacing: 10px;
+// }

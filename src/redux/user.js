@@ -6,19 +6,36 @@ const userSlice = createSlice({
         entities: [],
         loggedIn: false,
         zonesToday: false,
-        zonesToDisplay: []
+        zonesToDisplay: [],
+        calendar: {
+            year: 0,
+            month: 0,
+            date: 0
+        }
     },
     reducers: {
         setUser(state, action) {
             state.entities.push({
                 ...action.payload
             })
+            state.calendar.year = new Date().getFullYear()
+            state.calendar.month = new Date().getMonth()
+            state.calendar.date = new Date().getDate()
         },
         setZonesToday(state, action) {
             action.payload.forEach(zone => {
                 if (zone.isComplete && !zone.isActive) {
-                    state.zonesToday = true
-                    state.zonesToDisplay.push(zone)
+                    if(
+                        zone.zoneStartDate === state.calendar.date &&
+                        zone.zoneStartMonth === state.calendar.month &&
+                        zone.zoneStartYear === state.calendar.year
+                        ) {
+                            state.zonesToday = true
+                            state.zonesToDisplay.push(zone)
+                        } else {
+                            state.zonesToday = false
+                            state.zonesToDisplay = []
+                        }
                 }
             })
         },
@@ -30,6 +47,9 @@ const userSlice = createSlice({
             state.entities = []
             state.zonesToday = false
             state.zonesToDisplay = []
+            state.calendar.year = 0
+            state.calendar.month = 0
+            state.calendar.date = 0
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens
@@ -54,6 +74,11 @@ const userSlice = createSlice({
             if (state.zonesToday === false) {
                 state.zonesToday = true
             }
+        },
+        setCalendar(state, action) {
+            state.calendar.year = action.payload.year
+            state.calendar.month = action.payload.month
+            state.calendar.date = action.payload.date
         }
     }
 })
@@ -68,7 +93,8 @@ export const {
   deleteTag,
   addZone,
   completeZone,
-  setZonesToday
+  setZonesToday,
+  setCalendar
 } = userSlice.actions;
 
 export default userSlice.reducer
