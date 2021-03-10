@@ -608,4 +608,13 @@ body {
   align-items: center;
 }
 
+.inspiration-div {
+  grid-column: 1 / -1;
+  grid-row: 6 / span 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
