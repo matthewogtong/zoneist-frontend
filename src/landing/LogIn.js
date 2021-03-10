@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 import { useSpring, animated } from "react-spring"
 import { InputText } from "primereact/inputtext"
 import { useDispatch } from "react-redux"
-import { setUser, setLoggedIn } from "../redux/user"
+import { setUser, setLoggedIn, setZonesToday } from "../redux/user"
 
 const LogIn = () => {
   // ANIMATIONS
@@ -16,7 +16,7 @@ const LogIn = () => {
   })
 
    // DISPATCH
-   const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   // STATES
   const [username, setUsername] = useState("")
@@ -24,6 +24,8 @@ const LogIn = () => {
   const [logInError, setLogInError] = useState(null)
 
   // OTHER
+  const camelcaseKeys = require('camelcase-keys');
+
   const history = useHistory()
 
   const handleSubmit = (e) => {
@@ -51,15 +53,15 @@ const LogIn = () => {
         })
       })
       .then((data) => {
-        // success:
         dispatch(setUser(data.user))
         dispatch(setLoggedIn())
+        dispatch(setZonesToday(camelcaseKeys(data.user.zones)))
         localStorage.setItem("token", data.token)
         history.push("/home")
       })
       .catch((data) => {
         // error:
-        setLogInError(data.error.toLowerCase())
+        setLogInError(data.error)
       })
   }
 

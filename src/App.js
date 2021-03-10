@@ -25,6 +25,7 @@ function App() {
 
   // DISPATCH
   const dispatch = useDispatch()
+  const camelcaseKeys = require('camelcase-keys');
 
   // REDUX SELECTOR
   const isLoggedIn = useSelector(state => {
@@ -46,9 +47,10 @@ function App() {
       })
         .then((r) => r.json())
         .then((user) => {
+          console.log(user)
           dispatch(setUser(user))
           dispatch(setLoggedIn())
-          dispatch(setZonesToday(user.zones))
+          dispatch(setZonesToday(camelcaseKeys(user.zones)))
         });
     }
   }, [dispatch]);
@@ -70,6 +72,7 @@ function App() {
 
 
   PrimeReact.ripple = true;
+
 
   return (
     <div className="App">

@@ -8,15 +8,17 @@ const HomeCalendar = () => {
     const [fullDate, setFullDate] = useState(new Date());
 
     const dispatch = useDispatch()
+    const camelcaseKeys = require('camelcase-keys');
+    
 
-    const userZones = useSelector(state => state.user.entities[0].zones)
+    const userZones = useSelector(state => camelcaseKeys(state.user.entities[0].zones))
     const calendarInfo = useSelector(state => state.user.calendar)
     console.log(userZones)
     console.log(calendarInfo)
 
     const onChange = data => {
       setFullDate(data)
-      let toDispatch = {
+      const toDispatch = {
         year : data.getFullYear(),
         month : data.getMonth(),
         date : data.getDate()
