@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from "react-redux"
+import { ReactComponent as Sun } from "../../svg/nontrinkets/sun.svg"
+import { ReactComponent as Moon } from "../../svg/nontrinkets/moon.svg"
 
 const Greeting = () => {
 
@@ -13,19 +15,19 @@ const Greeting = () => {
     
     useEffect(() => {
       if (currentHour < 12) {
-        setGreeting("Good Morning")
+        setGreeting("good morning")
       } else if (currentHour < 18 ){
-        setGreeting("Good Afternoon")
+        setGreeting("good afternoon")
       } else {
-        setGreeting("Good Evening")
+        setGreeting("good evening")
       }
     }, [currentHour])
     
 
     return (
       <div className="home-greeting">
-        <h2>{greeting},</h2>
-        <h2>{username}</h2>
+        <h3 className="hello">{currentHour > 4 ? <Sun /> : <Moon /> }hi {username},</h3>
+        <h2 className="greet">{greeting}</h2>
       </div>
     );
 }

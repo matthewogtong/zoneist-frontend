@@ -262,6 +262,16 @@ body {
   text-align: center;
 }
 
+.hello {
+  position: relative;
+  bottom: 20%;
+}
+
+.greet {
+  position: relative;
+  bottom: 20%;
+}
+
 /* LEFT */
 .home-left {
   background-color: #FFFFFF;;

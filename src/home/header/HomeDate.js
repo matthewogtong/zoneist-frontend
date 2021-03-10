@@ -1,8 +1,18 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { getDay, getMonth, getDate } from 'date-fns'
+import { useSpring, animated } from "react-spring"
 
 const HomeDate = () => {
+
+    const fadeIn = useSpring({
+        opacity: 1,
+        marginLeft: 0,
+        from: { opacity: 0, marginLeft: -500 },
+        delay: 250,
+        duration: 1000
+      })
+
     const months = [
       "January",
       "February",
@@ -63,24 +73,20 @@ const HomeDate = () => {
       "Saturday",
     ]
 
-    const date = new Date()
-
     const info = useSelector(state => state.user.calendar)
 
     const newMonth = getMonth(new Date(info.year, info.month, info.date))
     const newDate = getDate(new Date(info.year, info.month, info.date))
     const newDay = getDay(new Date(info.year, info.month, info.date))
-    console.log(newDay)
-    console.log(newMonth)
-    console.log(newDate)
+
     const formattedHomeMonth = months[newMonth]
     const formattedHomeDate = dates[newDate]
     const formattedHomeDay = days[newDay]
 
     return(
         <div className="home-date">
-            <h2>{formattedHomeMonth} {formattedHomeDate}</h2>
-            <h4>{formattedHomeDay}</h4>
+            <animated.h2 style={fadeIn} >{formattedHomeMonth.toLowerCase()} {formattedHomeDate}</animated.h2>
+            <animated.h4 style={fadeIn} >{formattedHomeDay.toLowerCase()}</animated.h4>
         </div>
     )
 }
