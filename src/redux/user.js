@@ -25,8 +25,17 @@ const userSlice = createSlice({
         setZonesToday(state, action) {
             action.payload.forEach(zone => {
                 if (zone.isComplete && !zone.isActive) {
-                    state.zonesToday = true
-                    state.zonesToDisplay.push(zone)
+                    if(
+                        zone.zoneStartDate === state.calendar.date &&
+                        zone.zoneStartMonth === state.calendar.month &&
+                        zone.zoneStartYear === state.calendar.year
+                        ) {
+                            state.zonesToday = true
+                            state.zonesToDisplay.push(zone)
+                        } else {
+                            state.zonesToday = false
+                            state.zonesToDisplay = []
+                        }
                 }
             })
         },
