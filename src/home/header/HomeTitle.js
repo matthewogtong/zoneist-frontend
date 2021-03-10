@@ -10,9 +10,14 @@ const HomeTitle = () => {
     return (
       <div className="home-title">
         <h2>zoneist</h2>
-        <Token />{tokens}
+        <span className="home-title-token-svg">
+          <Token />
+        </span>
+        <span className="home-title-tokens">
+          {tokens}
+        </span>
       </div>
-    )
+    );
 }
 
 export default HomeTitle

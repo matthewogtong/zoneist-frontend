@@ -234,8 +234,20 @@ body {
 
 .home-title {
   grid-column: 1 / span 2;
-  grid-row: 1 / span 1;
+  grid-row: 1 / span 2;
   text-align: center;
+}
+
+.home-title-token-svg {
+  position: relative;
+  bottom: 25%;
+  right: 7%;
+}
+
+.home-title-tokens {
+  position: relative;
+  bottom: 53%;
+  right: 10%;
 }
 
 .home-date {
