@@ -20,8 +20,6 @@ import HomePage from './home/HomePage'
 
 // NONTRINKETS IMPORTS
 import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
-
-
  
 function App() {
 
@@ -55,7 +53,6 @@ function App() {
     }
   }, [dispatch]);
 
-
   // GET REGIONS
   useEffect(() => {
     fetch(`http://localhost:3001/regions`)
@@ -63,7 +60,6 @@ function App() {
       .then((regionsArr) => dispatch(setRegions(regionsArr)))
   }, [dispatch])
 
-  
 
   // GET TRINKETS
   useEffect(() => {

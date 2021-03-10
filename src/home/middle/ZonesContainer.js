@@ -9,8 +9,6 @@ const ZonesContainer = () => {
     const zoneState = useSelector(state => state.user)
     console.log(zoneState)
 
-    const zones = useSelector(state => state.user.entities[0].zones)
-    console.log(zones)
     const zonesToday = useSelector(state => state.user.zonesToday)
     const zonesToDisplay = useSelector(state => state.user.zonesToDisplay)
 
@@ -23,27 +21,26 @@ const ZonesContainer = () => {
 
     const displayUserZones = zonesToDisplay.map(zone => {
         return (
-          <Zone
+          <li key={zone.id}>
+            <Zone
             key={zone.id}
-            isActive={zone.isActive}
-            isComplete={zone.isComplete}
             objective={zone.objective}
             zoneStart={zone.zoneStart}
             zoneEnd={zone.zoneEnd}
-            prematureEnd={zone.prematureEnd}
             totalObjectiveTime={zone.totalObjectiveTime}
             tag={zone.tag}
             trinket={zone.trinket}
             region={zone.region}
           />
+          </li>
         );
       }
     )
 
   return (
-    <animated.div style={fadeIn} className="zones-container">
-      {zonesToday ? displayUserZones : <p>you have no completed zones today</p>}
-    </animated.div>
+    <animated.ul style={fadeIn} className="zones-container">
+        {zonesToday ? displayUserZones : <li>you have no completed zones today</li>}
+    </animated.ul>
   );
 };
 
