@@ -1,6 +1,6 @@
 import React from "react";
 import { useSpring, animated } from "react-spring"
-import {ReactComponent as Thinking } from "../svg/nontrinkets/thinking.svg"
+import { ReactComponent as Thinking } from "../svg/nontrinkets/thinking.svg"
 
 const LandingTitle = () => {
   const fadeIn = useSpring({

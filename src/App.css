@@ -35,16 +35,30 @@ body {
 
 /* AUTH CONTAINER */
 .auth-container {
-  background-color: #FFFFFF;
+  background: #0e101c;
   border-radius: 25px;
   grid-column: 9 / -2;
   grid-row: 3 / -4;
-  display: grid;
-  grid-gap: 1%;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 
+.auth-container .auth-h1,
+.auth-container .auth-h2 {
+  display: block;
+  margin: 10% auto;
+  width: 50%;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+.auth-svg-div {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 /* LOG IN FORM  */
 .log-in-container {
@@ -61,7 +75,7 @@ body {
   margin: 0 auto;
 }
 
-.log-in-container h1 {
+.log-in-container .log-in-h1 {
   display: block;
   margin: 10% auto;
   width: 50%;
@@ -100,14 +114,53 @@ body {
 
 /* SIGN UP FORM */
 .sign-up-container {
-  background-color: #FFFFFF;
+  background: #0e101c;
   border-radius: 25px;
   grid-column: 9 / -2;
   grid-row: 3 / -4;
-  display: grid;
-  grid-gap: 1%;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-container form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.sign-up-container .sign-up-h1 {
+  display: block;
+  margin: 10% auto;
+  width: 50%;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+.sign-up-container input {
+  display: block;
+  margin: 10% auto;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.sign-up-container button[type="submit"],
+.sign-up-container input[type="submit"] {
+  background: #ec5990;
+  color: white;
+  text-transform: lowercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
 }
 
 /* ABOUT PAGE  */

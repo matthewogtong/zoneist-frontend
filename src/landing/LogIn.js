@@ -9,10 +9,10 @@ const LogIn = () => {
   // ANIMATIONS
   const fadeIn = useSpring({
     opacity: 1,
-    marginLeft: 0,
+    marginLeft: "auto",
     from: { opacity: 0, marginLeft: -500 },
     delay: 250,
-    duration: 1000,
+    duration: 1000
   })
 
    // DISPATCH
@@ -64,8 +64,8 @@ const LogIn = () => {
   }
 
   return (
-      <animated.div style={fadeIn} className="log-in-container p-shadow-8">
-        <h1>login</h1>
+      <div style={fadeIn} className="log-in-container p-shadow-8">
+        <animated.h1 style={fadeIn} className="log-in-h1">login</animated.h1>
         <form onSubmit={handleSubmit}>
           <span className="p-float-label">
             <InputText
@@ -92,7 +92,7 @@ const LogIn = () => {
           ) : null}
           <input type="submit" value="submit" />
         </form>
-      </animated.div>
+      </div>
   )
 }
 
