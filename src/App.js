@@ -19,7 +19,7 @@ import AboutPage from './about/AboutPage'
 import HomePage from './home/HomePage'
 
 // NONTRINKETS IMPORTS
-import { ReactComponent as Hammer } from './svg/nontrinkets/loaf-hammer.svg'
+import { ReactComponent as Hammer } from './svg/nontrinkets/hammer.svg'
  
 function App() {
 

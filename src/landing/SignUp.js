@@ -59,7 +59,7 @@ const SignUp = () => {
       .catch((data) => {
         // error:
         if (data.error) {
-          setSignUpError(data.error[0])
+          setSignUpError(data.error[0].toLowerCase())
         }
       })
   }

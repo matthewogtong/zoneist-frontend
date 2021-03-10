@@ -59,7 +59,7 @@ const LogIn = () => {
       })
       .catch((data) => {
         // error:
-        setLogInError(data.error)
+        setLogInError(data.error.toLowerCase())
       })
   }
 

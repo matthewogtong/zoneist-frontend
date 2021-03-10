@@ -1,0 +1,59 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 49px; height: 49px;"><style>
+     .line-gesture1 {animation:tap 1.4s infinite; transform-origin: 54px 100px;}
+     @keyframes tap {
+         0%{transform:rotateX(0);}
+         20%{transform:rotateX(-40deg);}
+         40%{transform:rotateX(10deg);}
+         100%{transform:rotateX(0);}
+     }
+     .line-gesture1-a {animation:line-gesture1-a 1.4s infinite;}
+     .line-gesture1-b {animation:line-gesture1-b 1.4s infinite;}
+     .line-gesture1-c {animation:line-gesture1-c 1.4s infinite;}
+     .line-gesture1-d {animation:line-gesture1-d 1.4s infinite;}
+     .line-gesture1-e {animation:line-gesture1-e 1.4s infinite;}
+     @keyframes line-gesture1-a {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(-4px, 0, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(-4px, 0, 0); opacity: 0;}
+     }
+     @keyframes line-gesture1-b {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(-4px, -4px, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(-4px, -4px, 0); opacity: 0;}
+     }
+     @keyframes line-gesture1-c {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(0, -4px, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(0, -4px, 0); opacity: 0;}
+     }
+     @keyframes line-gesture1-d {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(4px, -4px, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(4px, -4px, 0); opacity: 0;}
+     }
+     @keyframes line-gesture1-e {
+         0%{opacity: 0;}
+         20%{transform:translate3d(0, 0, 0); opacity: 0;}
+         60%{opacity: .8;}
+         70%{transform:translate3d(4px, 0, 0); opacity: .8;}
+         90%{opacity: 0;}
+         100%{transform:translate3d(4px, 0, 0); opacity: 0;}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-gesture1, .line-gesture1-a, .line-gesture1-b, .line-gesture1-c, .line-gesture1-d, .line-gesture1-e {
+             animation: none;
+         }
+     }
+    </style><g class="line-gesture1" style="animation-duration: 2s;"><path class="fill1" d="M71.5 94H36C36 94 35 88 31.5 84.5C27.7417 80.7417 26 75 26 75V58C26 55.7909 27.7909 54 30 54H38.5V28C38.5 28 39 22 44 22C49 22 49.5 28 49.5 28V45.5C49.5 45.5 74.5 48 77 53C79.5 58 71.5 94 71.5 94Z" fill="#fff" stroke-width="3.4px"></path><path class="stroke1" d="M38.5 54V28C38.5 28 39 22 44 22C49 22 49.5 28 49.5 28V45.5C49.5 45.5 74.5 48 77 53C79.5 58 71.5 94 71.5 94H36C36 94 35 88 31.5 84.5C27.7417 80.7417 26 75 26 75V58C26 55.7909 27.7909 54 30 54H38.5ZM38.5 54V66.5" stroke="#000" stroke-width="3.4px"></path></g><line class="line-gesture1-c stroke2" x1="43" y1="16" x2="43" y2="6" stroke="#000" stroke-width="3.4px" style="animation-duration: 2s;"></line><line class="line-gesture1-e stroke2" x1="56" y1="27" x2="66" y2="27" stroke="#000" stroke-width="3.4px" style="animation-duration: 2s;"></line><line class="line-gesture1-a stroke2" x1="32" y1="27" x2="22" y2="27" stroke="#000" stroke-width="3.4px" style="animation-duration: 2s;"></line><line class="line-gesture1-d stroke2" x1="51" y1="19" x2="58" y2="12" stroke="#000" stroke-width="3.4px" style="animation-duration: 2s;"></line><line class="line-gesture1-b stroke2" x1="35" y1="19" x2="28" y2="12" stroke="#000" stroke-width="3.4px" style="animation-duration: 2s;"></line></svg>
