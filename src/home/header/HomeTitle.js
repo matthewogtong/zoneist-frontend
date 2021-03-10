@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from "react-redux"
+import { ReactComponent as Token } from '../../svg/nontrinkets/token.svg'
 
 const HomeTitle = () => {
 
@@ -7,11 +8,10 @@ const HomeTitle = () => {
 
 
     return (
-        <div className="home-title">
-            <h2>zoneist</h2>
-            <p>Tokens: {tokens}</p>
-        </div>
-        
+      <div className="home-title">
+        <h2>zoneist</h2>
+        <Token />{tokens}
+      </div>
     )
 }
 

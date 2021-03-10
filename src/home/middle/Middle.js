@@ -10,43 +10,43 @@ const Middle = ({ renderType }) => {
   const renderContent = () => {
     if (renderType === "market") {
       return (
-        <div className="home-middle p-shadow-8">
+        <div className="home-middle p-shadow-3">
           <Market />
         </div>
       )
     } else if (renderType === "tags") {
       return (
-        <div className="home-middle p-shadow-8">
+        <div className="home-middle p-shadow-3">
           <TagsContainer />
         </div>
       )
     } else if (renderType === "collection") {
       return (
-        <div className="home-middle p-shadow-8">
+        <div className="home-middle p-shadow-3">
           <Collection />
         </div>
       )
     } else if (renderType === "zone-form") {
       return (
-        <div className="home-middle p-shadow-8">
+        <div className="home-middle p-shadow-3">
           <ZoneForm />
         </div>
       ) 
     } else if (renderType === "in-the-zone") {
       return (
-        <div className="home-middle p-shadow-8">
+        <div className="home-middle p-shadow-3">
           <InTheZone />
         </div>
       ) 
     } else if (renderType === "zones") {
       return (
-        <div className="zones-middle">
+        <div className="zones-middle p-shadow-3">
           <ZonesContainer />
         </div>
       )
     } else {
       return (
-        <div className="zones-middle">
+        <div className="zones-middle p-shadow-3">
           <ZonesContainer />
         </div>
       )
@@ -57,7 +57,7 @@ const Middle = ({ renderType }) => {
     renderContent()
   )
 
-  // return <div className="home-middle p-shadow-8">{renderContent()}</div>
+  // return <div className="home-middle p-shadow-3">{renderContent()}</div>
 }
 
 export default Middle
