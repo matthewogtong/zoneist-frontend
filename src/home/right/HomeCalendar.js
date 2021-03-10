@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setCalendar } from '../../redux/user'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
 const HomeCalendar = () => {
-    const [date, setDate] = useState(new Date());
+    const [fullDate, setFullDate] = useState(new Date());
 
-    const onChange = date => {
-      setDate(date)
+    const dispatch = useDispatch()
+
+    const onChange = data => {
+      setFullDate(data)
+      let toDispatch = {
+        year : data.getFullYear(),
+        month : data.getMonth(),
+        date : data.getDate()
+      }
+      dispatch(setCalendar(toDispatch))
     }
-    console.log(date.getDate())
 
     return (
       <div className="home-calendar">
-        <Calendar onChange={onChange} value={date} />
+        <Calendar onChange={onChange} value={fullDate} />
       </div>
     );
 }
