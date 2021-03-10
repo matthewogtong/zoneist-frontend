@@ -37,16 +37,24 @@ const Zone = ({
 
   const [isFlipped, setIsFlipped] = useState(false)
 
+  const handleClick = () => {
+    setIsFlipped(!isFlipped)
+  }
+
   let SVG = svgMapper[trinket.name]
 
   return (
-    <div className={`${region.name.split(' ').join('')} completed-zone`}>
-      <h2>{zoneStart}</h2>
-      <p>{objective}</p>
-      <SVG />
-      <p></p>
-      <p></p>
-    </div>
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <div className={`${region.name.split(" ").join("")} completed-zone-front`}>
+        front of card
+        <button onClick={handleClick}>Click to Flip</button>
+      </div>
+
+      <div className="completed-zone-back">
+        back of card
+        <button onClick={handleClick}>Click to Flip</button>
+      </div>
+    </ReactCardFlip>
   );
 };
 
