@@ -17,7 +17,7 @@ const Inspiration = ()  => {
     return (
       <div className="inspiration-div">
         <br/>
-        <Message onClick={notify} label="Inspiration" />
+        <Message className="message-svg" onClick={notify} label="Inspiration" />
         <br/>
         <Gesture />
         <ToastContainer

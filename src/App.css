@@ -533,6 +533,7 @@ body {
   border-radius: 25px;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .tags-container h1 {
@@ -544,12 +545,17 @@ body {
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(79, 98, 148);
+  position: relative;
+  bottom: 10%;
 }
 
 .tag-form {
   max-width: 500px;
   margin: 0 auto;
+  position: relative;
+  bottom: 15%;
 }
+
 
 .tag-form input {
   display: block;
@@ -583,6 +589,9 @@ body {
 
 .tag-list-ul {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 0;
   padding: 0;
 }
@@ -591,58 +600,11 @@ body {
   color: white;
 }
 
-/* .sign-up-container {
-  background: #0e101c;
-  border-radius: 25px;
-  grid-column: 9 / -2;
-  grid-row: 3 / -4;
-  display: flex;
-  flex-direction: column;
+.tag-list-ul .tag-bin:hover {
+  opacity: .7;
+  transform: scale(0.98);
+  transition: all .5s ease-in;
 }
-
-.sign-up-container form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.sign-up-container .sign-up-h1 {
-  display: block;
-  margin: 10% auto;
-  width: 50%;
-  font-weight: 100;
-  color: white;
-  text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgb(79, 98, 148);
-}
-
-.sign-up-container input {
-  display: block;
-  margin: 10% auto;
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid white;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.sign-up-container button[type="submit"],
-.sign-up-container input[type="submit"] {
-  background: #ec5990;
-  color: white;
-  text-transform: lowercase;
-  border: none;
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 16px;
-  font-weight: 100;
-  letter-spacing: 10px;
-} */
-
-
-
 
 /* RIGHT */
 .home-right {
@@ -674,4 +636,15 @@ body {
   align-items: center;
 }
 
+.message-svg:hover {
+  opacity: .7;
+  transform: scale(0.98);
+  transition: all .5s ease-in;
+}
+
+.message-svg:active {
+  opacity: 1;
+  transform: scale(0.98);
+  transition: all .2s ease-out;
+}
 

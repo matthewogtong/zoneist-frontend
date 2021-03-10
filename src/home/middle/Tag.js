@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { deleteTag } from "../../redux/user"
 import ReactCardFlip from 'react-card-flip'
 
-import { ReactComponent as Recycle } from "../../svg/nontrinkets/recycle.svg"
+import { ReactComponent as Bin } from "../../svg/nontrinkets/bin.svg"
 
 
 const Tag = ({ tag }) => {
@@ -28,11 +28,8 @@ const Tag = ({ tag }) => {
     return (
       <>
         <li key={tag.id}>
-          {tag.name}
-          <button onClick={e => handleEditTag(tag.id)}>
-            ✏️
-          </button>
-          <Recycle onClick={e => handleDeleteTag(tag.id)}/>
+          <Bin className="tag-bin" onClick={e => handleDeleteTag(tag.id)}/>
+          {tag.name}        
         </li>
       </>
     );
