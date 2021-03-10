@@ -64,8 +64,8 @@ const LogIn = () => {
   }
 
   return (
-      <animated.div style={fadeIn} className="log-in-container p-shadow-24">
-        <h1>Login</h1>
+      <animated.div style={fadeIn} className="log-in-container p-shadow-8">
+        <h1>login</h1>
         <form onSubmit={handleSubmit}>
           <span className="p-float-label">
             <InputText
@@ -75,7 +75,7 @@ const LogIn = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">username</label>
           </span>
           <span className="p-float-label">
             <InputText
@@ -85,12 +85,12 @@ const LogIn = () => {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">password</label>
           </span>
           {logInError ? (
             <p style={{ color: "red" }}>Error: {logInError}</p>
           ) : null}
-          <input type="submit" value="Login" />
+          <input type="submit" value="submit" />
         </form>
       </animated.div>
   )

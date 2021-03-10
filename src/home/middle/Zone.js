@@ -44,7 +44,7 @@ const Zone = ({
   let SVG = svgMapper[trinket.name]
 
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
       <div className={`${region.name.split(" ").join("")} completed-zone-front`}>
         front of card
         <button onClick={handleClick}>Click to Flip</button>
