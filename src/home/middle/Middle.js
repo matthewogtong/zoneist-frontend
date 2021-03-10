@@ -4,6 +4,7 @@ import ZonesContainer from "./ZonesContainer"
 import ZoneForm from "./ZoneForm"
 import InTheZone from "./InTheZone"
 import TagsContainer from "./TagsContainer"
+import Collection from "./Collection"
 
 const Middle = ({ renderType }) => {
   const renderContent = () => {
@@ -17,6 +18,12 @@ const Middle = ({ renderType }) => {
       return (
         <div className="home-middle p-shadow-8">
           <TagsContainer />
+        </div>
+      )
+    } else if (renderType === "collection") {
+      return (
+        <div className="home-middle p-shadow-8">
+          <Collection />
         </div>
       )
     } else if (renderType === "zone-form") {
