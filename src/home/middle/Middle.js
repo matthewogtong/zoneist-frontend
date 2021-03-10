@@ -40,13 +40,13 @@ const Middle = ({ renderType }) => {
       ) 
     } else if (renderType === "zones") {
       return (
-        <div className="zones-middle p-shadow-3">
+        <div className="zones-middle">
           <ZonesContainer />
         </div>
       )
     } else {
       return (
-        <div className="zones-middle p-shadow-3">
+        <div className="zones-middle">
           <ZonesContainer />
         </div>
       )
@@ -56,8 +56,6 @@ const Middle = ({ renderType }) => {
   return (
     renderContent()
   )
-
-  // return <div className="home-middle p-shadow-3">{renderContent()}</div>
 }
 
 export default Middle
