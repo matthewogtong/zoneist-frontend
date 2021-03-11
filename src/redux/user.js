@@ -17,7 +17,8 @@ const userSlice = createSlice({
             timerMinutes: '00',
             timerSeconds: '00'
         }, 
-        inZone: false
+        inZone: false,
+        modalOpen: false
     },
     reducers: {
         setUser(state, action) {
@@ -40,10 +41,10 @@ const userSlice = createSlice({
                         ) {
                             state.zonesToday = true
                             state.zonesToDisplay.push(zone)
-                        } else {
-                            state.zonesToday = false
-                            state.zonesToDisplay = []
-                        }
+                        } 
+                }
+                if (state.zonesToDisplay === []) {
+                    state.zonesToday = false
                 }
             })
         },
@@ -61,6 +62,7 @@ const userSlice = createSlice({
             state.time.timerHours = "00"
             state.time.timerMinutes = "00"
             state.time.timerSeconds = "00"
+            state.inZone = false
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens
@@ -102,6 +104,12 @@ const userSlice = createSlice({
         },
         leaveZone(state) {
             state.inZone = false
+        },
+        openModal(state) {
+            state.modalOpen = true
+        },
+        closeModal(state) {
+            state.modalOpen = false
         }
     }
 })
@@ -120,7 +128,9 @@ export const {
   setCalendar,
   setTime,
   enterZone,
-  leaveZone
+  leaveZone,
+  openModal,
+  closeModal
 } = userSlice.actions;
 
 export default userSlice.reducer

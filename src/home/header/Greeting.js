@@ -14,9 +14,9 @@ const Greeting = () => {
     const currentHour = today.getHours()
     
     useEffect(() => {
-      if (currentHour < 12) {
+      if (currentHour < 12 && currentHour > 5) {
         setGreeting("good morning")
-      } else if (currentHour < 18 ){
+      } else if (currentHour < 17 && currentHour > 12 ){
         setGreeting("good afternoon")
       } else {
         setGreeting("good evening")
@@ -26,7 +26,7 @@ const Greeting = () => {
 
     return (
       <div className="home-greeting">
-        <h3 className="hello">{currentHour < 16 ? <Sun /> : <Moon /> }hi {username},</h3>
+        <h3 className="hello">{currentHour < 16 && currentHour > 5 ? <Sun /> : <Moon /> }hi {username},</h3>
         <h2 className="greet">{greeting}</h2>
       </div>
     );
