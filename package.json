@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.8.3",
     "camelcase-keys": "^6.2.2",
+    "chart.js": "^2.9.4",
     "date-fns": "^2.19.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",

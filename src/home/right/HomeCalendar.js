@@ -15,7 +15,6 @@ const HomeCalendar = () => {
     
 
     const userZones = useSelector(state => camelcaseKeys(state.user.entities[0].zones))
-    const calendarInfo = useSelector(state => state.user.calendar)
 
     const onChange = data => {
       setFullDate(data)

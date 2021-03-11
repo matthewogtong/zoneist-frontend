@@ -23,7 +23,8 @@ const userSlice = createSlice({
             timerSeconds: '00'
         }, 
         inZone: false,
-        modalOpen: false
+        modalOpen: false,
+        allTagNames: []
     },
     reducers: {
         setUser(state, action) {
@@ -36,9 +37,11 @@ const userSlice = createSlice({
             state.today.year = new Date().getFullYear()
             state.today.month = new Date().getMonth()
             state.today.date = new Date().getDate()
+            action.payload.tags.forEach(tag => state.allTagNames.push(tag.name))
         },
         setZonesToday(state, action) {
             state.zonesToDisplay = []
+            state.zonesToday = false
             action.payload.forEach(zone => {
                 if (zone.isComplete && !zone.isActive) {
                     if(
@@ -74,6 +77,7 @@ const userSlice = createSlice({
             state.today.year = 0
             state.today.month = 0
             state.today.date = 0
+            state.allTagNames = []
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens

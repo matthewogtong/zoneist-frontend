@@ -194,7 +194,7 @@ body {
 
 /* ABOUT PAGE  */
 .about-page {
-  background-color: #FFFFFF;;
+  background-color: #FFFFFF;
   color: black;
   display: grid;
   grid-gap: 1%;
@@ -209,7 +209,12 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 400%;
+  font-size: 250%;
+}
+
+.about-page h1 {
+  margin-top: 10%;
+  margin-left: 10%;
 }
 
 .about-nav {
@@ -222,17 +227,50 @@ body {
 
 .about-focus {
   grid-column: 2 / span 3;
-  grid-row: 3 / span 5
+  grid-row: 3 / span 5;
+  background: linear-gradient(-45deg, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border-radius: 5px;
+  color: white;
+  background-blend-mode: multiply;
+  display: flex;
 }
 
 .about-customize {
   grid-column: 6 / span 3;
-  grid-row: 3 / span 5
+  grid-row: 3 / span 5;
+  background: linear-gradient(-45deg, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border-radius: 5px;
+  color: white;
+  background-blend-mode: multiply;
+  display: flex;
 }
 
 .about-achieve {
   grid-column: 10 / span 3;
-  grid-row: 3 / span 5
+  grid-row: 3 / span 5;
+  background: linear-gradient(-45deg, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border-radius: 5px;
+  color: white;
+  background-blend-mode: multiply;
+  display: flex;
+}
+
+.about-page p {
+  display: flex;
+  align-self: center;
+}
+
+.about-trinket {
+  justify-self: flex-end;
+  align-self: flex-end;
+  position: relative;
+  bottom: 5%;
 }
 
 
@@ -301,7 +339,9 @@ body {
 
 /* LEFT */
 .home-left {
-  background-color: #FFFFFF;;
+  background: linear-gradient(-45deg, #e3FDf5, #dfe9f3, #e4efe9, #ffe6fa);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
   border-radius: 25px;
   grid-column: 1 / span 3;
   grid-row: 4 / -2;
@@ -649,6 +689,17 @@ section p:first-child, .timer div:last-child span {
   transform: scale(0.98);
 }
 
+.no-zones-today {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 50px;
+}
+
 .zone-front-detail {
   background: linear-gradient(-45deg, #48c6ef, #accbee, #6f86d6, #e7f0fd);
   background-size: 400% 400%;
@@ -873,6 +924,17 @@ section p:first-child, .timer div:last-child span {
   width: 50%;
 }
 
+/* ANALYTICS */
+.analytics-div {
+  width: 100%;
+  height: 100%;
+}
+
+.tag-chart {
+  width: 100%;
+  height: 100%;
+}
+
 /* TAGS */
 .tags-container {
   grid-column: 1 / -1 ;
@@ -958,7 +1020,9 @@ section p:first-child, .timer div:last-child span {
 
 /* RIGHT */
 .home-right {
-  background-color: #FFFFFF;;
+  background: linear-gradient(-45deg, #e3FDf5, #dfe9f3, #e4efe9, #ffe6fa);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
   border-radius: 25px;
   grid-column: 13 / -1;
   grid-row: 4 / -2;
@@ -967,6 +1031,7 @@ section p:first-child, .timer div:last-child span {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(12, 1fr);
   font-size: calc(10px + 2vmin);
+  
 }
 
 .home-calendar {
