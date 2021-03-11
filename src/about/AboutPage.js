@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button } from 'primereact/button'
 
 const AboutPage = () => {
+    
     return (
         <div className="about-page">
             <h1 className="about-header">zoneist</h1>
@@ -23,7 +24,7 @@ const AboutPage = () => {
             <div className="about-achieve p-shadow-8">
                 Achieve
             </div>
-        </div>
+        </div>  
     )
 }
 

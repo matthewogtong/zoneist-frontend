@@ -11,7 +11,14 @@ const userSlice = createSlice({
             year: 0,
             month: 0,
             date: 0
-        }
+        },
+        time: {
+            timerHours : '00',
+            timerMinutes: '00',
+            timerSeconds: '00'
+        }, 
+        inZone: false,
+        modalOpen: false
     },
     reducers: {
         setUser(state, action) {
@@ -23,19 +30,21 @@ const userSlice = createSlice({
             state.calendar.date = new Date().getDate()
         },
         setZonesToday(state, action) {
+            state.zonesToDisplay = []
             action.payload.forEach(zone => {
                 if (zone.isComplete && !zone.isActive) {
                     if(
                         zone.zoneStartDate === state.calendar.date &&
                         zone.zoneStartMonth === state.calendar.month &&
-                        zone.zoneStartYear === state.calendar.year
+                        zone.zoneStartYear === state.calendar.year &&
+                        !state.zonesToDisplay.includes(zone)
                         ) {
                             state.zonesToday = true
                             state.zonesToDisplay.push(zone)
-                        } else {
-                            state.zonesToday = false
-                            state.zonesToDisplay = []
-                        }
+                        } 
+                }
+                if (state.zonesToDisplay === []) {
+                    state.zonesToday = false
                 }
             })
         },
@@ -50,6 +59,10 @@ const userSlice = createSlice({
             state.calendar.year = 0
             state.calendar.month = 0
             state.calendar.date = 0
+            state.time.timerHours = "00"
+            state.time.timerMinutes = "00"
+            state.time.timerSeconds = "00"
+            state.inZone = false
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens
@@ -74,11 +87,29 @@ const userSlice = createSlice({
             if (state.zonesToday === false) {
                 state.zonesToday = true
             }
+            state.inZone = false
         },
         setCalendar(state, action) {
             state.calendar.year = action.payload.year
             state.calendar.month = action.payload.month
             state.calendar.date = action.payload.date
+        }, 
+        setTime(state, action) {
+            state.time.timerHours = action.payload[0]
+            state.time.timerMinutes = action.payload[1]
+            state.time.timerSeconds = action.payload[2]
+        },
+        enterZone(state) {
+            state.inZone = true
+        },
+        leaveZone(state) {
+            state.inZone = false
+        },
+        openModal(state) {
+            state.modalOpen = true
+        },
+        closeModal(state) {
+            state.modalOpen = false
         }
     }
 })
@@ -94,7 +125,12 @@ export const {
   addZone,
   completeZone,
   setZonesToday,
-  setCalendar
+  setCalendar,
+  setTime,
+  enterZone,
+  leaveZone,
+  openModal,
+  closeModal
 } = userSlice.actions;
 
 export default userSlice.reducer

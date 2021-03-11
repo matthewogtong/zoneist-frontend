@@ -7,10 +7,12 @@ import { useSelector } from "react-redux"
 const ZonesContainer = () => {
 
     const zoneState = useSelector(state => state.user)
-    console.log(zoneState)
-
     const zonesToday = useSelector(state => state.user.zonesToday)
     const zonesToDisplay = useSelector(state => state.user.zonesToDisplay)
+
+
+    console.log(zoneState)
+    console.log(zonesToDisplay)
 
     const fadeIn = useSpring({
       opacity: 1,
