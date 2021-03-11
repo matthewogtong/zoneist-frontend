@@ -71,6 +71,9 @@ const userSlice = createSlice({
             state.time.timerMinutes = "00"
             state.time.timerSeconds = "00"
             state.inZone = false
+            state.today.year = 0
+            state.today.month = 0
+            state.today.date = 0
         },
         purchaseTrinket(state, action) {
             state.entities[0].tokens = action.payload.user.tokens
