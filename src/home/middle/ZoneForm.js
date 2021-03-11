@@ -11,15 +11,11 @@ const ZoneForm = () => {
     const { register, handleSubmit, errors } = useForm()
 
     let history = useHistory()
-
     const dispatch = useDispatch()
 
     const userId = useSelector(state => state.user.entities[0].id)
-
     const userTags = useSelector(state => state.user.entities[0].tags)
-
     const userRegions = useSelector(state => state.user.entities[0].regions)
-
     const userTrinkets = useSelector(state => state.user.entities[0].trinkets)
 
     const displayTagOptions = userTags.map(tag => {
@@ -48,6 +44,8 @@ const ZoneForm = () => {
       })
 
     const onSubmit = (data) => {
+      const add = data.totalObjectiveTime * 60000
+      const expectedZoneEnd = new Date().getTime() + add
       fetch(`http://localhost:3001/users/${userId}/zones`, {
         method: "POST",
         headers: {
@@ -56,6 +54,7 @@ const ZoneForm = () => {
         body: JSON.stringify({
           ...data,
           zoneStart: format(new Date(), "Pp"),
+          zoneEnd: expectedZoneEnd,
           zoneStartDate: new Date().getDate(),
           zoneStartMonth: new Date().getMonth(),
           zoneStartYear: new Date().getFullYear(),
@@ -71,6 +70,8 @@ const ZoneForm = () => {
           history.push("/in-the-zone")
         })
     }
+
+    
 
     return (
       <animated.div style={fadeIn} className="zone-form">
@@ -90,7 +91,7 @@ const ZoneForm = () => {
             type="number"
             id="totalObjectiveTime"
             name="totalObjectiveTime"
-            ref={register({ required: true })}
+            ref={register({ required: true, min: 0 })}
           />
           {errors.totalObjectiveTime && errors.totalObjectiveTime.type === "required"}
 
@@ -134,54 +135,3 @@ const ZoneForm = () => {
 }
 
 export default ZoneForm
-
-
-// .log-in-container {
-//   background: #0e101c;
-//   border-radius: 25px;
-//   grid-column: 9 / -2;
-//   grid-row: 3 / -4;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .log-in-container form {
-//   max-width: 500px;
-//   margin: 0 auto;
-// }
-
-// .log-in-container .log-in-h1 {
-//   display: block;
-//   margin: 10% auto;
-//   width: 50%;
-//   font-weight: 100;
-//   color: white;
-//   text-align: center;
-//   padding-bottom: 10px;
-//   border-bottom: 1px solid rgb(79, 98, 148);
-// }
-
-// .log-in-container input {
-//   display: block;
-//   margin: 10% auto;
-//   box-sizing: border-box;
-//   width: 100%;
-//   border-radius: 4px;
-//   border: 1px solid white;
-//   padding: 10px 15px;
-//   margin-bottom: 10px;
-//   font-size: 14px;
-// }
-
-// .log-in-container button[type="submit"],
-// .log-in-container input[type="submit"] {
-//   background: #ec5990;
-//   color: white;
-//   text-transform: lowercase;
-//   border: none;
-//   margin-top: 40px;
-//   padding: 20px;
-//   font-size: 16px;
-//   font-weight: 100;
-//   letter-spacing: 10px;
-// }

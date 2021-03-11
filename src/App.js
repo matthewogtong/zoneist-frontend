@@ -53,7 +53,7 @@ function App() {
           dispatch(setZonesToday(camelcaseKeys(user.zones)))
         });
     }
-  }, [dispatch]);
+  }, [dispatch, camelcaseKeys]);
 
   // GET REGIONS
   useEffect(() => {

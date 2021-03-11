@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { setCalendar, setZonesToday } from '../../redux/user'
 import Calendar from 'react-calendar'
@@ -9,12 +10,14 @@ const HomeCalendar = () => {
 
     const dispatch = useDispatch()
     const camelcaseKeys = require('camelcase-keys');
+
+    const history = useHistory()
     
 
     const userZones = useSelector(state => camelcaseKeys(state.user.entities[0].zones))
     const calendarInfo = useSelector(state => state.user.calendar)
-    console.log(userZones)
-    console.log(calendarInfo)
+    // console.log(userZones)
+    // console.log(calendarInfo)
 
     const onChange = data => {
       setFullDate(data)
@@ -25,6 +28,7 @@ const HomeCalendar = () => {
       }
       dispatch(setCalendar(toDispatch))
       dispatch(setZonesToday(userZones))
+      history.push('/zones')
     }
 
 
