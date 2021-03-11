@@ -1,0 +1,97 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-cooking1-pan {animation:line-cooking1-pan 3s infinite; transform-origin: 64px 82px;}
+     @keyframes line-cooking1-pan {
+         0%{transform: rotate(0);}
+         20%{transform: rotate(-4deg);}
+         30%{transform: rotate(20deg);}
+         50%{transform: rotate(0deg);}
+         100%{transform: rotate(0deg);}
+     }
+     .line-cooking1-1 {animation:line-cooking1-1 3s infinite;}
+     @keyframes line-cooking1-1 {
+         0%{transform: translate3d(0, 38px, 0);}
+         20%{transform: translate3d(0, 38px, 0);}
+         31.5%{transform: translate3d(0, -5px, 0);}
+         33.5%{transform: translate3d(0, -5px, 0);}
+         50%{transform: translate3d(0, 38px, 0);}
+         100%{transform: translate3d(0, 38px, 0);}
+     }
+
+     .line-cooking1-2 {animation:line-cooking1-2 3s infinite;}
+     @keyframes line-cooking1-2 {
+         0%{transform: translate3d(0, 25px, 0);}
+         20%{transform: translate3d(0, 25px, 0);}
+         32%{transform: translate3d(0, -5px, 0);}
+         34%{transform: translate3d(0, -5px, 0);}
+         50%{transform: translate3d(0, 25px, 0);}
+         100%{transform: translate3d(0, 25px, 0);}
+     }
+
+     .line-cooking1-3 {animation:line-cooking1-3 3s infinite;}
+     @keyframes line-cooking1-3 {
+         0%{transform: translate3d(0, 52px, 0);}
+         20%{transform: translate3d(0, 52px, 0);}
+         31%{transform: translate3d(0, 0px, 0);}
+         33%{transform: translate3d(0, 0px, 0);}
+         50%{transform: translate3d(0, 52px, 0);}
+         100%{transform: translate3d(0, 52px, 0);}
+     }
+     
+     .line-cooking1-4 {animation:line-cooking1-4 3s infinite;}
+     @keyframes line-cooking1-4 {
+         0%{transform: translate3d(0, 20px, 0);}
+         20%{transform: translate3d(0, 20px, 0);}
+         31%{transform: translate3d(0, -20px, 0);}
+         32%{transform: translate3d(0, -20px, 0);}
+         45%{transform: translate3d(0, 20px, 0);}
+         100%{transform: translate3d(0, 20px, 0);}
+     }
+
+     .line-cooking1-5 {animation:line-cooking1-5 3s infinite;}
+     @keyframes line-cooking1-5 {
+         0%{transform: translate3d(0, 33px, 0);}
+         20%{transform: translate3d(0, 33px, 0);}
+         30%{transform: translate3d(0, -10px, 0);}
+         32%{transform: translate3d(0, -10px, 0);}
+         45%{transform: translate3d(0, 33px, 0);}
+         100%{transform: translate3d(0, 33px, 0);}
+     }
+
+     .line-cooking1-6 {animation:line-cooking1-6 3s infinite;}
+     @keyframes line-cooking1-6 {
+         0%{transform: translate3d(0, 14px, 0);}
+         20%{transform: translate3d(0, 14px, 0);}
+         34%{transform: translate3d(0, -10px, 0);}
+         35%{transform: translate3d(0, -10px, 0);}
+         45%{transform: translate3d(0, 14px, 0);}
+         100%{transform: translate3d(0, 14px, 0);}
+     }
+     .line-cooking1-7 {animation:line-cooking1-7 3s infinite;}
+     @keyframes line-cooking1-7 {
+         0%{transform: translate3d(0, 38px, 0);}
+         20%{transform: translate3d(0, 38px, 0);}
+         30%{transform: translate3d(0, -10px, 0);}
+         32%{transform: translate3d(0, -10px, 0);}
+         55%{transform: translate3d(0, 38px, 0);}
+         100%{transform: translate3d(0, 38px, 0);}
+     }
+
+     .line-cooking1-8 {animation:line-cooking1-8 3s infinite;}
+     @keyframes line-cooking1-8 {
+         0%{transform: translate3d(0, 17px, 0);}
+         20%{transform: translate3d(0, 17px, 0);}
+         31%{transform: translate3d(0, -10px, 0);}
+         32%{transform: translate3d(0, -10px, 0);}
+         52%{transform: translate3d(0, 17px, 0);}
+         100%{transform: translate3d(0, 17px, 0);}
+     }
+     .line-cooking1-9 {animation:line-cooking1-9 3s infinite;}
+     @keyframes line-cooking1-9 {
+         0%{transform: translate3d(0, 47px, 0);}
+         20%{transform: translate3d(0, 47px, 0);}
+         31%{transform: translate3d(0, -10px, 0);}
+         32%{transform: translate3d(0, -10px, 0);}
+         49%{transform: translate3d(0, 47px, 0);}
+         100%{transform: translate3d(0, 47px, 0);}
+     }
+    </style><circle class="line-cooking1-4 stroke2 fill2" cx="20" cy="67" r="4" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></circle><circle class="line-cooking1-5 stroke2 fill2" cx="34" cy="54" r="4" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></circle><circle class="line-cooking1-6 stroke2 fill2" cx="48" cy="72" r="4" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></circle><rect class="line-cooking1-7 stroke2 fill2" x="42" y="45" width="8" height="8" rx="2" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></rect><rect class="line-cooking1-8 stroke2 fill2" x="29.5359" y="66.5359" width="8" height="8" rx="2" transform="rotate(-30 29.5359 66.5359)" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></rect><rect class="line-cooking1-9 stroke2 fill2" x="25" y="37" width="8" height="8" rx="2" transform="rotate(-30 25 37)" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></rect><path class="line-cooking1-3 stroke2 fill2" d="M45.2786 39.202L42.4046 38.3418C42.14 38.2626 41.9898 37.984 42.069 37.7194L42.9635 34.7307C43.0279 34.5154 42.9414 34.2834 42.7648 34.1444C42.2497 33.7389 41.309 32.8319 41.73 31.8769C42.1318 30.9653 43.2794 30.9408 43.806 30.9814C43.9755 30.9944 44.1464 30.9381 44.2752 30.8272C44.6548 30.5001 45.5247 29.8812 46.4222 30.1498C47.3198 30.4185 47.7066 31.4134 47.8441 31.8953C47.8907 32.0588 48.0026 32.1997 48.1514 32.2819C48.6137 32.5374 49.5591 33.1884 49.3941 34.1708C49.2211 35.2 47.9368 35.4411 47.2837 35.4969C47.0598 35.5161 46.86 35.6623 46.7955 35.8776L45.901 38.8664C45.8218 39.1309 45.5432 39.2812 45.2786 39.202Z" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></path><path class="line-cooking1-1 stroke2 fill2" d="M24.6044 52.8624L22.1187 54.5421C21.8899 54.6967 21.579 54.6366 21.4244 54.4077L19.6777 51.8228C19.5519 51.6366 19.3175 51.5567 19.0982 51.6054C18.4582 51.7472 17.1605 51.901 16.6879 50.9704C16.2369 50.0822 16.9446 49.1784 17.3095 48.7965C17.4269 48.6736 17.4916 48.5057 17.4872 48.3358C17.4745 47.8348 17.5463 46.7697 18.3226 46.2451C19.0989 45.7206 20.1138 46.0513 20.5739 46.25C20.7299 46.3175 20.9098 46.3201 21.0677 46.257C21.5581 46.061 22.6607 45.7414 23.3165 46.4913C24.0036 47.2769 23.3768 48.4236 23.0065 48.9644C22.8795 49.1498 22.8662 49.3971 22.992 49.5833L24.7387 52.1682C24.8933 52.397 24.8332 52.7078 24.6044 52.8624Z" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></path><path class="line-cooking1-2 stroke2 fill2" d="M55.647 55.9821L57.4876 58.3511C57.657 58.5692 57.6176 58.8833 57.3995 59.0527L54.9359 60.9667C54.7585 61.1046 54.6942 61.3438 54.7573 61.5594C54.9412 62.1886 55.1806 63.4733 54.2833 64.0064C53.4269 64.5153 52.4783 63.869 52.0731 63.5302C51.9426 63.4212 51.7708 63.3678 51.6015 63.3833C51.1025 63.4293 50.035 63.4282 49.4602 62.6883C48.8854 61.9484 49.1482 60.9138 49.316 60.4416C49.373 60.2814 49.3637 60.1017 49.2903 59.9484C49.0622 59.472 48.6704 58.3931 49.3751 57.689C50.1135 56.9514 51.2992 57.5008 51.8634 57.8346C52.0568 57.949 52.3044 57.9459 52.4818 57.808L54.9454 55.894C55.1635 55.7246 55.4776 55.764 55.647 55.9821Z" fill="#fff" stroke="#000" stroke-width="2px" style="animation-duration: 3s;"></path><g class="line-cooking1-pan" style="animation-duration: 3s;"><path class="stroke1 fill1" d="M59 80H86C86.5523 80 87 80.4477 87 81V83C87 83.5523 86.5523 84 86 84H59V80Z" fill="#fff" stroke="#000" stroke-width="2px"></path><path class="stroke1 fill1" d="M13 81C13 80.4477 13.4477 80 14 80H61V83C61 88.5228 56.5228 93 51 93H23C17.4772 93 13 88.5228 13 83V81Z" fill="#fff" stroke="#000" stroke-width="2px"></path></g></svg>

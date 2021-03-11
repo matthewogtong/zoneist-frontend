@@ -11,10 +11,15 @@ import { ReactComponent as Bed } from "../../svg/trinkets/bed.svg"
 import { ReactComponent as Coder } from "../../svg/trinkets/coder.svg"
 import { ReactComponent as Camera } from "../../svg/trinkets/loaf-camera.svg"
 import { ReactComponent as Campfire } from "../../svg/trinkets/loaf-campfire-1.svg"
-import { ReactComponent as Candle } from "../../svg/trinkets/loaf-candle-3.svg"
+import { ReactComponent as Cake } from "../../svg/trinkets/cake.svg"
 import { ReactComponent as Coffee } from "../../svg/trinkets/loaf-coffee-3.svg"
 import { ReactComponent as Devices } from "../../svg/trinkets/loaf-devices-4.svg"
-import { ReactComponent as Diamond } from "../../svg/trinkets/loaf-diamond-1.svg"
+import { ReactComponent as Cooking } from "../../svg/trinkets/cooking.svg"
+import { ReactComponent as Pencil } from "../../svg/trinkets/pencil.svg"
+import { ReactComponent as Game } from "../../svg/trinkets/game.svg"
+import { ReactComponent as Koi } from "../../svg/trinkets/koi.svg"
+import { ReactComponent as Tools } from "../../svg/trinkets/tools.svg"
+import { ReactComponent as Home } from "../../svg/trinkets/home.svg"
 
 const Zone = ({
   objective,
@@ -27,6 +32,7 @@ const Zone = ({
 }) => {
 
   const zoneEndDate = new Date(parseInt(zoneEnd))
+  console.log(zoneEndDate)
   const formattedZoneEnd = format(zoneEndDate, 'Pp')
 
   const fadeIn = useSpring({
@@ -42,10 +48,15 @@ const Zone = ({
     Coder: Coder,
     Camera: Camera,
     Campfire: Campfire,
-    Candle: Candle,
+    Cake: Cake,
     Coffee: Coffee,
     Devices: Devices,
-    Diamond: Diamond,
+    Cooking: Cooking,
+    Pencil: Pencil,
+    Game: Game,
+    Koi: Koi,
+    Tools: Tools,
+    Home: Home
   }
 
   const [isFlipped, setIsFlipped] = useState(false)

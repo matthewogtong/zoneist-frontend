@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { setUser, setLoggedIn, setZonesToday, openModal, closeModal } from "./redux/user"
+import { setUser, setLoggedIn, setZonesToday, closeModal } from "./redux/user"
 import { setRegions } from "./redux/region"
 import { setTrinkets } from "./redux/trinket"
 import Modal from 'react-modal'
@@ -183,6 +183,15 @@ function App() {
           {isLoggedIn ? (
             <HomePage
               renderType="collection"
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route path="/analytics">
+          {isLoggedIn ? (
+            <HomePage
+              renderType="analytics"
             />
           ) : (
             <Redirect to="/" />

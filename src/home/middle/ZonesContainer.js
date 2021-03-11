@@ -2,6 +2,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring"
 import Zone from './Zone'
 import { useSelector } from "react-redux"
+import { Card } from 'primereact/card'
 
 
 const ZonesContainer = () => {
@@ -41,7 +42,13 @@ const ZonesContainer = () => {
 
   return (
     <animated.ul style={fadeIn} className="zones-container">
-        {zonesToday ? displayUserZones : <li>you have no completed zones today</li>}
+      {zonesToday ? (
+        displayUserZones
+      ) : (
+        <Card className="no-zones-today p-shadow-8">
+          <p>you have not completed any zones this day</p>
+        </Card>
+      )}
     </animated.ul>
   );
 };

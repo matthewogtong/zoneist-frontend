@@ -76,6 +76,8 @@ const RegionCarousel = () => {
           setMarketRegions(filteredRegions)
           dispatch(purchaseRegion(regionData))
         })
+    } else {
+      alert("sorry, you do not have enough tokens")
     }
   }
 
