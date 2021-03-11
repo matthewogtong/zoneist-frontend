@@ -30,17 +30,17 @@ const LandingNav = () => {
         {isLoggedIn ? (
           <>
             <Link to="/home" style={{ textDecoration: "none" }}>
-              <Button label="home" />
+              <Button className="landing-button-signup" label="home" />
             </Link>
-            <Button onClick={handleLogOut}>log out</Button>
+            <Button className="landing-button" onClick={handleLogOut}>log out</Button>
           </>
         ) : (
           <>
             <Link to="/login" style={{ textDecoration: "none" }}>
-              <Button label="log in" />
+              <Button className="landing-button" label="log in" />
             </Link>
             <Link to="/signup" style={{ textDecoration: "none" }}>
-              <Button label="sign up" />
+              <Button className="landing-button-signup" label="sign up" />
             </Link>
           </>
         )}
