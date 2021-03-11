@@ -67,7 +67,7 @@ const Collection = () => {
 
         return (
             <div className="region">
-              <div className="region-content">
+              <div className="region-content p-shadow-3">
                 <div>
                   <img className="p-shadow-5" src={image} alt={region.name} />
                   <h4>{region.name}</h4>
@@ -82,7 +82,7 @@ const Collection = () => {
 
         return (
             <div className="trinket">
-              <div className="trinket-content">
+              <div className="trinket-content p-shadow-3">
                 <div>
                   <SVG />
                   <h4>{trinket.name}</h4>
@@ -101,7 +101,7 @@ const Collection = () => {
               numVisible={3}
               numScroll={3}
               itemTemplate={regionTemplate}
-              header={<h2 className="collection-region-carousel-header">Regions</h2>}
+              header={<h2 className="collection-region-carousel-header">regions</h2>}
               style={{ maxWidth: "1000px" }}
             />
           </div>
@@ -113,7 +113,7 @@ const Collection = () => {
               numVisible={3}
               numScroll={3}
               itemTemplate={trinketTemplate}
-              header={<h2 className="collection-trinket-carousel-header">Trinkets</h2>}
+              header={<h2 className="collection-trinket-carousel-header">trinkets</h2>}
               style={{ maxWidth: "1000px" }}
             />
           </div>

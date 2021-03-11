@@ -88,7 +88,7 @@ const SignUp = () => {
             <label htmlFor="password">password</label>
           </span>
           {signUpError ? (
-            <p style={{ color: "red" }}>Error: {signUpError}</p>
+            <p style={{ color: "black" }}>Error: {signUpError}</p>
           ) : null}
           <input type="submit" value="submit" />
         </form>

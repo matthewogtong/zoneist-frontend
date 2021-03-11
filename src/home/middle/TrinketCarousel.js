@@ -89,12 +89,12 @@ const TrinketCarousel = () => {
     
         return (
           <div className="trinket-item">
-            <div className="trinket-item-content">
+            <div className="trinket-item-content p-shadow-8">
               <div>
                 <SVG />
                 <h4>{trinket.name}</h4>
                 <h6>${trinket.price}</h6>
-                <Button onClick={(e) => handleTrinketPurchase(trinket)}>Buy</Button>
+                <Button className="button-bright" onClick={(e) => handleTrinketPurchase(trinket)}>Buy</Button>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ const TrinketCarousel = () => {
           orientation="vertical"
           verticalViewPortHeight="352px"
           itemTemplate={trinketTemplate}
-          header={<h2 className="trinket-carousel-header">Trinkets</h2>}
+          header={<h2 className="trinket-carousel-header">trinkets</h2>}
           style={{ maxWidth: "400px" }}
         />
       </div>

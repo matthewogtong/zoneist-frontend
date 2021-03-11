@@ -85,12 +85,12 @@ const RegionCarousel = () => {
 
     return (
       <div className="region-item">
-        <div className="region-item-content">
+        <div className="region-item-content p-shadow-8">
           <div>
             <img className="p-shadow-5" src={image} alt={region.name} />
             <h4>{region.name}</h4>
             <h6>${region.price}</h6>
-            <Button onClick={(e) => handleRegionPurchase(region)}>Buy</Button>
+            <Button className="button-bright" onClick={(e) => handleRegionPurchase(region)}>Buy</Button>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@ const RegionCarousel = () => {
           orientation="vertical"
           verticalViewPortHeight="352px"
           itemTemplate={regionTemplate}
-          header={<h2 className="region-carousel-header">Regions</h2>}
+          header={<h2 className="region-carousel-header">regions</h2>}
           style={{ maxWidth: "400px" }}
         />
       </div>

@@ -24,18 +24,18 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
-.landing-button {
+.button-dark {
   background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
 
-.landing-button-signup {
+.button-bright {
   background: linear-gradient(-45deg, #fa709a, #d299c2, #f3f9d7, #fee140);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  color: Black;
+  color: black;
 }
 
 .landing-title {
@@ -239,9 +239,6 @@ body {
 
 /* HOME PAGE */
 .home-page {
-  background: linear-gradient(-45deg, #fad0c4, #ffffff, #e2ebf0, #f8f8f8);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
   grid-gap: 1%;
   color: black;
   display: grid;
@@ -253,9 +250,6 @@ body {
 
 /* HEADER */
 .home-header {
-  background: linear-gradient(-45deg, #fad0c4, #ffffff, #e2ebf0, #f8f8f8);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
   border-radius: 25px;
   grid-column: 1 / -1;
   grid-row: 1 / span 3;
@@ -625,18 +619,24 @@ section p:first-child, .timer div:last-child span {
 .collection {
   grid-column: 1 / -1 ;
   grid-row: 1 / -1;
+  background: linear-gradient(-45deg, #fad0c4, #ffffff, #e2ebf0, #f8f8f8);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 .collection-region-carousel-header {
   text-align: center;
+  margin-top: 5%;
 }
 
 .collection-region-carousel .region .region-content {
-  border: 1px solid var(--surface-d);
+  border: 1px solid black;
   border-radius: 3px;
   margin: .3rem;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
+  background-color: white;
+  
 }
 
 .collection-region-carousel .region img {
@@ -648,11 +648,12 @@ section p:first-child, .timer div:last-child span {
 }
 
 .collection-trinket-carousel .trinket .trinket-content {
-  border: 1px solid var(--surface-d);
+  border: 1px solid black;
   border-radius: 3px;
   margin: .3rem;
   text-align: center;
   padding: 2rem 0;
+  background-color: white;
 }
 
 .collection-trinket-carousel .trinket img {
@@ -663,6 +664,9 @@ section p:first-child, .timer div:last-child span {
 
 /* MARKET */
 .market {
+  background: linear-gradient(-45deg, #fad0c4, #ffffff, #e2ebf0, #f8f8f8);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   grid-column: 1 / -1 ;
   grid-row: 1 / -1;
   display: grid;
@@ -683,8 +687,10 @@ section p:first-child, .timer div:last-child span {
   border: 1px solid var(--surface-d);
   border-radius: 3px;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
+  border-width: 2px;
   border-color: black;
+  background-color: white;
 }
 
 .region-carousel .region-item img {
@@ -704,8 +710,10 @@ section p:first-child, .timer div:last-child span {
   border: 1px solid var(--surface-d);
   border-radius: 3px;
   text-align: center;
-  padding: 2rem 0;
+  border-width: 2px;
+  padding: 3rem 0;
   border-color: black;
+  background-color: white;
 }
 
 .trinket-carousel .trinket-item img {
