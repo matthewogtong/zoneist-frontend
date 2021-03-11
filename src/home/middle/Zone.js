@@ -78,7 +78,7 @@ const Zone = ({
             
             <Card className="p-shadow-8" title="zone details">
               <p><em><strong>objective:</strong></em> {objective}</p>
-              <p><em><strong>total zone time:</strong></em> {totalObjectiveTime}</p>
+              <p><em><strong>total zone time:</strong></em> {totalObjectiveTime} minutes</p>
               <p><em><strong>tag:</strong></em> {tag.name}</p>
               <p><em><strong>region:</strong></em> {region.name}</p>
               <p><em><strong>trinket:</strong></em> {trinket.name}</p>
