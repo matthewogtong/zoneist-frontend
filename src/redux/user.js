@@ -12,6 +12,11 @@ const userSlice = createSlice({
             month: 0,
             date: 0
         },
+        today: {
+            year: 0,
+            month: 0,
+            date: 0
+        },
         time: {
             timerHours : '00',
             timerMinutes: '00',
@@ -28,6 +33,9 @@ const userSlice = createSlice({
             state.calendar.year = new Date().getFullYear()
             state.calendar.month = new Date().getMonth()
             state.calendar.date = new Date().getDate()
+            state.today.year = new Date().getFullYear()
+            state.today.month = new Date().getMonth()
+            state.today.date = new Date().getDate()
         },
         setZonesToday(state, action) {
             state.zonesToDisplay = []
