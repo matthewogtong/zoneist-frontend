@@ -12,6 +12,11 @@ import { ReactComponent as Cake } from "../../svg/trinkets/cake.svg"
 import { ReactComponent as Coffee } from "../../svg/trinkets/loaf-coffee-3.svg"
 import { ReactComponent as Devices } from "../../svg/trinkets/loaf-devices-4.svg"
 import { ReactComponent as Cooking } from "../../svg/trinkets/cooking.svg"
+import { ReactComponent as Pencil } from "../../svg/trinkets/pencil.svg"
+import { ReactComponent as Game } from "../../svg/trinkets/game.svg"
+import { ReactComponent as Koi } from "../../svg/trinkets/koi.svg"
+import { ReactComponent as Tools } from "../../svg/trinkets/tools.svg"
+import { ReactComponent as Home } from "../../svg/trinkets/home.svg"
 
 const TrinketCarousel = () => {
     const [marketTrinkets, setMarketTrinkets] = useState([])
@@ -26,6 +31,11 @@ const TrinketCarousel = () => {
       Coffee: Coffee,
       Devices: Devices,
       Cooking: Cooking,
+      Pencil: Pencil,
+      Game: Game,
+      Koi: Koi,
+      Tools: Tools,
+      Home: Home
     }
 
     const dispatch = useDispatch()

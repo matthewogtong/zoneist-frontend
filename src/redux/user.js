@@ -98,7 +98,7 @@ const userSlice = createSlice({
             state.entities[0].zones.push(action.payload)
         }, 
         completeZone(state, action) {
-            // state.entities[0].zones.push(action.payload)
+            state.entities[0].zones.push(action.payload)
             state.zonesToDisplay.push(action.payload)
             if (state.zonesToday === false) {
                 state.zonesToday = true
