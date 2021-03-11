@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { setTime } from "../../redux/user"
+import { setTime, leaveZone, completeZone, enterZone } from "../../redux/user"
 
 const Timer = () => {
   const currentZone = useSelector(
@@ -9,12 +9,15 @@ const Timer = () => {
 
   const dispatch = useDispatch()
   let interval = useRef()
+
+  const userId = useSelector((state) => state.user.entities[0].id)
+
   const add = currentZone.totalObjectiveTime * 60000
   const showHours = useSelector((state) => state.user.time.timerHours)
   const showMinutes = useSelector((state) => state.user.time.timerMinutes)
   const showSeconds = useSelector((state) => state.user.time.timerSeconds)
-  
-  const isInZone = useSelector(state => state.user.inZone)
+
+  const isInZone = useSelector((state) => state.user.inZone)
   console.log(isInZone)
 
   const startTimer = () => {
@@ -23,6 +26,7 @@ const Timer = () => {
     interval = setInterval(() => {
       const now = new Date().getTime()
       const distance = countdownDate - now
+      console.log(distance)
 
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -31,28 +35,23 @@ const Timer = () => {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
       const timeArr = [hours, minutes, seconds]
-        if (!isInZone) {
-            clearInterval(interval.current)
-        } else if (distance < 0) {
-            clearInterval(interval.current)
-        // dispatch(completeZone(currentZone))
-        // console.log(currentZone)
-        // fetch(
-        //   `http://localhost:3001/users/${userId}/zones/${currentZone.id}`,
-        //   {
-        //     method: "PATCH",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //       Accept: "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //       isActive: false,
-        //       isComplete: true,
-        //     }),
-        //   }
-        // )
-        //   .then((r) => r.json())
-        //   .then((data) => console.log(data))
+      if (distance < 0) {
+        dispatch(leaveZone())
+        clearInterval(interval)
+        dispatch(completeZone(currentZone))
+        fetch(`http://localhost:3001/users/${userId}/zones/${currentZone.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            isActive: false,
+            isComplete: true,
+          }),
+        })
+          .then((r) => r.json())
+          .then((data) => console.log(data))
       } else {
         dispatch(setTime(timeArr))
       }
@@ -60,10 +59,12 @@ const Timer = () => {
   }
   //componentDidMount
   useEffect(() => {
-    const someref = interval.current
-    startTimer()
-    return () => {
-      clearInterval(someref)
+    if (!isInZone && currentZone.isActive) {
+      dispatch(enterZone())
+      startTimer()
+    //   return () => {
+    //     clearInterval(interval)
+    //   }
     }
   }, [])
 
@@ -72,8 +73,7 @@ const Timer = () => {
       <section className="timer">
         <div>
           <span></span>
-          <h2>countdown</h2>
-          <p>objective </p>
+          <h2>time left</h2>
         </div>
         <div>
           <section>

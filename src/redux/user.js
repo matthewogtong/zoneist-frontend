@@ -79,7 +79,6 @@ const userSlice = createSlice({
         },
         addZone(state, action) {
             state.entities[0].zones.push(action.payload)
-            state.inZone = true
         }, 
         completeZone(state, action) {
             state.zonesToDisplay.push(action.payload)
@@ -97,6 +96,9 @@ const userSlice = createSlice({
             state.time.timerHours = action.payload[0]
             state.time.timerMinutes = action.payload[1]
             state.time.timerSeconds = action.payload[2]
+        },
+        enterZone(state) {
+            state.inZone = true
         },
         leaveZone(state) {
             state.inZone = false
@@ -117,6 +119,7 @@ export const {
   setZonesToday,
   setCalendar,
   setTime,
+  enterZone,
   leaveZone
 } = userSlice.actions;
 

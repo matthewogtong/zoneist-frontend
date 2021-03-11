@@ -26,7 +26,7 @@ const Greeting = () => {
 
     return (
       <div className="home-greeting">
-        <h3 className="hello">{currentHour > 4 ? <Sun /> : <Moon /> }hi {username},</h3>
+        <h3 className="hello">{currentHour < 16 ? <Sun /> : <Moon /> }hi {username},</h3>
         <h2 className="greet">{greeting}</h2>
       </div>
     );

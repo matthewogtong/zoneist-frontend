@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { completeZone, setTime, leaveZone } from "../../redux/user"
+import { completeZone, leaveZone } from "../../redux/user"
 import CompletedZone from './CompletedZone'
 import Timer from './Timer'
 
@@ -23,9 +23,9 @@ const InTheZone = () => {
     history.push("/home")
   }
 
-
   return (
     <div className="in-zone-div">
+      <Timer />
       <h1>Currently in Zone</h1>
       <h3>Objective: {currentZone.objective}</h3>
       <h3>Total Expected Zone Time: {currentZone.totalObjectiveTime} minutes</h3>
@@ -34,7 +34,6 @@ const InTheZone = () => {
       <h3>Region: {currentZone.region.name}</h3>
       <h3>Trinket being crafted: {currentZone.trinket.name}</h3>
       <button onClick={e => handleClick()}>End Zone</button>
-      <Timer />
     </div>
   );
 }
