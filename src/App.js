@@ -50,7 +50,6 @@ function App() {
       })
         .then((r) => r.json())
         .then((user) => {
-          console.log(user)
           dispatch(setUser(user))
           dispatch(setLoggedIn())
           dispatch(setZonesToday(camelcaseKeys(user.zones)))

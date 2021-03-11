@@ -50,9 +50,6 @@ const TrinketCarousel = () => {
       )
     })
 
-    const state = useSelector(state => state.user.entities[0])
-    console.log(state)
-
     // GET USER TRINKETS
     useEffect(() => {
       fetch(`http://localhost:3001/users/${userId}/trinkets`)
@@ -89,7 +86,6 @@ const TrinketCarousel = () => {
                 )
                 setMarketTrinkets(filteredTrinkets)
                 dispatch(purchaseTrinket(trinketData))
-                console.log(trinketData)
               })
           }
     }
