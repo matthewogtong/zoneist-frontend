@@ -11,14 +11,14 @@ const Analytics = () => {
         labels: tagData,
         datasets: [
             {
-                label: 'My First dataset',
+                label: 'tag count',
                 backgroundColor: 'rgba(255,99,132,0.2)',
                 borderColor: 'rgba(179,181,198,1)',
                 pointBackgroundColor: 'rgba(179,181,198,1)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(179,181,198,1)',
-                data: [65, 59, 90, 81, 56, 55, 40]
+                pointBorderColor: '#000000',
+                pointHoverBackgroundColor: '#000000',
+                pointHoverBorderColor: '#000000',
+                data: [9, 3, 1, 5, 1, 1, 0, 0, 2, 1]
             }
         ]
     };
@@ -26,52 +26,71 @@ const Analytics = () => {
     const lightOptions = {
         legend: {
             labels: {
-                fontColor: '#495057'
+                fontColor: '#000000'
             }
         },
         scale: {
             pointLabels: {
-                fontColor: '#495057'
+                fontColor: '#000000'
             },
             gridLines: {
-                color: '#ebedef'
+                color: '#000000'
             }
         }
-    };
+    }
+
+    const barChartData = {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [
+            {
+                label: 'week of 3/8/2021',
+                backgroundColor: '#ffb199',
+                data: [630, 600, 660, 260, 0, 0, 0]
+            }
+        ]
+    }
+
+    const getLightTheme = () => {
+        let basicOptions = {
+            legend: {
+                labels: {
+                    fontColor: '#495057'
+                }
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        fontColor: '#495057'
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        fontColor: '#495057'
+                    }
+                }]
+            }
+        }
+
+        return {
+            basicOptions
+        }
+    }
+
+    const { basicOptions } = getLightTheme();
+
 
     return (
         <div className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
-                <h1>tag data</h1>
-                <Chart width={600} height={450} className="tag-chart" type="radar" data={chartData}  />
+                <h1>all time tag usage</h1>
+                <Chart width={'600'} height={'450'} className="tag-chart" type="polarArea" data={chartData}  options={lightOptions} />
+            </div>
+            <div className="bar-chart-div p-shadow-8">
+                <h1>weekly zone time</h1>
+                <Chart width={'500'} height={'450'} className="bar-chart" type="bar" data={barChartData} options={basicOptions}/>
             </div>
         </div>
     );
-    // const tagData = useSelector(state => state.user.allTagNames)
-    // console.log(tagData)
-
-    // const tagChartData = {
-    //     tags: tagData,
-    //     dataset: {
-    //         backgroundColor: 'rgba(255,99,132,0.2)',
-    //         borderColor: 'rgba(255,99,132,1)',
-    //         pointBackgroundColor: 'rgba(255,99,132,1)',
-    //         pointBorderColor: '#fff',
-    //         pointHoverBackgroundColor: '#fff',
-    //         pointHoverBorderColor: 'rgba(255,99,132,1)',
-    //         data: [1, 3, 4, 5, 6, 7, 8, 9, 9, 9]
-    //     }
-    // }
-
-    // console.log(tagChartData)
-
-    // return (
-    //     <div className="analytics-div">
-    //         <div className="card">
-    //             <Chart type="radar" data={tagChartData} />
-    //         </div>
-    //     </div>
-    // )
 }
 
 export default Analytics

@@ -24,7 +24,7 @@ const TagForm = () => {
       }
     }
 
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
       fetch(`http://localhost:3001/users/${userId}/tags`, {
             method: "POST",
             headers: {
@@ -39,8 +39,8 @@ const TagForm = () => {
             .then(r => r.json())
             .then(newTag => {
                 dispatch(addTag(newTag))
-                console.log(newTag)
             })
+            e.target.reset()
     }
 
     return (

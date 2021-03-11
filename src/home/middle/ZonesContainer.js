@@ -7,13 +7,8 @@ import { Card } from 'primereact/card'
 
 const ZonesContainer = () => {
 
-    const zoneState = useSelector(state => state.user)
     const zonesToday = useSelector(state => state.user.zonesToday)
     const zonesToDisplay = useSelector(state => state.user.zonesToDisplay)
-
-
-    console.log(zoneState)
-    console.log(zonesToDisplay)
 
     const fadeIn = useSpring({
       opacity: 1,
