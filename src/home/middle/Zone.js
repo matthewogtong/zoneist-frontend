@@ -53,14 +53,16 @@ const Zone = ({
   return (
     <animated.div style={fadeIn}>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <div className={`${region.name.split(" ").join("")} completed-zone-front`}>
-          front of card
-          <button onClick={handleClick}>Click to Flip</button>
+        <div className={`${region.name.split(" ").join("")} completed-zone-front p-shadow-3`}>
+          <div className="zone-front-detail">
+            <p>{region.name.toLowerCase()}</p>
+            <button onClick={handleClick}>flip</button>
+          </div>
         </div>
 
         <div className="completed-zone-back">
           back of card
-          <button onClick={handleClick}>Click to Flip</button>
+          <button onClick={handleClick}>flip</button>
         </div>
       </ReactCardFlip>
     </animated.div>

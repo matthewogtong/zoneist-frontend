@@ -10,7 +10,7 @@ const NavBar = () => {
   const isInZone = useSelector(state => state.user.inZone)
 
   return (
-    <nav className="nav-bar p-shadow-8">
+    <nav className="nav-bar">
       <Link
         to="/zones"
         className="navbar-link"
@@ -65,6 +65,7 @@ const NavBar = () => {
           <Button className="button-bright zone-button">enter new zone</Button>
         </Link>
       )}
+      <hr/>
     </nav>
   );
 }
