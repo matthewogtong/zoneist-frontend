@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { setUser, setLoggedIn, setZonesToday } from "./redux/user"
+import { setUser, setLoggedIn, setZonesToday, openModal, closeModal } from "./redux/user"
 import { setRegions } from "./redux/region"
 import { setTrinkets } from "./redux/trinket"
+import Modal from 'react-modal'
 
 import PrimeReact from 'primereact/api';
 
@@ -20,11 +21,13 @@ import HomePage from './home/HomePage'
 
 // NONTRINKETS IMPORTS
 import { ReactComponent as Hammer } from './svg/nontrinkets/hammer.svg'
+import { ReactComponent as Money } from './svg/nontrinkets/money.svg'
  
 function App() {
 
   // DISPATCH
   const dispatch = useDispatch()
+  const history = useHistory()
   const camelcaseKeys = require('camelcase-keys');
 
   // REDUX SELECTOR
@@ -73,9 +76,31 @@ function App() {
 
   PrimeReact.ripple = true;
 
+  const handleCloseModal = () => {
+    dispatch(closeModal())
+    history.push('/zones')
+  }
+
+  const modalState = useSelector(state => state.user.modalOpen)
 
   return (
     <div className="App">
+      {modalState ? (
+        <Modal
+          ariaHideApp={false}
+          className="modal-complete-div p-shadow-8"
+          isOpen={modalState}
+          shouldCloseOnOverlayClick={false}
+          contentLabel="Example Modal"
+        >
+            <div>
+                <h1>congratulations for successfully focusing </h1>
+                <h1>on your objective for the alloted time!</h1>
+                <h2>Here are some tokens for your success ~ <Money /></h2>
+                <button onClick={handleCloseModal}>close me</button>
+            </div>
+        </Modal>
+      ) : null}
       <Switch>
         <Route exact path="/">
           {isLoggedIn ? (

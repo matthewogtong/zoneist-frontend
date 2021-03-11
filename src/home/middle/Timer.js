@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { setTime, leaveZone, completeZone, enterZone } from "../../redux/user"
+import { setTime, leaveZone, completeZone, enterZone, openModal } from "../../redux/user"
 
 const Timer = () => {
   const currentZone = useSelector(
@@ -51,20 +51,20 @@ const Timer = () => {
           }),
         })
           .then((r) => r.json())
-          .then((data) => console.log(data))
+          .then((data) => {
+              console.log(data)
+              dispatch(openModal())
+          })
       } else {
         dispatch(setTime(timeArr))
       }
     }, 1000)
   }
-  //componentDidMount
+
   useEffect(() => {
     if (!isInZone && currentZone.isActive) {
       dispatch(enterZone())
       startTimer()
-    //   return () => {
-    //     clearInterval(interval)
-    //   }
     }
   }, [])
 
@@ -99,7 +99,7 @@ const Timer = () => {
         </div>
       </section>
     </section>
-  )
+  );
 }
 
 export default Timer
