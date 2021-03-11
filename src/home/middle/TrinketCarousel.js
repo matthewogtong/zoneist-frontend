@@ -11,7 +11,7 @@ import { ReactComponent as Campfire } from "../../svg/trinkets/loaf-campfire-1.s
 import { ReactComponent as Cake } from "../../svg/trinkets/cake.svg"
 import { ReactComponent as Coffee } from "../../svg/trinkets/loaf-coffee-3.svg"
 import { ReactComponent as Devices } from "../../svg/trinkets/loaf-devices-4.svg"
-import { ReactComponent as Diamond } from "../../svg/trinkets/loaf-diamond-1.svg"
+import { ReactComponent as Cooking } from "../../svg/trinkets/cooking.svg"
 
 const TrinketCarousel = () => {
     const [marketTrinkets, setMarketTrinkets] = useState([])
@@ -25,7 +25,7 @@ const TrinketCarousel = () => {
       Cake: Cake,
       Coffee: Coffee,
       Devices: Devices,
-      Diamond: Diamond,
+      Cooking: Cooking,
     }
 
     const dispatch = useDispatch()

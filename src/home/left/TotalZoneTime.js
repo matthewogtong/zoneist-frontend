@@ -4,7 +4,7 @@ import { ReactComponent as Task } from '../../svg/nontrinkets/task.svg'
 
 const TotalZoneTime = () => {
 
-  const userZones = useSelector(state => state.user.entities[0].zones)
+  const userZones = useSelector(state => state.user.zonesToDisplay)
   const todayInfo = useSelector(state => state.user.today)
   console.log(userZones)
   console.log(todayInfo)

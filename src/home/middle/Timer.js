@@ -18,7 +18,6 @@ const Timer = () => {
   const showSeconds = useSelector((state) => state.user.time.timerSeconds)
 
   const isInZone = useSelector((state) => state.user.inZone)
-  console.log(isInZone)
 
   const startTimer = () => {
     const countdownDate = new Date().getTime() + add
@@ -38,7 +37,6 @@ const Timer = () => {
       if (distance < 0) {
         dispatch(leaveZone())
         clearInterval(interval)
-        dispatch(completeZone(currentZone))
         fetch(`http://localhost:3001/users/${userId}/zones/${currentZone.id}`, {
           method: "PATCH",
           headers: {
@@ -52,7 +50,7 @@ const Timer = () => {
         })
           .then((r) => r.json())
           .then((data) => {
-              console.log(data)
+              dispatch(completeZone(data))
               dispatch(openModal())
           })
       } else {
