@@ -9,10 +9,18 @@ import { ReactComponent as Achieve } from '../svg/nontrinkets/achieve.svg'
 
 const AboutPage = () => {
 
+    const fadeInHeader = useSpring({
+        opacity: 1,
+        marginLeft: 150,
+        from: { opacity: 0, marginLeft: -500 },
+        delay: 100,
+        duration: 500
+      })
+
     const fadeInFirst = useSpring({
       opacity: 1,
       marginLeft: 0,
-      from: { opacity: 0, marginLeft: -1000 },
+      from: { opacity: 0, marginLeft: -500 },
       delay: 100,
       duration: 500
     })
@@ -20,7 +28,7 @@ const AboutPage = () => {
     const fadeInSecond = useSpring({
       opacity: 1,
       marginLeft: 0,
-      from: { opacity: 0, marginLeft: -1000 },
+      from: { opacity: 0, marginLeft: -500 },
       delay: 300,
       duration: 500
     })
@@ -28,14 +36,14 @@ const AboutPage = () => {
     const fadeInThird = useSpring({
       opacity: 1,
       marginLeft: 0,
-      from: { opacity: 0, marginLeft: -1000 },
+      from: { opacity: 0, marginLeft: -500 },
       delay: 500,
       duration: 500
     })
     
     return (
         <div className="about-page">
-            <animated.h1 style={fadeInFirst} className="about-header">zoneist</animated.h1>
+            <animated.h1 style={fadeInHeader} className="about-header">zoneist</animated.h1>
             <animated.nav  style={fadeInFirst} className="about-nav">
                 <Link to="/" style={{ textDecoration: "none" }}>
                     <Button className="button-dark">Title</Button>
@@ -44,19 +52,19 @@ const AboutPage = () => {
                     <Button className="button-bright">Home</Button>
                 </Link>
             </animated.nav>
-            <animated.div  style={fadeInFirst}className="about-focus p-shadow-8">
+            <animated.div  style={fadeInFirst}className="about-focus p-shadow-20">
                 <h1>FOCUS</h1>
-                <p>some content</p>
+                <p>It can sometimes be incredibly difficult and frustrating to focus on anything. Finding your ‘Zone’ is much easier said than done. I found that for me personally whether I am studying or working, I like to see my progress in realtime in a gamified goal-setting, even if I know the end output should be satisfactory enough. zoneist is here to help with those major daily tasks that are alway so difficult to start. </p>
                 <Brain className="about-trinket" />
             </animated.div>
-            <animated.div  style={fadeInSecond}className="about-customize p-shadow-8">
+            <animated.div  style={fadeInSecond}className="about-customize p-shadow-20">
                 <h1>CUSTOMIZE</h1>
-                <p>some content</p>
+                <p>Structure and design your own 'Zones' with some very popular destinations set as regions, customizable tags as well as with some cute trinkets. Shop for a variety of customizations in the market with your hard earned tokens from completing 'Zones'.</p>
                 <Spanner className="about-trinket"/>
             </animated.div>
-            <animated.div  style={fadeInThird}className="about-achieve p-shadow-8">
+            <animated.div  style={fadeInThird}className="about-achieve p-shadow-20">
                 <h1>ACHIEVE</h1>
-                <p>some content</p>
+                <p>You will have access to calendar where you can choose any day you’ve completed 'Zones' and see what you have accomplished for that day. Every goal starts with a step and being able to track your big goals throughout the day can be a very important step to your own roadmap.</p>
                 <Achieve className="about-trinket"/>
             </animated.div>
         </div>  
