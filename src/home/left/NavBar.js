@@ -4,7 +4,6 @@ import { Button } from "primereact/button"
 import { useSelector } from 'react-redux'
 
 
-
 const NavBar = () => {
 
 
@@ -12,34 +11,58 @@ const NavBar = () => {
 
   return (
     <nav className="nav-bar p-shadow-8">
-      <Link to="/zones" style={{ textDecoration: "none" }}>
-        Zones
+      <Link
+        to="/zones"
+        className="navbar-link"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="pi pi-star"></span>zones
       </Link>
-      <Link to="/market" style={{ textDecoration: "none" }}>
-        Market
+      <Link
+        to="/market"
+        className="navbar-link"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="pi pi-shopping-cart"></span>market
       </Link>
-      <Link to="/collection" style={{ textDecoration: "none" }}>
-        Collection
+      <Link
+        to="/collection"
+        className="navbar-link"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="pi pi-th-large"></span>collection
       </Link>
-      <Link to="/analytics" style={{ textDecoration: "none" }}>
-        Analytics
+      <Link
+        to="/analytics"
+        className="navbar-link"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="pi pi-chart-bar"></span>analytics
       </Link>
-      <Link to="/tags" style={{ textDecoration: "none" }}>
-        Tags
+      <Link
+        to="/tags"
+        className="navbar-link"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="pi pi-tags"></span>tags
       </Link>
-      <Link to="/about" style={{ textDecoration: "none" }}>
-        About
+      <Link
+        to="/about"
+        className="navbar-link"
+        style={{ textDecoration: "none" }}
+      >
+        <span className="pi pi-question"></span>about
       </Link>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        Title | Log Out
+      <Link to="/" className="navbar-link" style={{ textDecoration: "none" }}>
+        <span className="pi pi-key"></span>title | log out
       </Link>
       {isInZone ? (
         <Link to="in-the-zone" style={{ textDecoration: "none" }}>
-          <Button>see current zone</Button>
+          <Button className="button-dark zone-button">see current zone</Button>
         </Link>
       ) : (
         <Link to="zone-form" style={{ textDecoration: "none" }}>
-          <Button>enter new zone</Button>
+          <Button className="button-bright zone-button">enter new zone</Button>
         </Link>
       )}
     </nav>

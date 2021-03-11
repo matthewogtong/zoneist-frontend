@@ -1,0 +1,11 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 69px; height: 69px;"><style>
+     .line-task1-hand {animation: line-task1-hand 15s infinite linear; transform-origin: 68.1px 70.6px;}
+     @keyframes line-task1-hand {
+         100%{transform:rotate(360deg);}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-task1-hand {
+             animation: none;
+         }
+     }
+    </style><path class="fill1" d="M65 28V74C65 77.3137 62.3137 80 59 80H16C12.6863 80 10 77.3137 10 74V28C10 24.6863 12.6863 22 16 22H24V19.5C24 18.9477 24.4477 18.5 25 18.5H30C30 18.5 31 11 37.5 11C44 11 45 18.5 45 18.5H50C50.5523 18.5 51 18.9477 51 19.5V22H59C62.3137 22 65 24.6863 65 28Z" fill="rgba(193,193,193,1)" stroke-width="2.0px"></path><path class="stroke1" d="M51 22V24C51 26.2091 49.2091 28 47 28H28C25.7909 28 24 26.2091 24 24V22M51 22V19.5C51 18.9477 50.5523 18.5 50 18.5H45C45 18.5 44 11 37.5 11C31 11 30 18.5 30 18.5H25C24.4477 18.5 24 18.9477 24 19.5V22M51 22H59C62.3137 22 65 24.6863 65 28V74C65 77.3137 62.3137 80 59 80H16C12.6863 80 10 77.3137 10 74V28C10 24.6863 12.6863 22 16 22H24" stroke="#000" stroke-width="2.0px"></path><path class="stroke1" d="M19.5 38.5H55.5" stroke="#000" stroke-width="2.0px" stroke-linecap="round"></path><path class="stroke1" d="M19.5 48.5H44.5" stroke="#000" stroke-width="2.0px" stroke-linecap="round"></path><path class="stroke1" d="M19.5 58.5H38.5" stroke="#000" stroke-width="2.0px" stroke-linecap="round"></path><circle class="stroke2 fill2" cx="68" cy="69" r="21" fill="#FFF" stroke="#000" stroke-width="2.0px"></circle><path class="stroke2" d="M68 70.5V57.5" stroke="#000" stroke-width="2.0px" stroke-linecap="round"></path><path class="line-task1-hand stroke2" d="M68.3708 70.75L79.6292 77.25" stroke="#000" stroke-width="2.0px" stroke-linecap="round"></path></svg>
