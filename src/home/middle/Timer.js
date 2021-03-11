@@ -72,10 +72,6 @@ const Timer = () => {
     <section className="timer-container">
       <section className="timer">
         <div>
-          <span></span>
-          <h2>time left</h2>
-        </div>
-        <div>
           <section>
             <p>{showHours}</p>
             <p>

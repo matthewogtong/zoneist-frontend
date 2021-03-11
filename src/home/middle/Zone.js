@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 import { useSpring, animated } from "react-spring"
+import { Card } from 'primereact/card'
+import { format } from 'date-fns'
+
 
 // IMPORT TRINKETS
 import { ReactComponent as LPrinter } from "../../svg/trinkets/3D-printing.svg"
@@ -22,6 +25,9 @@ const Zone = ({
   trinket,
   region,
 }) => {
+
+  const zoneEndDate = new Date(parseInt(zoneEnd))
+  const formattedZoneEnd = format(zoneEndDate, 'Pp')
 
   const fadeIn = useSpring({
       opacity: 1,
@@ -53,14 +59,34 @@ const Zone = ({
   return (
     <animated.div style={fadeIn}>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <div className={`${region.name.split(" ").join("")} completed-zone-front`}>
-          front of card
-          <button onClick={handleClick}>Click to Flip</button>
+        <div
+          className={`${region.name
+            .split(" ")
+            .join("")} completed-zone-front p-shadow-3`}
+        >
+          <div className="zone-front-detail">
+            <p>{region.name.toLowerCase()}</p>
+            <button onClick={handleClick}>flip</button>
+          </div>
         </div>
 
-        <div className="completed-zone-back">
-          back of card
-          <button onClick={handleClick}>Click to Flip</button>
+        <div className="completed-zone-back p-shadow-3">
+          <div className="zone-trinket-holder">
+            <SVG className="zone-back-svg" />
+          </div>
+          <div className="zone-back-detail">
+            
+            <Card className="p-shadow-8" title="zone details">
+              <p><em><strong>objective:</strong></em> {objective}</p>
+              <p><em><strong>total zone time:</strong></em> {totalObjectiveTime} minutes</p>
+              <p><em><strong>tag:</strong></em> {tag.name}</p>
+              <p><em><strong>region:</strong></em> {region.name}</p>
+              <p><em><strong>trinket:</strong></em> {trinket.name}</p>
+              <p><em><strong>zone start:</strong></em> {zoneStart}</p>
+              <p><em><strong>zone end:</strong></em> {formattedZoneEnd}</p>
+            </Card>
+            <button onClick={handleClick}>flip</button>
+          </div>
         </div>
       </ReactCardFlip>
     </animated.div>
