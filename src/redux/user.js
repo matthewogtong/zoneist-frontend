@@ -103,6 +103,7 @@ const userSlice = createSlice({
                 state.zonesToday = true
             }
             state.inZone = false
+            state.entities[0].tokens += 3
         },
         setCalendar(state, action) {
             state.calendar.year = action.payload.year

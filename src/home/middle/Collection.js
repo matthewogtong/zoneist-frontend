@@ -20,7 +20,7 @@ import { ReactComponent as Bed } from "../../svg/trinkets/bed.svg"
 import { ReactComponent as Coder } from "../../svg/trinkets/coder.svg"
 import { ReactComponent as Camera } from "../../svg/trinkets/loaf-camera.svg"
 import { ReactComponent as Campfire } from "../../svg/trinkets/loaf-campfire-1.svg"
-import { ReactComponent as Candle } from "../../svg/trinkets/loaf-candle-3.svg"
+import { ReactComponent as Cake } from "../../svg/trinkets/cake.svg"
 import { ReactComponent as Coffee } from "../../svg/trinkets/loaf-coffee-3.svg"
 import { ReactComponent as Devices } from "../../svg/trinkets/loaf-devices-4.svg"
 import { ReactComponent as Diamond } from "../../svg/trinkets/loaf-diamond-1.svg"
@@ -55,7 +55,7 @@ const Collection = () => {
         Coder: Coder,
         Camera: Camera,
         Campfire: Campfire,
-        Candle: Candle,
+        Cake: Cake,
         Coffee: Coffee,
         Devices: Devices,
         Diamond: Diamond,

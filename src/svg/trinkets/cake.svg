@@ -1,0 +1,22 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;"><style>
+     .line-cake1 {animation:line-cake1-flame1 200ms infinite linear; transform-origin: 32px 35px;}
+     .line-cake2 {animation:line-cake1-flame2 200ms infinite linear; transform-origin: 51px 35px;}
+     .line-cake3 {animation:line-cake1-flame3 200ms infinite linear; transform-origin: 70px 35px;}
+     @keyframes line-cake1-flame1 {
+         0%{transform:scale(1);}
+         30%{transform:scale(1.2);}
+     }
+     @keyframes line-cake1-flame2 {
+         0%{transform:scale(1);}
+         60%{transform:scale(1.2);}
+     }
+     @keyframes line-cake1-flame3 {
+         0%{transform:scale(1);}
+         90%{transform:scale(1.2);}
+     }
+     @media (prefers-reduced-motion: reduce) {
+         .line-cake1, .line-cake2, .line-cake3 {
+             animation: none;
+         }
+     }
+    </style><rect class="stroke2 fill2" x="28" y="40" width="8" height="19" rx="2" fill="#FFF" stroke="#000" stroke-width="2px"></rect><path class="line-cake1 stroke2 fill2" d="M36 31C36 33.2091 34.1714 35 31.8857 35C29.6 35 28 32.75 28 31C28 27.75 31.8857 23 31.8857 23C31.8857 23 36 28.25 36 31Z" fill="#FFF" stroke="#000" stroke-width="2px"></path><path class="line-cake2 stroke2 fill2" d="M55 31C55 33.2091 53.1714 35 50.8857 35C48.6 35 47 32.75 47 31C47 27.75 50.8857 23 50.8857 23C50.8857 23 55 28.25 55 31Z" fill="#FFF" stroke="#000" stroke-width="2px"></path><path class="line-cake3 stroke2 fill2" d="M74 31C74 33.2091 72.1714 35 69.8857 35C67.6 35 66 32.75 66 31C66 27.75 69.8857 23 69.8857 23C69.8857 23 74 28.25 74 31Z" fill="#FFF" stroke="#000" stroke-width="2px"></path><rect class="stroke2 fill2" x="47" y="40" width="8" height="19" rx="2" fill="#FFF" stroke="#000" stroke-width="2px"></rect><rect class="stroke2 fill2" x="66" y="40" width="8" height="19" rx="2" fill="#FFF" stroke="#000" stroke-width="2px"></rect><rect class="stroke1 fill1" x="19" y="57" width="64" height="38" rx="2" fill="#FFF" stroke="#000" stroke-width="2px"></rect><line class="stroke1" x1="19" y1="84" x2="83" y2="84" stroke="#000" stroke-width="2px"></line><line class="stroke1" x1="19" y1="70" x2="83" y2="70" stroke="#000" stroke-width="2px"></line></svg>

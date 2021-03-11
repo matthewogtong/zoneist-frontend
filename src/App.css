@@ -564,7 +564,9 @@ body {
 }
 
 .in-zone-div button {
-  background: #ec5990;
+  background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: white;
   text-transform: uppercase;
   border: none;
