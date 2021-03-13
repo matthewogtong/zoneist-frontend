@@ -692,7 +692,6 @@ section p:first-child, .timer div:last-child span {
   margin-bottom: 8px;
   border-radius: 15px;
   background-size: 100% 100%;
-  /* background-repeat: no-repeat; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1062,10 +1061,6 @@ section p:first-child, .timer div:last-child span {
   letter-spacing: 10px;
 }
 
-.tag-list {
-  /* grid-column: 1 / -1;
-  grid-row: 3 / -1;  */
-}
 
 .tag-list-ul {
   list-style-type: none;
