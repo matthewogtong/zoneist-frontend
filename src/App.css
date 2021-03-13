@@ -692,12 +692,15 @@ section p:first-child, .timer div:last-child span {
   margin-bottom: 8px;
   border-radius: 15px;
   background-size: 100% 100%;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   transition: all .1s ease-in;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .zones-container .completed-zone-front:hover {

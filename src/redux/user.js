@@ -12,11 +12,6 @@ const userSlice = createSlice({
             month: 0,
             date: 0
         },
-        // today: {
-        //     year: 0,
-        //     month: 0,
-        //     date: 0
-        // },
         time: {
             timerHours : '00',
             timerMinutes: '00',
@@ -34,9 +29,6 @@ const userSlice = createSlice({
             state.calendar.year = new Date().getFullYear()
             state.calendar.month = new Date().getMonth()
             state.calendar.date = new Date().getDate()
-            // state.today.year = new Date().getFullYear()
-            // state.today.month = new Date().getMonth()
-            // state.today.date = new Date().getDate()
             action.payload.tags.forEach(tag => state.allTagNames.push(tag.name))
         },
         setZonesToday(state, action) {
@@ -74,9 +66,6 @@ const userSlice = createSlice({
             state.time.timerMinutes = "00"
             state.time.timerSeconds = "00"
             state.inZone = false
-            // state.today.year = 0
-            // state.today.month = 0
-            // state.today.date = 0
             state.allTagNames = []
         },
         purchaseTrinket(state, action) {
