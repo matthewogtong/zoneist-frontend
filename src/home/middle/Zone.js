@@ -74,32 +74,66 @@ const Zone = ({
     <animated.div style={fadeIn}>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
         <div
+          onClick={handleClick}
           className={`${region.name
             .split(" ")
             .join("")} completed-zone-front p-shadow-3`}
         >
           <div className="zone-front-detail">
             <p>{region.name.toLowerCase()}</p>
-            <button onClick={handleClick}>flip</button>
           </div>
         </div>
 
-        <div className="completed-zone-back p-shadow-3">
+        <div onClick={handleClick} className="completed-zone-back p-shadow-3">
           <div className="zone-trinket-holder">
             <SVG className="zone-back-svg" />
           </div>
           <div className="zone-back-detail">
-            
             <Card className="p-shadow-8" title="zone details">
-              <p><em><strong>objective:</strong></em> {objective}</p>
-              <p><em><strong>total zone time:</strong></em> {totalObjectiveTime} minutes</p>
-              <p><em><strong>tag:</strong></em> {tag.name}</p>
-              <p><em><strong>region:</strong></em> {region.name}</p>
-              <p><em><strong>trinket:</strong></em> {trinket.name}</p>
-              <p><em><strong>zone start:</strong></em> {zoneStart}</p>
-              <p><em><strong>zone end:</strong></em> {formattedZoneEnd}</p>
+              <p>
+                <em>
+                  <strong>objective:</strong>
+                </em>{" "}
+                {objective}
+              </p>
+              <p>
+                <em>
+                  <strong>total zone time:</strong>
+                </em>{" "}
+                {totalObjectiveTime} minutes
+              </p>
+              <p>
+                <em>
+                  <strong>tag:</strong>
+                </em>{" "}
+                {tag.name}
+              </p>
+              <p>
+                <em>
+                  <strong>region:</strong>
+                </em>{" "}
+                {region.name}
+              </p>
+              <p>
+                <em>
+                  <strong>trinket:</strong>
+                </em>{" "}
+                {trinket.name}
+              </p>
+              <p>
+                <em>
+                  <strong>zone start:</strong>
+                </em>{" "}
+                {zoneStart}
+              </p>
+              <p>
+                <em>
+                  <strong>zone end:</strong>
+                </em>{" "}
+                {formattedZoneEnd}
+              </p>
             </Card>
-            <button onClick={handleClick}>flip</button>
+            <button>flip</button>
           </div>
         </div>
       </ReactCardFlip>

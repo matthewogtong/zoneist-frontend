@@ -2,9 +2,6 @@ import React from "react"
 import { useSpring, animated } from "react-spring"
 import { useSelector } from "react-redux"
 
-// SVG 
-import { ReactComponent as ArrowDown } from "../svg/nontrinkets/arrow-down-5.svg"
-
 const AuthContainer = () => {
 
   const username = useSelector(state => state.user.entities[0].username)
@@ -26,10 +23,6 @@ const AuthContainer = () => {
         <animated.h2 style={fadeIn} className="auth-h2">
           {username}
         </animated.h2>
-        <div className="auth-svg-div">
-          <ArrowDown />
-          <ArrowDown />
-        </div>
       </div>
     </>
   );

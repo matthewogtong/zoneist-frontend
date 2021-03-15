@@ -16,7 +16,6 @@ const Inspiration = ()  => {
     }
     return (
       <div className="inspiration-div">
-        <br/>
         <Message className="message-svg" onClick={notify} label="Inspiration" />
         <br/>
         <Gesture />
@@ -31,6 +30,7 @@ const Inspiration = ()  => {
           draggable
           pauseOnHover
         />
+        <p>click for inspiration!</p>
       </div>
     )
 }
