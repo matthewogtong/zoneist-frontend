@@ -26,10 +26,6 @@ const AuthContainer = () => {
         <animated.h2 style={fadeIn} className="auth-h2">
           {username}
         </animated.h2>
-        <div className="auth-svg-div">
-          <ArrowDown />
-          <ArrowDown />
-        </div>
       </div>
     </>
   );

@@ -80,11 +80,6 @@ body {
   border-bottom: 1px solid rgb(79, 98, 148);
 }
 
-.auth-svg-div {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 /* LOG IN FORM  */
 .log-in-container {
   background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
