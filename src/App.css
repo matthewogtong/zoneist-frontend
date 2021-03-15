@@ -735,22 +735,6 @@ section p:first-child, .timer div:last-child span {
 }
 
 
-.completed-zone-front button {
-  background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  padding: 20px;
-  font-size: 16px;
-  font-weight: 100;
-  letter-spacing: 10px;
-  border-radius: 4px;
-  width: 70%;
-  height: 50%;
-}
-
 .Barcelona {
   background: url('./img/barcelona.jpg');
 }
