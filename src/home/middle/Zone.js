@@ -133,7 +133,7 @@ const Zone = ({
                 {formattedZoneEnd}
               </p>
             </Card>
-            <button>flip</button>
+            <h6>{tag.name}</h6>
           </div>
         </div>
       </ReactCardFlip>
