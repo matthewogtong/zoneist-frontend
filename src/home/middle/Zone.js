@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 import { useSpring, animated } from "react-spring"
 import { Card } from 'primereact/card'
-import { format } from 'date-fns'
+import { getDate, format } from 'date-fns'
 
 
 // IMPORT TRINKETS
@@ -30,7 +30,6 @@ const Zone = ({
   trinket,
   region,
 }) => {
-
   const zoneEndDate = new Date(parseInt(zoneEnd))
   const formattedZoneEnd = format(zoneEndDate, 'Pp')
 
@@ -81,6 +80,7 @@ const Zone = ({
         >
           <div className="zone-front-detail">
             <p>{region.name.toLowerCase()}</p>
+            <p>{formattedZoneEnd}</p>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ const Zone = ({
                 {formattedZoneEnd}
               </p>
             </Card>
-            <button>flip</button>
+            <h6>{tag.name}</h6>
           </div>
         </div>
       </ReactCardFlip>
