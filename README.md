@@ -23,7 +23,7 @@ See all your progress
 
 Full Auth
 - User will be able to create an account, log in and log out successfully with validations applied.
-- user information will be encrypted via JWT along with b-crypt to hash user passwords. 
+- user information will be encrypted via JWT along with b-crypt to hash user passwords.
 
 ## Technologies and Libraries
 
