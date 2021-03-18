@@ -32,7 +32,7 @@ const LandingNav = () => {
             <Link to="/home" style={{ textDecoration: "none" }}>
               <Button className="button-bright" label="home" />
             </Link>
-            <Button className="button-dark" onClick={handleLogOut}>log out</Button>
+            <Button className="button-dark" onClick={handleLogOut} label="log out"/>
           </>
         ) : (
           <>
