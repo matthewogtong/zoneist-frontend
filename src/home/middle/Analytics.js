@@ -4,8 +4,13 @@ import { Chart } from 'primereact/chart'
 
 const Analytics = () => {
 
+    const currentYear = new Date().getFullYear()
+
     const tagData = useSelector(state => state.user.allTagNames)
     console.log(tagData)
+
+    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
+    console.log(userZonesThisYear)
 
     const chartData = {
         labels: tagData,
@@ -82,7 +87,7 @@ const Analytics = () => {
     return (
         <div className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
-                <h1>all time tag usage</h1>
+                <h1>{currentYear} - tag usage</h1>
                 <Chart width={'600'} height={'450'} className="tag-chart" type="polarArea" data={chartData}  options={lightOptions} />
             </div>
             <div className="bar-chart-div p-shadow-8">
