@@ -55,6 +55,7 @@ const Analytics = () => {
         ]
     }
 
+    // add dynamic data for yearly tag usage
     const getLightTheme = () => {
         let basicOptions = {
             legend: {
@@ -83,7 +84,7 @@ const Analytics = () => {
 
     const { basicOptions } = getLightTheme();
 
-
+    //add dymanic data for weekly time zones
     return (
         <div className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
