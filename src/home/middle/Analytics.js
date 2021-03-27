@@ -45,7 +45,7 @@ const Analytics = () => {
     }
 
     const barChartData = {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
             {
                 label: 'week of 3/29/2021',
