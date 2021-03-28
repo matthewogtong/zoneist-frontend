@@ -88,7 +88,7 @@ const Analytics = () => {
     return (
         <div className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
-                <h1>{currentYear} - tag usage</h1>
+                <h1>{currentYear} | tag usage</h1>
                 <Chart width={'600'} height={'450'} className="tag-chart" type="polarArea" data={chartData}  options={lightOptions} />
             </div>
             <div className="bar-chart-div p-shadow-8">
