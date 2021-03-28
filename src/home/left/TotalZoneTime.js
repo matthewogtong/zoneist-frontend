@@ -6,6 +6,7 @@ const TotalZoneTime = () => {
 
   const userZones = useSelector(state => state.user.zonesToDisplay)
   const calendarInfo = useSelector(state => state.user.calendar)
+  
 
   const totalTimeToDisplay = () => {
     let result = 0
