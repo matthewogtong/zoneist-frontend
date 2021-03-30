@@ -1,4 +1,6 @@
-# About
+# zoneist
+
+# Description
 
 zoneist is a productivity app set out to inspire focus for accomplishing daily objectives with a clear goal-setting.
 
@@ -6,7 +8,7 @@ zoneist is a productivity app set out to inspire focus for accomplishing daily o
 
 It can sometimes be incredibly difficult and frustrating to focus on anything. Finding your ‘Zone’ is much easier said than done. I found that for me personally whether I am studying or working, I like to see my progress in realtime in a gamified goal-setting, even if I know the end output should be satisfactory enough. I crave for that real time progress, that small dopamine hit of seeing where I am with my current goals. In comes zoneist, you’ll be able to create an objective and specify it with details, along with customizing it by choosing unique regions and trinkets. 
 
-## User Stories
+## Usage
 
 Enter "Zones"
 - Structure a single objective you'd like to focus on for the current day and allot a time period of which you'd like to be focusing on that goal for.
