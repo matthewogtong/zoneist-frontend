@@ -58,7 +58,6 @@ const LogIn = () => {
         dispatch(setZonesToday(camelcaseKeys(data.user.zones)))
         localStorage.setItem("token", data.token)
         history.push("/home")
-        reportWebVitals(console.log)
       })
       .catch((data) => {
         // error:
