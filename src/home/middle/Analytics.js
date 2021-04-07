@@ -48,7 +48,7 @@ const Analytics = () => {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
             {
-                label: 'week of 4/5/2021',
+                label: 'week of 4/12/2021',
                 backgroundColor: '#ffb199',
                 data: [630, 600, 660, 260, 0, 0, 0]
             }
