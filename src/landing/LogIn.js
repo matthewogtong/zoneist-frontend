@@ -42,12 +42,9 @@ const LogIn = () => {
     })
       .then((r) => {
         return r.json().then((data) => {
-          // .ok is true for good status codes, and false for bad status codes
           if (r.ok) {
-            // return data to the next .then method
             return data
           } else {
-            // throw data to the .catch method
             throw data
           }
         })
@@ -60,7 +57,6 @@ const LogIn = () => {
         history.push("/home")
       })
       .catch((data) => {
-        // error:
         setLogInError(data.error)
       })
   }
