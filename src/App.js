@@ -94,8 +94,8 @@ function App() {
         >
             <div>
                 <h1>congratulations for successfully focusing </h1>
-                <h1>on your objective for the alloted time!</h1>
-                <h2>Here are some tokens for your success ~ <Money /></h2>
+                <h1>on your objective for the alloted time,</h1>
+                <h2>you've earned 3 tokens! <Money /></h2>
                 <button onClick={handleCloseModal}>close me</button>
             </div>
         </Modal>
