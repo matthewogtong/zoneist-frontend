@@ -544,13 +544,8 @@ body {
 .in-zone-div {
   grid-column: 1 / -1 ;
   grid-row: 1 / -1;
-  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80");
+  border-radius: 4px;
   color: black;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
-  animation: animation 100s linear infinite;
 }
 
 .in-zone-details {
@@ -581,6 +576,13 @@ body {
   border-radius: 4px;
   width: 30%;
   justify-self: center;
+  transition: all .5s ease-in;
+}
+
+.in-zone-div button:hover {
+  opacity: 0.8;
+  transform: scale(0.98);
+  transition: all .5s ease-in;
 }
 
 
@@ -597,15 +599,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding-bottom: 7em;
-  padding-top: 2em; */
   width: 100%;
   height: 100%;
 }
 
-/* .timer div:first-child {
-  text-align: center;
-} */
 
 .timer-container h2 {
   color: black;
@@ -746,38 +743,83 @@ section p:first-child, .timer div:last-child span {
 
 .Barcelona {
   background: url('./img/barcelona.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .BlueLagoon {
   background: url('./img/bluelagoon.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .BlueLakeTorii {
   background: url('./img/bluelaketorii.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .Giza {
   background: url('./img/giza.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .IguazuFalls {
   background: url('./img/iguazufalls.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .LofotenIslands {
   background: url('./img/lofotenislands.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .MachuPicchu {
   background: url('./img/machupicchu.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .NewYorkCity {
   background: url('./img/newyorkcity.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .Venice {
-  background: url('./img/venice.jpg')
+  background: url('./img/venice.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
 }
 
 .zones-container .completed-zone-back {
