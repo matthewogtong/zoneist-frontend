@@ -9,8 +9,8 @@ const Analytics = () => {
     const tagData = useSelector(state => state.user.allTagNames)
     console.log(tagData)
 
-    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
-    console.log(userZonesThisYear)
+    // const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
+    // console.log(userZonesThisYear)
 
     const chartData = {
         labels: tagData,

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { setCalendar, setZonesToday } from '../../redux/user'
 import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+import 'react-calendar/dist/Calendar.css'
 
 const HomeCalendar = () => {
     const [fullDate, setFullDate] = useState(new Date());
