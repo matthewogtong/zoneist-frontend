@@ -474,11 +474,6 @@ body {
   border-bottom: 1px solid rgb(79, 98, 148);
 }
 
-.z-form {
-  /* max-width: 500px;
-  margin: 0 auto; */
-}
-
 .z-form input,
 .z-form select {
   display: block;
@@ -587,12 +582,6 @@ body {
 
 
 /* ZONE TIMER */
-.timer-container {
-  /* color: #FFFFFF; */
-  /* width: 100vw;
-  height: 100vh; */
-}
-
 .timer {
   color: white;
   display: flex;
@@ -1160,13 +1149,6 @@ section p:first-child, .timer div:last-child span {
   opacity: 1;
   transform: scale(0.98);
   transition: all .2s ease-out;
-}
-
-.inpiration-div p {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end; */
 }
 
 /* ANIMATE BACKGROUND */
