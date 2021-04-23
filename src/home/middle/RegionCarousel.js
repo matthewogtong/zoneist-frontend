@@ -87,7 +87,7 @@ const RegionCarousel = () => {
 
     return (
       <div className="region-item">
-        <div className="region-item-content p-shadow-8">
+        <div className="region-item-content">
           <div>
             <img className="p-shadow-5" src={image} alt={region.name} />
             <h4>{region.name}</h4>
