@@ -95,7 +95,7 @@ const TrinketCarousel = () => {
     
         return (
           <div className="trinket-item">
-            <div className="trinket-item-content p-shadow-8">
+            <div className="trinket-item-content">
               <div>
                 <SVG />
                 <h4>{trinket.name}</h4>

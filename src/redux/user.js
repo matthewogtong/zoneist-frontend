@@ -18,8 +18,7 @@ const userSlice = createSlice({
             timerSeconds: '00'
         }, 
         inZone: false,
-        modalOpen: false,
-        allTagNames: []
+        modalOpen: false
     },
     reducers: {
         setUser(state, action) {
@@ -29,7 +28,6 @@ const userSlice = createSlice({
             state.calendar.year = new Date().getFullYear()
             state.calendar.month = new Date().getMonth()
             state.calendar.date = new Date().getDate()
-            action.payload.tags.forEach(tag => state.allTagNames.push(tag.name))
         },
         setZonesToday(state, action) {
             state.zonesToDisplay = []

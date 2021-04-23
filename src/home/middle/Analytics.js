@@ -1,19 +1,51 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Chart } from 'primereact/chart'
+import { format, startOfWeek } from 'date-fns'
 
 const Analytics = () => {
 
     const currentYear = new Date().getFullYear()
 
-    const tagData = useSelector(state => state.user.allTagNames)
-    console.log(tagData)
+    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
 
-    // const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
-    // console.log(userZonesThisYear)
+    const tagDataObj = {}
+    for (let val of userZonesThisYear) {
+        tagDataObj[val.tag.name] = (tagDataObj[val.tag.name] || 0) + 1
+    }
+
+    const tagLabels = Object.keys(tagDataObj)
+    const tagData = Object.values(tagDataObj)
+    
+    
+    const months = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const yearlyZoneTimeData = {
+        0 : 0,
+        1 : 0,
+        2 : 0,
+        3 : 0,
+        4 : 0,
+        5 : 0,
+        6 : 0,
+        7 : 0,
+        8 : 0, 
+        9 : 0,
+        10 : 0,
+        11 : 0
+    }
+
+    for (let val of userZonesThisYear) {
+        yearlyZoneTimeData[val.zoneStartMonth] = (yearlyZoneTimeData[val.zoneStartMonth] || 0) + val.totalObjectiveTime
+    }
+
+
+    const zoneTimeData = Object.values(yearlyZoneTimeData)
+
+    console.log(yearlyZoneTimeData)
+    
 
     const chartData = {
-        labels: tagData,
+        labels: tagLabels,
         datasets: [
             {
                 label: 'tag count',
@@ -23,7 +55,7 @@ const Analytics = () => {
                 pointBorderColor: '#000000',
                 pointHoverBackgroundColor: '#000000',
                 pointHoverBorderColor: '#000000',
-                data: [9, 3, 1, 5, 1, 1, 0, 0, 2, 1]
+                data: tagData
             }
         ]
     };
@@ -45,17 +77,16 @@ const Analytics = () => {
     }
 
     const barChartData = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: months,
         datasets: [
             {
-                label: 'week of 4/12/2021',
+                label: 'total minutes',
                 backgroundColor: '#ffb199',
-                data: [630, 600, 660, 260, 0, 0, 0]
+                data: zoneTimeData
             }
         ]
     }
 
-    // add dynamic data for yearly tag usage
     const getLightTheme = () => {
         let basicOptions = {
             legend: {
@@ -88,15 +119,15 @@ const Analytics = () => {
     return (
         <div className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
-                <h1>{currentYear} | tag usage</h1>
+                <h1>{currentYear} tag usage</h1>
                 <Chart width={'600'} height={'450'} className="tag-chart" type="polarArea" data={chartData}  options={lightOptions} />
             </div>
             <div className="bar-chart-div p-shadow-8">
-                <h1>weekly zone time</h1>
+                <h1>{currentYear} zone time</h1>
                 <Chart width={'500'} height={'450'} className="bar-chart" type="bar" data={barChartData} options={basicOptions}/>
             </div>
         </div>
-    );
+    )
 }
 
 export default Analytics
