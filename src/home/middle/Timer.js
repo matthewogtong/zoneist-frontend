@@ -53,7 +53,6 @@ const Timer = () => {
               dispatch(openModal())
           })
       } else {
-        console.log(distance)
         dispatch(setTime(timeArr))
       }
     }, 1000)
