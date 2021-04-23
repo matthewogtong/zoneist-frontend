@@ -17,11 +17,32 @@ const Analytics = () => {
     const tagLabels = Object.keys(tagDataObj)
     const tagData = Object.values(tagDataObj)
     
-    let currentWeekStart = startOfWeek(new Date(), { weekStartsOn: 1 })
-    const currentWeek = format(currentWeekStart, 'P')
     
+    const months = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const yearlyZoneTimeData = {
+        0 : 0,
+        1 : 0,
+        2 : 0,
+        3 : 0,
+        4 : 0,
+        5 : 0,
+        6 : 0,
+        7 : 0,
+        8 : 0, 
+        9 : 0,
+        10 : 0,
+        11 : 0
+    }
+
+    for (let val of userZonesThisYear) {
+        yearlyZoneTimeData[val.zoneStartMonth] = (yearlyZoneTimeData[val.zoneStartMonth] || 0) + val.totalObjectiveTime
+    }
+
+
+    const zoneTimeData = Object.values(yearlyZoneTimeData)
+
+    console.log(yearlyZoneTimeData)
     
-    console.log(currentWeek)
 
     const chartData = {
         labels: tagLabels,
@@ -56,17 +77,16 @@ const Analytics = () => {
     }
 
     const barChartData = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: months,
         datasets: [
             {
-                label: 'week of ' + currentWeek,
+                label: 'total minutes',
                 backgroundColor: '#ffb199',
-                data: [630, 600, 660, 260, 0, 0, 0]
+                data: zoneTimeData
             }
         ]
     }
 
-    // add dynamic data for yearly tag usage
     const getLightTheme = () => {
         let basicOptions = {
             legend: {
@@ -99,11 +119,11 @@ const Analytics = () => {
     return (
         <div className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
-                <h1>{currentYear} | tag usage</h1>
+                <h1>{currentYear} tag usage</h1>
                 <Chart width={'600'} height={'450'} className="tag-chart" type="polarArea" data={chartData}  options={lightOptions} />
             </div>
             <div className="bar-chart-div p-shadow-8">
-                <h1>weekly zone time</h1>
+                <h1>{currentYear} zone time</h1>
                 <Chart width={'500'} height={'450'} className="bar-chart" type="bar" data={barChartData} options={basicOptions}/>
             </div>
         </div>
