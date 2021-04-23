@@ -963,6 +963,11 @@ section p:first-child, .timer div:last-child span {
   background-color: white;
 }
 
+.trinket-item-content svg {
+  width: 25.7%;
+  height: 25.7%;
+}
+
 .trinket-carousel .trinket-item img {
   width: 50%;
 }
