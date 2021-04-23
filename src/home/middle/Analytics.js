@@ -6,14 +6,19 @@ const Analytics = () => {
 
     const currentYear = new Date().getFullYear()
 
-    const tagData = useSelector(state => state.user.allTagNames)
-    console.log(tagData)
+    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
 
-    // const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
-    // console.log(userZonesThisYear)
+    const tagDataObj = {}
+    for (let val of userZonesThisYear) {
+        tagDataObj[val.tag.name] = (tagDataObj[val.tag.name] || 0) + 1
+    }
+
+    const tagLabels = Object.keys(tagDataObj)
+    const tagData = Object.values(tagDataObj)
+    
 
     const chartData = {
-        labels: tagData,
+        labels: tagLabels,
         datasets: [
             {
                 label: 'tag count',
@@ -23,7 +28,7 @@ const Analytics = () => {
                 pointBorderColor: '#000000',
                 pointHoverBackgroundColor: '#000000',
                 pointHoverBorderColor: '#000000',
-                data: [9, 3, 1, 5, 1, 1, 0, 0, 2, 1]
+                data: tagData
             }
         ]
     };
