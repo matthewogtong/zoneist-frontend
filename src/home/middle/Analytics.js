@@ -1,9 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Chart } from 'primereact/chart'
-import { format, startOfWeek } from 'date-fns'
+import { useSpring, animated } from "react-spring"
 
 const Analytics = () => {
+
+    const fadeIn = useSpring({
+        opacity: 1,
+        marginTop: 0,
+        from: { opacity: 0, marginTop: -1000 },
+        delay: 0
+      });
 
     const currentYear = new Date().getFullYear()
 
@@ -117,7 +124,7 @@ const Analytics = () => {
 
     //add dymanic data for weekly time zones
     return (
-        <div className="analytics-div">
+        <animated.div style={fadeIn} className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
                 <h1>{currentYear} tag usage</h1>
                 <Chart width={'600'} height={'450'} className="tag-chart" type="polarArea" data={chartData}  options={lightOptions} />
@@ -126,7 +133,7 @@ const Analytics = () => {
                 <h1>{currentYear} zone time</h1>
                 <Chart width={'500'} height={'450'} className="bar-chart" type="bar" data={barChartData} options={basicOptions}/>
             </div>
-        </div>
+        </animated.div>
     )
 }
 
