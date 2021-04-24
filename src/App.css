@@ -535,6 +535,10 @@ body {
   font-size: 65%;
 }
 
+.not-available-zone-form {
+  color: red;
+}
+
 /* IN ZONE */
 .in-zone-div {
   grid-column: 1 / -1 ;

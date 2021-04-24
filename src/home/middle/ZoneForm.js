@@ -18,6 +18,10 @@ const ZoneForm = () => {
     const userRegions = useSelector(state => state.user.entities[0].regions)
     const userTrinkets = useSelector(state => state.user.entities[0].trinkets)
 
+    console.log(userTags)
+    console.log(userRegions)
+    console.log(userTrinkets)
+
     const displayTagOptions = userTags.map(tag => {
         return (
             <option key={tag.id} value={tag.name}>{tag.name}</option>
@@ -94,7 +98,7 @@ const ZoneForm = () => {
           />
           {errors.totalObjectiveTime && errors.totalObjectiveTime.type === "required"}
 
-          <label htmlFor="tag">Tag</label>
+          <label htmlFor="tag">{userTags.length == 0 ? <span class="not-available-zone-form">Tag (not available - CREATE A TAG)</span> : 'Tag'}</label>
           <select
             name="tag"
             id="tag"
@@ -105,7 +109,7 @@ const ZoneForm = () => {
           </select>
           {errors.tag && errors.tag.type === "required"}
 
-          <label htmlFor="region">Region</label>
+          <label htmlFor="region">{userRegions.length == 0 ? <span class="not-available-zone-form">Region (not available - PURCHASE A REGION)</span> : 'Region'}</label>
           <select
             name="region"
             id="region"
@@ -116,7 +120,7 @@ const ZoneForm = () => {
           </select>
           {errors.region && errors.region.type === "required"}
 
-          <label htmlFor="trinket">Trinket</label>
+          <label htmlFor="trinket">{userTrinkets.length == 0 ? <span class="not-available-zone-form">Trinket (not available - PURCHASE A TRINKET)</span> : 'Trinket'}</label>
           <select
             name="trinket"
             id="trinket"
