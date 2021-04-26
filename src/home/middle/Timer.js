@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"
+import { useRef, useEffect, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setTime, leaveZone, completeZone, enterZone, openModal } from "../../redux/user"
 
@@ -53,17 +53,22 @@ const Timer = () => {
               dispatch(openModal())
           })
       } else {
+        console.log(isInZone)
         dispatch(setTime(timeArr))
       }
     }, 1000)
   }
 
+  const safeEnterZone = useCallback(() => {
+    dispatch(enterZone())
+  }, [dispatch])
+
   useEffect(() => {
     if (!isInZone && currentZone.isActive) {
-      dispatch(enterZone())
+      safeEnterZone()
       startTimer()
     }
-  }, [])
+  }, [currentZone.isActive, isInZone, safeEnterZone])
 
   return (
     <section className="timer-container">
