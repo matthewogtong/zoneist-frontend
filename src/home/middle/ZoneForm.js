@@ -98,7 +98,7 @@ const ZoneForm = () => {
           />
           {errors.totalObjectiveTime && errors.totalObjectiveTime.type === "required"}
 
-          <label htmlFor="tag">{userTags.length == 0 ? <span class="not-available-zone-form">Tag (not available - CREATE A TAG)</span> : 'Tag'}</label>
+          <label htmlFor="tag">{userTags.length == 0 ? <span class="not-available-zone-form">Tag (not available - create a tag)</span> : 'Tag'}</label>
           <select
             name="tag"
             id="tag"
@@ -109,7 +109,7 @@ const ZoneForm = () => {
           </select>
           {errors.tag && errors.tag.type === "required"}
 
-          <label htmlFor="region">{userRegions.length == 0 ? <span class="not-available-zone-form">Region (not available - PURCHASE A REGION)</span> : 'Region'}</label>
+          <label htmlFor="region">{userRegions.length == 0 ? <span class="not-available-zone-form">Region (not available - purchase a region)</span> : 'Region'}</label>
           <select
             name="region"
             id="region"
@@ -120,7 +120,7 @@ const ZoneForm = () => {
           </select>
           {errors.region && errors.region.type === "required"}
 
-          <label htmlFor="trinket">{userTrinkets.length == 0 ? <span class="not-available-zone-form">Trinket (not available - PURCHASE A TRINKET)</span> : 'Trinket'}</label>
+          <label htmlFor="trinket">{userTrinkets.length == 0 ? <span class="not-available-zone-form">Trinket (not available - purchase a trinket)</span> : 'Trinket'}</label>
           <select
             name="trinket"
             id="trinket"
