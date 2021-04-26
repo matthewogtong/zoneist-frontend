@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
 import { useSpring, animated } from "react-spring"
 import { Card } from 'primereact/card'
-import { getDate, format } from 'date-fns'
+import { format } from 'date-fns'
 
 
 // IMPORT TRINKETS
@@ -33,9 +33,6 @@ const Zone = ({
   const zoneEndDate = new Date(parseInt(zoneEnd))
   const formattedZoneEnd = format(zoneEndDate, 'Pp')
 
-  // const zoneStartDate = new Date(parseInt(zoneStart))
-  // const formattedZoneStart = format(zoneStartDate, 'Pp')
-  // console.log(zoneStart)
 
   const fadeIn = useSpring({
       opacity: 1,

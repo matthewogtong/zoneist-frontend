@@ -63,7 +63,7 @@ const Timer = () => {
       dispatch(enterZone())
       startTimer()
     }
-  }, [])
+  }, [currentZone.isActive, dispatch, isInZone, startTimer])
 
   return (
     <section className="timer-container">

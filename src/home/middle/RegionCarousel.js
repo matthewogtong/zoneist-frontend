@@ -31,9 +31,10 @@ const RegionCarousel = () => {
   const dispatch = useDispatch();
 
   const userId = useSelector((state) => state.user.entities[0].id);
+  
 
   const userTokens = useSelector((state) => state.user.entities[0].tokens);
-
+  
   const regions = useSelector((state) => {
     return state.region.entities[0];
   });
