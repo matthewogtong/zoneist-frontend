@@ -53,7 +53,6 @@ const Timer = () => {
               dispatch(openModal())
           })
       } else {
-        console.log(isInZone)
         dispatch(setTime(timeArr))
       }
     }, 1000)
