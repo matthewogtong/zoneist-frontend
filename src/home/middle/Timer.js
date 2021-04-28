@@ -67,7 +67,7 @@ const Timer = () => {
       safeEnterZone()
       startTimer()
     }
-  }, [currentZone.isActive, isInZone, safeEnterZone])
+  }, [])
 
   return (
     <section className="timer-container">
