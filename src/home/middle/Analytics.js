@@ -4,7 +4,7 @@ import { Chart } from 'primereact/chart'
 import { useSpring, animated } from "react-spring"
 
 const Analytics = () => {
-
+      
     const fadeIn = useSpring({
         opacity: 1,
         marginTop: 0,
@@ -14,7 +14,7 @@ const Analytics = () => {
 
     const currentYear = new Date().getFullYear()
 
-    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
+    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear || zone.zone_start_year === currentYear))
 
     const tagDataObj = {}
     for (let val of userZonesThisYear) {
@@ -42,14 +42,16 @@ const Analytics = () => {
     }
 
     for (let val of userZonesThisYear) {
-        yearlyZoneTimeData[val.zoneStartMonth] = (yearlyZoneTimeData[val.zoneStartMonth] || 0) + val.totalObjectiveTime
+      yearlyZoneTimeData[val.zoneStartMonth || val.zone_start_month] =
+        (yearlyZoneTimeData[val.zoneStartMonth] ||
+          yearlyZoneTimeData[val.zone_start_month] ||
+          0) + val.totalObjectiveTime || val.total_objective_time;
     }
 
-
     const zoneTimeData = Object.values(yearlyZoneTimeData)
-
+    console.log(userZonesThisYear)
     console.log(yearlyZoneTimeData)
-    
+    console.log(zoneTimeData)
 
     const chartData = {
         labels: tagLabels,
@@ -122,7 +124,6 @@ const Analytics = () => {
 
     const { basicOptions } = getLightTheme();
 
-    //add dymanic data for weekly time zones
     return (
         <animated.div style={fadeIn} className="analytics-div">
             <div className="tag-chart-div p-shadow-8">
