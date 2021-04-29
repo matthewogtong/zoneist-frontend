@@ -32,8 +32,6 @@ const Zone = ({
 }) => {
   const zoneEndDate = new Date(parseInt(zoneEnd))
   const formattedZoneEnd = format(zoneEndDate, 'Pp')
-  console.log(zoneStart)
-
 
   const fadeIn = useSpring({
       opacity: 1,
