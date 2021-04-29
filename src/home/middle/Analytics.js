@@ -4,7 +4,7 @@ import { Chart } from 'primereact/chart'
 import { useSpring, animated } from "react-spring"
 
 const Analytics = () => {
-
+      
     const fadeIn = useSpring({
         opacity: 1,
         marginTop: 0,
@@ -14,8 +14,8 @@ const Analytics = () => {
 
     const currentYear = new Date().getFullYear()
 
-    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear === currentYear))
-
+    const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear || zone.zone_start_year === currentYear))
+    const thisUser = useSelector(state => state.user.entities[0])
     const tagDataObj = {}
     for (let val of userZonesThisYear) {
         tagDataObj[val.tag.name] = (tagDataObj[val.tag.name] || 0) + 1
@@ -49,6 +49,8 @@ const Analytics = () => {
     const zoneTimeData = Object.values(yearlyZoneTimeData)
 
     console.log(yearlyZoneTimeData)
+    console.log(userZonesThisYear)
+    console.log(thisUser)
     
 
     const chartData = {
