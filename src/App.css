@@ -141,6 +141,22 @@ body {
   letter-spacing: 10px;
 }
 
+.log-in-container button[type="submit"]:hover,
+.log-in-container input[type="submit"]:hover {
+  background: linear-gradient(-45deg, #30cfd0, #ec5990, #f2eae3, #ffc876);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: black;
+  text-transform: lowercase;
+  border: 1px solid black;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  transition: all .5s ease-in;
+}
+
 
 /* SIGN UP FORM */
 .sign-up-container {
@@ -185,7 +201,7 @@ body {
 .sign-up-container button[type="submit"],
 .sign-up-container input[type="submit"] {
   background: #ec5990;
-  color: white;
+  color: black;
   text-transform: lowercase;
   border: none;
   margin-top: 40px;
@@ -193,6 +209,24 @@ body {
   font-size: 16px;
   font-weight: 100;
   letter-spacing: 10px;
+}
+
+.sign-up-container button[type="submit"]:hover,
+.sign-up-container input[type="submit"]:hover {
+  background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: white;
+  text-transform: lowercase;
+  border: 1px solid black;
+  text-transform: lowercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  transition: all .5s ease-in;
 }
 
 /* ABOUT PAGE  */
