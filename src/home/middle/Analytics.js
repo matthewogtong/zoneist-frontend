@@ -15,7 +15,7 @@ const Analytics = () => {
     const currentYear = new Date().getFullYear()
 
     const userZonesThisYear = useSelector(state => state.user.entities[0].zones.filter(zone => zone.zoneStartYear || zone.zone_start_year === currentYear))
-    const thisUser = useSelector(state => state.user.entities[0])
+
     const tagDataObj = {}
     for (let val of userZonesThisYear) {
         tagDataObj[val.tag.name] = (tagDataObj[val.tag.name] || 0) + 1
@@ -45,13 +45,7 @@ const Analytics = () => {
         yearlyZoneTimeData[val.zoneStartMonth] = (yearlyZoneTimeData[val.zoneStartMonth] || 0) + val.totalObjectiveTime
     }
 
-
     const zoneTimeData = Object.values(yearlyZoneTimeData)
-
-    console.log(yearlyZoneTimeData)
-    console.log(userZonesThisYear)
-    console.log(thisUser)
-    
 
     const chartData = {
         labels: tagLabels,
