@@ -9,6 +9,7 @@ const ZonesContainer = () => {
 
     const zonesToday = useSelector(state => state.user.zonesToday)
     const zonesToDisplay = useSelector(state => state.user.zonesToDisplay)
+    console.log(zonesToDisplay)
 
     const fadeIn = useSpring({
       opacity: 1,

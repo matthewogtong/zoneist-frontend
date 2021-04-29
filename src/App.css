@@ -899,7 +899,7 @@ section p:first-child, .timer div:last-child span {
   align-items: center;
 }
 
-.completed-zone-back h6 {
+/* .completed-zone-back h6 {
   background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -914,7 +914,7 @@ section p:first-child, .timer div:last-child span {
   border-radius: 4px;
   width: 20%;
   height: 10%;
-}
+} */
 
 /* COLLECTION */
 .collection {

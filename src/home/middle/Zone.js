@@ -32,6 +32,7 @@ const Zone = ({
 }) => {
   const zoneEndDate = new Date(parseInt(zoneEnd))
   const formattedZoneEnd = format(zoneEndDate, 'Pp')
+  console.log(zoneStart)
 
 
   const fadeIn = useSpring({
@@ -130,7 +131,6 @@ const Zone = ({
                 {formattedZoneEnd}
               </p>
             </Card>
-            <h6>{tag.name}</h6>
           </div>
         </div>
       </ReactCardFlip>
