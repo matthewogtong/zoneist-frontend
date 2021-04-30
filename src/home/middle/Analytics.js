@@ -41,12 +41,11 @@ const Analytics = () => {
         11 : 0
     }
 
-
     for (let val of userZonesThisYear) {
       yearlyZoneTimeData[val.zoneStartMonth || val.zone_start_month] =
         (yearlyZoneTimeData[val.zoneStartMonth] ||
-          yearlyZoneTimeData[val.zone_start_month] ||
-          0) + val.totalObjectiveTime || val.total_objective_time;
+          yearlyZoneTimeData[val.zone_start_month]) + (val.totalObjectiveTime ||
+        val.total_objective_time)
     }
 
     const zoneTimeData = Object.values(yearlyZoneTimeData)
