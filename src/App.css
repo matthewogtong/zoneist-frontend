@@ -499,8 +499,6 @@ body {
   grid-row: 1 / -1;
   background: #0e101c;
   border-radius: 25px;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .zone-form form {
@@ -509,14 +507,6 @@ body {
 }
 
 .zone-form h3 {
-  /* display: block;
-  margin: 10% auto;
-  width: 50%;
-  font-weight: 100;
-  color: white;
-  text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgb(79, 98, 148); */
   font-weight: 100;
   color: white;
   text-align: center;
@@ -898,23 +888,6 @@ section p:first-child, .timer div:last-child span {
   justify-content: center;
   align-items: center;
 }
-
-/* .completed-zone-back h6 {
-  background: linear-gradient(-45deg, #30cfd0, #231C3d, #0c5a6b, #330867);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  border: none;
-  padding: 2px;
-  font-size: 16px;
-  font-weight: 100;
-  letter-spacing: 10px;
-  border-radius: 4px;
-  width: 20%;
-  height: 10%;
-} */
 
 /* COLLECTION */
 .collection {
