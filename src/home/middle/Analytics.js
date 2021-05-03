@@ -40,15 +40,15 @@ const Analytics = () => {
         10 : 0,
         11 : 0
     }
-
+    
     for (let val of userZonesThisYear) {
-      yearlyZoneTimeData[val.zoneStartMonth || val.zone_start_month] =
-        (yearlyZoneTimeData[val.zoneStartMonth] ||
-          yearlyZoneTimeData[val.zone_start_month]) + (val.totalObjectiveTime ||
-        val.total_objective_time)
+      yearlyZoneTimeData[val.zoneStartMonth ? val.zoneStartMonth : val.zone_start_month] = (yearlyZoneTimeData[val.zoneStartMonth ? val.zoneStartMonth : val.zone_start_month]) + (val.totalObjectiveTime || val.total_objective_time)
     }
 
     const zoneTimeData = Object.values(yearlyZoneTimeData)
+    console.log(userZonesThisYear)
+    console.log(zoneTimeData)
+    console.log(yearlyZoneTimeData)
 
     const chartData = {
         labels: tagLabels,
