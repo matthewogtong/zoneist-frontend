@@ -1144,6 +1144,21 @@ section p:first-child, .timer div:last-child span {
   letter-spacing: 10px;
 }
 
+.tag-form button[type="submit"]:hover,
+.tag-form input[type="submit"]:hover {
+  background: linear-gradient(-45deg, #30cfd0, #ec5990, #f2eae3, #ffc876);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: white;
+  text-transform: lowercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
 
 .tag-list-ul {
   list-style-type: none;
