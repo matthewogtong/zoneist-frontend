@@ -30,7 +30,7 @@ const Inspiration = ()  => {
           draggable
           pauseOnHover
         />
-        <p>click</p>
+        <p>click for inspiration</p>
       </div>
     )
 }
