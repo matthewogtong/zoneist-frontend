@@ -41,7 +41,7 @@ const ZonesContainer = () => {
         displayUserZones
       ) : (
         <Card className="no-zones-today p-shadow-8">
-          <p>you have not completed any zones this day</p>
+          <p>no completed zones this day</p>
         </Card>
       )}
     </animated.ul>
