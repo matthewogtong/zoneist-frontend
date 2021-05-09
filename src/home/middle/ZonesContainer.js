@@ -1,9 +1,8 @@
 import React from "react";
 import { useSpring, animated } from "react-spring"
-import Zone from './Zone'
 import { useSelector } from "react-redux"
 import { Card } from 'primereact/card'
-
+import Zone from './Zone'
 
 const ZonesContainer = () => {
 
