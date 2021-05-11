@@ -93,8 +93,8 @@ function App() {
           contentLabel="Example Modal"
         >
             <div>
-                <h1>congratulations for successfully focusing </h1>
-                <h1>on your objective for the alloted time,</h1>
+                <h1>you have completed your objective for the alloted time</h1>
+                <h1>you're completed zone has been added and</h1>
                 <h2>you've earned 3 tokens! <Money /></h2>
                 <button onClick={handleCloseModal}>close me</button>
             </div>
