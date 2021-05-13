@@ -8,6 +8,7 @@ import blueLagoon from "../../img/bluelagoon.jpg"
 import blueLakeTorii from "../../img/bluelaketorii.jpg"
 import giza from "../../img/giza.jpg"
 import iguazuFalls from "../../img/iguazufalls.jpg"
+import kauai from "../../img/kauai.jpg"
 import lofotenIslands from "../../img/lofotenislands.jpg"
 import machuPicchu from "../../img/machupicchu.jpg"
 import newYorkCity from "../../img/newyorkcity.jpg"
@@ -22,6 +23,7 @@ const RegionCarousel = () => {
     "Blue Lake Torii": blueLakeTorii,
     Giza: giza,
     "Iguazu Falls": iguazuFalls,
+    Kauai: kauai,
     "Lofoten Islands": lofotenIslands,
     "Machu Picchu": machuPicchu,
     "New York City": newYorkCity,

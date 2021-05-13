@@ -850,6 +850,15 @@ section p:first-child, .timer div:last-child span {
   animation: animation 100s linear infinite;
 }
 
+.Kauai {
+  background: url('./img/kauai.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
+}
+
 .LofotenIslands {
   background: url('./img/lofotenislands.jpg');
   background-position: center;
