@@ -93,9 +93,9 @@ function App() {
           contentLabel="Example Modal"
         >
             <div>
-                <h1>- you have completed your objective for the alloted time</h1>
-                <h1>- your completed zone has been added</h1>
-                <h2>- you've earned 3 tokens! <Money /></h2>
+                <h2>you have completed your objective for the alloted time</h2>
+                <h2>your completed zone has been added</h2>
+                <h3>you've earned 3 tokens! <Money /></h3>
                 <button onClick={handleCloseModal}>close me</button>
             </div>
         </Modal>
