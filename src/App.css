@@ -886,6 +886,15 @@ section p:first-child, .timer div:last-child span {
   animation: animation 100s linear infinite;
 }
 
+.Osaka {
+  background: url('./img/osaka.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
+}
+
 .Venice {
   background: url('./img/venice.jpg');
   background-position: center;
