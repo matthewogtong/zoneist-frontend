@@ -14,6 +14,7 @@ import lofotenIslands from "../../img/lofotenislands.jpg"
 import machuPicchu from "../../img/machupicchu.jpg"
 import newYorkCity from "../../img/newyorkcity.jpg"
 import osaka from "../../img/osaka.jpg"
+import paris from "../../img/paris.jpg"
 import venice from "../../img/venice.jpg"
 
 // IMPORT TRINKETS
@@ -55,6 +56,7 @@ const Collection = () => {
         "Machu Picchu": machuPicchu,
         "New York City": newYorkCity,
         Osaka: osaka,
+        Paris: paris,
         Venice: venice,
       }
 
