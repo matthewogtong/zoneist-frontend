@@ -16,6 +16,7 @@ import newYorkCity from "../../img/newyorkcity.jpg"
 import osaka from "../../img/osaka.jpg"
 import paris from "../../img/paris.jpg"
 import venice from "../../img/venice.jpg"
+import yosemite from "../../img/yosemite.jpg"
 
 // IMPORT TRINKETS
 import { ReactComponent as LPrinter } from "../../svg/trinkets/3D-printing.svg"
@@ -58,6 +59,7 @@ const Collection = () => {
         Osaka: osaka,
         Paris: paris,
         Venice: venice,
+        Yosemite: yosemite
       }
 
       const svgMapper = {
