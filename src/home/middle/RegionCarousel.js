@@ -15,6 +15,7 @@ import newYorkCity from "../../img/newyorkcity.jpg"
 import osaka from "../../img/osaka.jpg"
 import paris from "../../img/paris.jpg"
 import venice from "../../img/venice.jpg"
+import yosemite from "../../img/yosemite.jpg"
 
 const RegionCarousel = () => {
   const [marketRegions, setMarketRegions] = useState([])
@@ -32,6 +33,7 @@ const RegionCarousel = () => {
     Osaka: osaka,
     Paris: paris,
     Venice: venice,
+    Yosemite: yosemite
   }
 
   const dispatch = useDispatch();

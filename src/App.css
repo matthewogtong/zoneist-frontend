@@ -913,6 +913,15 @@ section p:first-child, .timer div:last-child span {
   animation: animation 100s linear infinite;
 }
 
+.Yosemite {
+  background: url('./img/yosemite.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
+}
+
 .zones-container .completed-zone-back {
   background: linear-gradient(-45deg, #93a5cf, #f3e7e9, #e3eeff, #e4efe9);
   background-size: 400% 400%;
