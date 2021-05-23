@@ -16,6 +16,7 @@ import newYorkCity from "../../img/newyorkcity.jpg"
 import niagaraFalls from "../../img/niagarafalls.jpg"
 import osaka from "../../img/osaka.jpg"
 import paris from "../../img/paris.jpg"
+import shibuyaCrossing from "../../img/shibuyacrossing.jpg"
 import venice from "../../img/venice.jpg"
 import yosemite from "../../img/yosemite.jpg"
 
@@ -60,6 +61,7 @@ const Collection = () => {
         "Niagara Falls": niagaraFalls,
         Osaka: osaka,
         Paris: paris,
+        "Shibuya Crossing": shibuyaCrossing,
         Venice: venice,
         Yosemite: yosemite
       }
