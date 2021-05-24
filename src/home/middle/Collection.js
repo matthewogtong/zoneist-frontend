@@ -12,6 +12,7 @@ import iguazuFalls from "../../img/iguazufalls.jpg"
 import kauai from "../../img/kauai.jpg"
 import lofotenIslands from "../../img/lofotenislands.jpg"
 import machuPicchu from "../../img/machupicchu.jpg"
+import mykonos from "../../img/mykonos.jpg"
 import newYorkCity from "../../img/newyorkcity.jpg"
 import niagaraFalls from "../../img/niagarafalls.jpg"
 import osaka from "../../img/osaka.jpg"
@@ -57,6 +58,7 @@ const Collection = () => {
         Kauai: kauai,
         "Lofoten Islands": lofotenIslands,
         "Machu Picchu": machuPicchu,
+        "Mykonos": mykonos,
         "New York City": newYorkCity,
         "Niagara Falls": niagaraFalls,
         Osaka: osaka,

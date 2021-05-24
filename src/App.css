@@ -877,6 +877,15 @@ section p:first-child, .timer div:last-child span {
   animation: animation 100s linear infinite;
 }
 
+.Mykonos {
+  background: url('./img/mykonos.jpg');
+  background-position: center;
+  background-size: cover;
+  perspective: 100px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
+}
+
 .NewYorkCity {
   background: url('./img/newyorkcity.jpg');
   background-position: center;
