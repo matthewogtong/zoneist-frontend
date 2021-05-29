@@ -36,6 +36,7 @@ import { ReactComponent as Game } from "../../svg/trinkets/game.svg"
 import { ReactComponent as Koi } from "../../svg/trinkets/koi.svg"
 import { ReactComponent as Tools } from "../../svg/trinkets/tools.svg"
 import { ReactComponent as Home } from "../../svg/trinkets/home.svg"
+import { ReactComponent as Astronaut } from "../../svg/trinkets/astronaut.svg"
 
 const Collection = () => {
 
@@ -67,7 +68,7 @@ const Collection = () => {
         Venice: venice,
         Yosemite: yosemite
       }
-
+      
       const svgMapper = {
         LPrinter: LPrinter,
         Bed: Bed,
@@ -82,7 +83,8 @@ const Collection = () => {
         Game: Game,
         Koi: Koi,
         Tools: Tools,
-        Home: Home
+        Home: Home,
+        Astronaut: Astronaut
       }
 
     // COLLETION TEMPLATE
