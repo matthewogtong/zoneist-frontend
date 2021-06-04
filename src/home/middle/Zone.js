@@ -22,6 +22,7 @@ import { ReactComponent as Tools } from "../../svg/trinkets/tools.svg"
 import { ReactComponent as Home } from "../../svg/trinkets/home.svg"
 import { ReactComponent as Astronaut } from "../../svg/trinkets/astronaut.svg"
 import { ReactComponent as Idea } from "../../svg/trinkets/idea.svg"
+import { ReactComponent as Reading } from "../../svg/trinkets/reading.svg"
 
 const Zone = ({
   objective,
@@ -58,7 +59,8 @@ const Zone = ({
     Tools: Tools,
     Home: Home,
     Astronaut: Astronaut,
-    Idea: Idea
+    Idea: Idea,
+    Reading: Reading
   }
 
   const [isFlipped, setIsFlipped] = useState(false)
