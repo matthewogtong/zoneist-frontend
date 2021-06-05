@@ -20,6 +20,7 @@ import { ReactComponent as Home } from "../../svg/trinkets/home.svg"
 import { ReactComponent as Astronaut } from "../../svg/trinkets/astronaut.svg"
 import { ReactComponent as Idea } from "../../svg/trinkets/idea.svg"
 import { ReactComponent as Reading } from "../../svg/trinkets/reading.svg"
+import { ReactComponent as Working } from "../../svg/trinkets/working.svg"
 
 const TrinketCarousel = () => {
     const [marketTrinkets, setMarketTrinkets] = useState([])
@@ -41,7 +42,8 @@ const TrinketCarousel = () => {
       Home: Home,
       Astronaut: Astronaut,
       Idea: Idea,
-      Reading: Reading
+      Reading: Reading,
+      Working: Working
     }
 
     const dispatch = useDispatch()
