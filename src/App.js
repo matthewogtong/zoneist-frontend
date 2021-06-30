@@ -42,7 +42,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3001/home", {
+      fetch("http://https://zoneist.herokuapp.com/home", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -59,7 +59,7 @@ function App() {
 
   // GET REGIONS
   useEffect(() => {
-    fetch(`http://localhost:3001/regions`)
+    fetch(`http://https://zoneist.herokuapp.com/regions`)
       .then((r) => r.json())
       .then((regionsArr) => dispatch(setRegions(regionsArr)))
   }, [dispatch])
@@ -67,7 +67,7 @@ function App() {
 
   // GET TRINKETS
   useEffect(() => {
-    fetch(`http://localhost:3001/trinkets`)
+    fetch(`http://https://zoneist.herokuapp.com/trinkets`)
       .then((r) => r.json())
       .then((trinketsArr) => dispatch(setTrinkets(trinketsArr)))
   }, [dispatch])

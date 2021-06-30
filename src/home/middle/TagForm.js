@@ -25,7 +25,7 @@ const TagForm = () => {
     }
 
     const onSubmit = (data, e) => {
-      fetch(`http://localhost:3001/users/${userId}/tags`, {
+      fetch(`http://https://zoneist.herokuapp.com/users/${userId}/tags`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

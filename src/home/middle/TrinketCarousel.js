@@ -60,7 +60,7 @@ const TrinketCarousel = () => {
 
     // GET USER TRINKETS
     useEffect(() => {
-      fetch(`http://localhost:3001/users/${userId}/trinkets`)
+      fetch(`http://https://zoneist.herokuapp.com/users/${userId}/trinkets`)
         .then((r) => r.json())
         .then((userTrinketsArr) => {
           const filteredTrinkets = trinkets.filter(
@@ -75,7 +75,7 @@ const TrinketCarousel = () => {
 
     const handleTrinketPurchase = (trinket) => {
         if (userTokens >= trinket.price) {
-            fetch(`http://localhost:3001/users/${userId}/trinkets`, {
+            fetch(`http://https://zoneist.herokuapp.com/users/${userId}/trinkets`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

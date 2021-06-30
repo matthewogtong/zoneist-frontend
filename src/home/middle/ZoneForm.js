@@ -46,7 +46,7 @@ const ZoneForm = () => {
     const onSubmit = (data) => {
       const add = data.totalObjectiveTime * 60000
       const expectedZoneEnd = new Date().getTime() + add
-      fetch(`http://localhost:3001/users/${userId}/zones`, {
+      fetch(`http://https://zoneist.herokuapp.com/users/${userId}/zones`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
