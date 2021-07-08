@@ -55,7 +55,7 @@ const RegionCarousel = () => {
 
   // GET USER REGIONS
   useEffect(() => {
-    fetch(`http://https://zoneist.herokuapp.com/users/${userId}/regions`)
+    fetch(`https://zoneist.herokuapp.com/users/${userId}/regions`)
       .then((r) => r.json())
       .then((userRegionsArr) => {
         const filteredRegions = regions.filter(
@@ -70,7 +70,7 @@ const RegionCarousel = () => {
 
   const handleRegionPurchase = (region) => {
     if (userTokens >= region.price) {
-      fetch(`http://https://zoneist.herokuapp.com/users/${userId}/regions`, {
+      fetch(`https://zoneist.herokuapp.com/users/${userId}/regions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

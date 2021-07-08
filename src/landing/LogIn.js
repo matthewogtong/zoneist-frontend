@@ -33,7 +33,7 @@ const LogIn = () => {
 
     const formData = { username, password }
 
-    fetch("http://https://zoneist.herokuapp.com/login", {
+    fetch("https://zoneist.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

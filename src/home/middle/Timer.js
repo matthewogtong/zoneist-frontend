@@ -36,7 +36,7 @@ const Timer = () => {
       if (distance < 0) {
         dispatch(leaveZone())
         clearInterval(interval)
-        fetch(`http://https://zoneist.herokuapp.com/users/${userId}/zones/${currentZone.id}`, {
+        fetch(`https://zoneist.herokuapp.com/users/${userId}/zones/${currentZone.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

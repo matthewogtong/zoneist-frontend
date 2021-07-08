@@ -12,7 +12,7 @@ const Tag = ({ tag }) => {
     const userId = useSelector(state => state.user.entities[0].id)
  
     const handleDeleteTag = (tagId) => {
-        fetch(`http://https://zoneist.herokuapp.com/users/${userId}/tags/${tagId}`, {
+        fetch(`https://zoneist.herokuapp.com/users/${userId}/tags/${tagId}`, {
             method: "DELETE"
         })
         .then(r => r.json())

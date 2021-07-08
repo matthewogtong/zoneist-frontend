@@ -30,7 +30,7 @@ const SignUp = () => {
 
     const formData = { username, password }
 
-    fetch("http://https://zoneist.herokuapp.com/register", {
+    fetch("https://zoneist.herokuapp.com/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

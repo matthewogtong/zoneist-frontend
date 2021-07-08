@@ -39,27 +39,27 @@ function App() {
 
   
   // AUTO LOGIN
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetch("http://https://zoneist.herokuapp.com/home", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((r) => r.json())
-        .then((user) => {
-          dispatch(setUser(user))
-          dispatch(setLoggedIn())
-          dispatch(setZonesToday(camelcaseKeys(user.zones)))
-        });
-    }
-  }, [dispatch, camelcaseKeys]);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     fetch("https://zoneist.herokuapp.com/home", {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //       .then((r) => r.json())
+  //       .then((user) => {
+  //         dispatch(setUser(user))
+  //         dispatch(setLoggedIn())
+  //         dispatch(setZonesToday(camelcaseKeys(user.zones)))
+  //       });
+  //   }
+  // }, [dispatch, camelcaseKeys]);
 
   // GET REGIONS
   useEffect(() => {
-    fetch(`http://https://zoneist.herokuapp.com/regions`)
+    fetch(`https://zoneist.herokuapp.com/regions`)
       .then((r) => r.json())
       .then((regionsArr) => dispatch(setRegions(regionsArr)))
   }, [dispatch])
@@ -67,7 +67,7 @@ function App() {
 
   // GET TRINKETS
   useEffect(() => {
-    fetch(`http://https://zoneist.herokuapp.com/trinkets`)
+    fetch(`https://zoneist.herokuapp.com/trinkets`)
       .then((r) => r.json())
       .then((trinketsArr) => dispatch(setTrinkets(trinketsArr)))
   }, [dispatch])
