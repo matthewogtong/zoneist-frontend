@@ -530,12 +530,12 @@ body {
   grid-row: 1 / -1;
   background: #0e101c;
   border-radius: 25px;
+  overflow-y: scroll;
 }
 
 .zone-form form {
   max-width: 500px;
   margin: 0 auto;
-  overflow-y: scroll;
 }
 
 .zone-form h3 {
