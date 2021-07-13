@@ -39,23 +39,23 @@ function App() {
 
   
   // AUTO LOGIN
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     fetch("https://zoneist.herokuapp.com/home", {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //       .then((r) => r.json())
-  //       .then((user) => {
-  //         dispatch(setUser(user))
-  //         dispatch(setLoggedIn())
-  //         dispatch(setZonesToday(camelcaseKeys(user.zones)))
-  //       });
-  //   }
-  // }, [dispatch, camelcaseKeys]);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("https://zoneist.herokuapp.com/home", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((r) => r.json())
+        .then((user) => {
+          dispatch(setUser(user))
+          dispatch(setLoggedIn())
+          dispatch(setZonesToday(camelcaseKeys(user.zones)))
+        });
+    }
+  }, [dispatch, camelcaseKeys]);
 
   // GET REGIONS
   useEffect(() => {
